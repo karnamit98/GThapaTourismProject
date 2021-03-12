@@ -1,51 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+$big-font: 3em;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    overflow-x: hidden;
-}
-
-@mixin flexCenter() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  overflow-x: hidden;
+  font-size: 16px;
 }
 
-section.landing-section{
-    height:100vh;
-    width:100vw;
-    overflow: hidden;
-    position:absolute;
-    top:0;
-    background: url("/images/anjali-mehta-PCz-8TEFAv0-unsplash.jpg") center no-repeat;
-    background-size: cover;
+section.landing-section {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  background: url("/images/anjali-mehta-PCz-8TEFAv0-unsplash.jpg") center
+    no-repeat;
+  background-size: cover;
 }
 
-header{
-   // position:absolute;
-    top:0;
-    nav{
-        @include flexCenter();
-        justify-content: space-between  !important;
-        .logo{
-            width:12rem;
-            height:5rem;
-        }
-    
-        ul.nav-items{
-            @include flexCenter();
-            li.nav-item{
-                color:red;
-                
-            }
-        }
+header {
+  height: 100vh;
+  background: url("/assets/hero-image.jpg") center no-repeat;
+  position: relative;
+  nav {
+    position: sticky;
+    top: 0px;
+    border: 2px solid red;
+    height: 50px;
+    .logo {
+      width: 100px;
+      height: 50px;
     }
+    .nav-items {
+      display: flex;
+      list-style: none;
+      font-weight: 600;
+      background-color: #111820;
+      color: white;
+      li {
+        padding: 10px 20px;
+        .nav-profile {
+          width: 25px;
+          height: 25px;
+          background-color: white;
+          border-radius: 50px;
+        }
+        span {
+          font-size: small;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  & > div {
+    position: absolute;
+    font-weight: 400;
+    font-size: $big-font;
+    right: 5%;
+    top: 222px;
+    width: 50%;
+    color: white;
+    button {
+      margin-top: 10px;
+    }
+  }
+}
+
+/**
+    Usefull classes to keep using throughout the website
+**/
+//gives margin to all the content of the website
+.container {
+  width: 90%;
+  margin: auto;
+}
+//flex space-between
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  display: block;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  background: #00b662;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    font-size: 12px;
+  }
 }
