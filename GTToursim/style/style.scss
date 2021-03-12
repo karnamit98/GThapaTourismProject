@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 //@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&display=swap");
 $big-font: 3em;
 * {
   margin: 0;
@@ -15,6 +15,9 @@ body {
   overflow-x: hidden;
   font-size: 16px;
 }
+.test-class {
+  width: 100%;
+}
 
 // section.landing-section {
 //   height: 100vh;
@@ -26,12 +29,15 @@ body {
 //     no-repeat;
 //   background-size: cover;
 // }
-.green{color:#00b662}
+.green {
+  color: #00b662;
+}
 header {
   height: 100vh;
-  background:url("/GTToursim/assets/annapurna_sanctuary_trek.jpg") center no-repeat; //url("/assets/hero-image.jpg") center no-repeat;
-  background:cover;
- //background:blue;
+  background: url("/GTToursim/assets/annapurna_sanctuary_trek.jpg") center
+    no-repeat; //url("/assets/hero-image.jpg") center no-repeat;
+  background: cover;
+  //background:blue;
   position: relative;
   nav {
     position: sticky;
@@ -48,9 +54,9 @@ header {
       list-style: none;
       font-weight: 600;
       //background-color: #111820;
-    
-      font-family: 'Josefin Slab', serif;
-      color:black;
+
+      font-family: "Josefin Slab", serif;
+      color: black;
       li {
         padding: 10px 20px;
         .nav-profile {
@@ -104,7 +110,7 @@ header {
   background: #00b662;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 10px 10px 48px -13px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 48px -13px rgba(0, 0, 0, 0.75);
 }
 
 @media only screen and (max-width: 700px) {

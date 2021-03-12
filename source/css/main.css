@@ -5,10 +5,10 @@
   width: 100%;
   background-color: white;
   position: relative;
-  font-family: 'Cormorant Unicase', serif;
+  font-family: "Cormorant Unicase", serif;
   font-weight: 500;
-  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  border: 2px solid red;
 }
 
 .nav > .nav-header {
@@ -24,6 +24,10 @@
 
 .nav > .nav-btn {
   display: none;
+}
+
+.test-class {
+  width: 100%;
 }
 
 .nav > .nav-links {
@@ -60,7 +64,8 @@
     height: 50px;
     padding: 13px;
   }
-  .nav > .nav-btn > label:hover, .nav #nav-check:checked ~ .nav-btn > label {
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
     background-color: #f2edd7;
   }
   .nav > .nav-btn > label > span {
@@ -75,7 +80,6 @@
     width: 100%;
     background-color: white;
     height: 0px;
-    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -97,8 +101,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -107,6 +110,7 @@ html {
 
 body {
   overflow-x: hidden;
+  display: none;
 }
 
 section.banner {
@@ -114,4 +118,3 @@ section.banner {
   height: 60vh;
   width: 100vw;
 }
-/*# sourceMappingURL=main.css.map */
