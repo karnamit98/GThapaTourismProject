@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+//@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&display=swap');
 $big-font: 3em;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  // font-family: "Montserrat", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -15,26 +16,29 @@ body {
   font-size: 16px;
 }
 
-section.landing-section {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  background: url("/images/anjali-mehta-PCz-8TEFAv0-unsplash.jpg") center
-    no-repeat;
-  background-size: cover;
-}
-
+// section.landing-section {
+//   height: 100vh;
+//   width: 100vw;
+//   overflow: hidden;
+//   position: absolute;
+//   top: 0;
+//   background: url("/assets/hero-image.jpg") center
+//     no-repeat;
+//   background-size: cover;
+// }
+.green{color:#00b662}
 header {
   height: 100vh;
-  background: url("/assets/hero-image.jpg") center no-repeat;
+  background:url("/GTToursim/assets/annapurna_sanctuary_trek.jpg") center no-repeat; //url("/assets/hero-image.jpg") center no-repeat;
+  background:cover;
+ //background:blue;
   position: relative;
   nav {
     position: sticky;
     top: 0px;
-    border: 2px solid red;
-    height: 50px;
+    //border: 2px solid red;
+    //background:#121013;
+    height: 55px;
     .logo {
       width: 100px;
       height: 50px;
@@ -43,14 +47,16 @@ header {
       display: flex;
       list-style: none;
       font-weight: 600;
-      background-color: #111820;
-      color: white;
+      //background-color: #111820;
+    
+      font-family: 'Josefin Slab', serif;
+      color:black;
       li {
         padding: 10px 20px;
         .nav-profile {
           width: 25px;
           height: 25px;
-          background-color: white;
+          //background-color: white;
           border-radius: 50px;
         }
         span {
@@ -62,12 +68,13 @@ header {
   }
 
   & > div {
+    font-family: "Montserrat", sans-serif;
     position: absolute;
     font-weight: 400;
     font-size: $big-font;
     right: 5%;
-    top: 222px;
-    width: 50%;
+    top: 250px;
+    width: 40%;
     color: white;
     button {
       margin-top: 10px;
@@ -97,6 +104,7 @@ header {
   background: #00b662;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 10px 10px 48px -13px rgba(0,0,0,0.75);
 }
 
 @media only screen and (max-width: 700px) {
