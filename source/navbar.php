@@ -1,7 +1,8 @@
 <?php $curPage = basename($_SERVER['PHP_SELF']); ?>
 
 <div class="top-nav">
-    <a href="register.php" class="<?php echo ($curPage == "register.php" ? "active" : "");?>">SignUp/SignIn</a>
+    <!-- <p class="" style="color:white;font-size:.8rem;"><i class="fas fa-phone-alt"></i> 9844723612 </p> -->
+    <a href="register.php" class="<?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
 </div>
 
 <div class="nav">
@@ -24,7 +25,7 @@
     <div class="nav-links">
         <a href="index.php" class="<?php echo ($curPage == "index.php" ? "active" : "");?>" >Home</a>
         <a href="about.php" class="<?php echo ($curPage == "about.php" ? "active" : "");?>">About Us</a>
-        <a href="contact.php" class="<?php echo ($curPage == "contact.php" ? "active" : "");?>">Contact Us</a>
+        <a href="contact.php" class="<?php echo ($curPage == "contact.php" ? "active" : "");?>"> Contact Us</a>
     </div>
 
     

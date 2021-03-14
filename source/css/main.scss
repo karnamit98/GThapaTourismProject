@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 
+/************* RESPONSIVE BREAKPOINTS *************/
+@mixin respond($breakpoint) {
+  @if($breakpoint == medium) {
+      @media (max-width: 980px) { @content }
+  }
+  @if($breakpoint == small) {
+      @media (max-width: 600px) { @content }
+  }
+}
+
 
 * {
   margin: 0;
@@ -8,6 +18,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -32,6 +43,7 @@ section.banner {
 footer{
   //position:absolute;
   //bottom:0;
+  margin-top:1.5rem;  
   width:100vw;
   background:#1e212d;
   color:whitesmoke;
@@ -63,7 +75,7 @@ footer{
   }
 }
 
-$bgColor: white;
+$bgColor: #fff3e6;//white;
 $bgColorHover: #f2edd7;
 $fgColor: #000;
 .nav {
@@ -170,43 +182,134 @@ $fgColor: #000;
 
 
 /********* SIGN UP FORM **************/ 
-.registerForm{
+.registerContainer {
+  @include displayFlexCenter();
+  flex-direction:row;
+.loginImage{
+  background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
+}
+.registerImage{
+  background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg") center no-repeat;
+}
+  .registerImage,.loginImage{
+    padding:3rem;
+    height:45vh;
+    width:30vw;
+    
+    background-size:cover;
+   // border:1px solid red;
+   box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
+   .loginLink{
+     position:relative;
+     top:130%;
+     left:20%;
+     font-family: "Montserrat", serif;
+     a{
+        color:#000;
+     }
+   }
+
+   @include respond(medium){ display:none; }
+  }
+
+  form.registerForm{
+    a{color:#000;}
+    //width:100%;
+    h2{font-size: 2rem; }
+    padding:3rem;
+    font-family: "Montserrat", serif;
+    @include displayFlexCenter();
+    flex-direction: column;
+    height:80vh;
+    //border:1px solid red;
+    .formGroup{
+      @include displayFlexCenter();
+
+    }
+    i{
+      position:relative;
+      left:1.5rem;
+      @include respond(small){}
+    }
+    input[type=text],input[type=password],input[type=email],input[type=checkbox],input[type=number]{
+      border:none;
+      border-bottom: 1px solid #000;
+      padding:.3rem .3rem .3rem 2rem;
+      width:300px;
+      margin-top:2rem;
+      @include respond(small){  }
+    }
+    input[type=checkbox]{padding:0;width:auto;}
+    button{
+      background:#0f1123;
+      color:#fff;
+      padding:1rem 1.4rem 1rem 1.4rem;
+      margin-top:2rem;
+      border:0;
+      &:hover{
+      background:#706897;
+      cursor:pointer;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+.introText{
+  margin:3rem;
   font-family: "Montserrat", serif;
   @include displayFlexCenter();
   flex-direction: column;
-  height:80vh;
-  border:1px solid red;
-  i{
-    position:relative;
-    left:1.5rem;
-  }
-  input[type=text],input[type=password],input[type=email],input[type=checkbox]{
-    border:none;
-    border-bottom: 1px solid #000;
-    padding:.3rem .3rem .3rem 2rem;
-    width:300px;
-    margin-top:2rem;
-  }
-  input[type=checkbox]{padding:0;width:auto;}
-  h2{
-
+  
+  h1{
+   // margin-bottom:1.6rem;
+    font-family: "Cormorant Unicase", serif;
   }
 }
 
+.section1, .section2, .section3{ margin:auto;margin-bottom:4rem;
+    height:400px;
+    width:80vw  !important;
+    @include displayFlexCenter();
+    justify-content: space-between;
+    font-family: "Montserrat", serif;
+    
+    .left,.right{
+      h1{  font-family: "Cormorant Unicase", serif; color:#c7956d; margin-bottom:1rem;   }
+      @include displayFlexCenter();
+      flex-direction: column;
+      height:85%;
+      width: 45%;
+      text-align: justify;
+      padding:1rem;
+  }
+  .cover1{ background: url("../assets/ski-photo.png") center no-repeat; background-size: cover;}
+  .cover2{ background: url("../assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp") center no-repeat; background-size: cover; }
+  .cover3{ background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat; background-size: cover; }
+  .registerImage{
+      }
 
-
-
-/* external css: flickity.css */
+  }
 
 .gallery {
   background: #eee;
+  .flickity-button {
+    // background: #1d9bfc !important;
+    display: none;
+  }
 }
 
 .gallery-cell {
-  width: 100vh;
-  height: 70vh ;
+  width: 100% !important;
+  height: 70vh;
   background: #8c8;
   counter-increment: gallery-cell;
+  margin-right: 0px !important;
 }
 
 /* cell number */
@@ -217,9 +320,45 @@ $fgColor: #000;
   font-size: 80px;
   color: white;
 }
+
+.sport-box {
+  counter-increment: gallery-cell;
+ margin-right: 40px !important;
+}
+.container .flickity-page-dots {
+  display: none;
+}
+
+#footer {
+  width: 100%;
+
+  font-family: "Montserrat", serif;
+  .space-between {
+    margin: auto;
+    &>div{
+      width: 300px;
+      text-align: center;
+      p{
+        font-size: 12px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+
+
+}
+
 /** Flickity ends here**/
 .hero-section {
-  background-color: rgba(0, 0, 0, 0.224);
+  background: rgba(255, 255, 255, 0.034);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.054);
+ // background-color: rgba(0, 0, 0, 0.224);
   position: absolute;
   top: 100px;
   right: 5%;
@@ -231,16 +370,189 @@ $fgColor: #000;
     font-family: "Montserrat", serif;
   }
   color: white;
-  .btn{
-    
+  .btn {
     background: #1e212d;
-    padding:.5rem .3rem;
+    padding: 0.5rem 0.3rem;
     color: white;
-    border:0;
+    border: 0;
   }
 }
-.flickity-button{
-  background:#eff8ff  !important;
+
+.sport-box {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  color:white;
+}
+// .sport-carasoul{
+//   height:480px;
+// }
+.sport-title {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.m-20 {
+  margin: 20px 0px;
+}
+.pd-20 {
+  padding: 20px !important;
+}
+.pd-10 {
+  padding: 10px !important;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.title-underline {
+  width: 100px;
+  height: 3px;
+  background-color: #00B662;
+  margin-top: 3px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+ // background-color: rgba(0, 0, 0, 0.45);
+ background-color:rgba(255, 255, 255, 0.183);
+  position: relative;
+  border-radius: 10px;
+}
+.bg {
+ // background-color: rgba(0, 0, 0, 0.3);
+ margin-top:3rem;
+ background-color: #bbbbbb71;
+ box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  color:#000;
+  height:110%;
+  padding-bottom:3rem !important;
+}
+.display-inline {
+  display: inline;
+  margin-top: 5px;
+}
+#footer{
+  background: #000;
+  color:#fff;
+}
+@media only screen and(max-width: 700px) {
+
+  .space-between {
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer {
+    &>div{
+      width: 400px;
+    }
+  }
+
 }
 
 
+
+/**PAYMENT PAGE**/
+.paymentContainer{
+  @include displayFlexCenter();
+  width:100vw;
+  height:80vh;
+  
+}
+.receipt {
+  box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
+  padding:1.7rem;
+  border-radius: 10px;
+   //position: relative;
+  // margin:10% auto 50px 10%;
+  margin:5vh auto auto auto;
+  // top: 50%;
+ //  left: 50%;
+   //transform: translate(-50%, -50%);
+  // -webkit-transform: translate(-50%, -50%);
+   background-color: white;
+   width: 70vw;
+   height: 90%;
+   //margin: 0 auto;
+  font-size: 14px;
+  font-family: "Montserrat", serif;
+
+   h1 {margin-bottom:3rem;
+      text-align: center;
+      color: red;
+      margin-top: 10px;font-family: "Cormorant Unicase", serif;
+   }
+}
+
+.payments {
+
+  td {
+    text-align: left;
+  }
+  color: black;
+   table {
+      width: 90%;
+      margin: 10px auto;
+      tr {
+        margin: 10px 0px;
+         td {
+            margin: 10px 0px !important;
+            padding: 10px 0px;
+         }
+      }
+   }
+}
+
+.total {
+   background: #aaaaaa;
+   font-weight: 600;
+   width: 100%;
+
+   p {
+      color: #171717;
+   }
+   margin-top: 10px
+}
+
+.pay {
+   &:hover {
+      div {
+         background-color: #3f3b3b;
+         cursor: pointer;
+      }
+   }
+
+   div {
+     margin:auto;
+      background-color: #669b7c;
+      width: 20%;
+      height: 40px;
+      text-align: center;
+      padding: 10px 10px;
+      margin-top: 110px;
+
+      p {
+         color: white;
+      }
+   }
+}
