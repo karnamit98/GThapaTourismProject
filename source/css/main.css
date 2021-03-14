@@ -1,5 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section.banner {
+  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat;
+  height: 60vh;
+  width: 100vw;
+}
+
+footer {
+  width: 100vw;
+  background: #1e212d;
+  color: whitesmoke;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*****  NAVBAR   **********/
+.top-nav {
+  width: 100vw;
+  height: 2rem;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", serif;
+  float: right;
+  font-size: .7rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.top-nav .active {
+  text-decoration: underline;
+  font-weight: 300;
+}
+
 .nav {
   height: 50px;
   width: 100%;
@@ -7,8 +75,8 @@
   position: relative;
   font-family: "Cormorant Unicase", serif;
   font-weight: 500;
-  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-  border: 2px solid red;
+  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -47,6 +115,11 @@
   background-color: #f2edd7;
 }
 
+.nav > .nav-links > .active {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
 .nav > #nav-check {
   display: none;
 }
@@ -80,6 +153,7 @@
     width: 100%;
     background-color: white;
     height: 0px;
+    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -98,23 +172,90 @@
   }
 }
 
-* {
-  margin: 0;
+/********* SIGN UP FORM **************/
+.registerForm {
+  font-family: "Montserrat", serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80vh;
+  border: 1px solid red;
+}
+
+.registerForm i {
+  position: relative;
+  left: 1.5rem;
+}
+
+.registerForm input[type=text], .registerForm input[type=password], .registerForm input[type=email], .registerForm input[type=checkbox] {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: .3rem .3rem .3rem 2rem;
+  width: 300px;
+  margin-top: 2rem;
+}
+
+.registerForm input[type=checkbox] {
   padding: 0;
-  box-sizing: border-box;
+  width: auto;
 }
 
-html {
-  scroll-behavior: smooth;
+/* external css: flickity.css */
+.gallery {
+  background: #eee;
 }
 
-body {
-  overflow-x: hidden;
-  display: none;
+.gallery-cell {
+  width: 100vh;
+  height: 70vh;
+  background: #8c8;
+  counter-increment: gallery-cell;
 }
 
-section.banner {
-  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat !important;
-  height: 60vh;
-  width: 100vw;
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
 }
+
+/** Flickity ends here**/
+.hero-section {
+  background-color: rgba(0, 0, 0, 0.224);
+  position: absolute;
+  top: 100px;
+  right: 5%;
+  width: 50%;
+  padding: 20px;
+  color: white;
+}
+
+.hero-section .hero-text {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Montserrat", serif;
+}
+
+.hero-section .btn {
+  background: #1e212d;
+  padding: .5rem .3rem;
+  color: white;
+  border: 0;
+}
+
+.flickity-button {
+  background: #eff8ff  !important;
+}
+/*# sourceMappingURL=main.css.map */

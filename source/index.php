@@ -1,26 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include_once 'header.php'; ?>
 
-    <!--CSS File-->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+   <!-- <section class="banner">
 
-    <title>Rip & Roar</title>
-</head>
-<body>
-    
-   <?php include 'navbar.php'; ?>
+   </section> -->
 
-   <section class="banner">
+<!-- 
+      <h1>hello</h1> -->
 
-   </section>
+      <div class="gallery js-flickity"
+    data-flickity='{ "wrapAround": true, "autoPlay":2000, "pauseAutoPlayOnHover":false }'>
+        <div class="gallery-cell" style="background-image: url('assets/product-5b5820635f71d.[1600].jpeg'); background-size:cover;width:85%;">
+            <div class="hero-section">
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                <button class="btn">Explore Now</button>
+            </div>
+        </div>
+        
+        <div class="gallery-cell" style="background-image: url('assets/trekking-banner.jpeg'); background-size:cover;width:85%;">
+            <div class="hero-section">
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                <button class="btn">Explore Now</button>
+            </div>
+        </div>
+        <div class="gallery-cell" style="background-image: url('assets/annapurna_sanctuary_trek.jpg'); background-size:cover;width:85%;">
+            <div class="hero-section">
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                <button class="btn">Explore Now</button>
+            </div>
+        </div>
+        <div class="gallery-cell" style="background-image: url('assets/gallery_image623.jpg'); background-size:cover;width:85%;">
+            <div class="hero-section">
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                <button class="btn">Explore Now</button>
+            </div>
+        </div>
+        <div class="gallery-cell" style="background-image: url('assets/annapurna_sanctuary_trek.jpg'); background-size:cover;width:85%;">
+            <div class="hero-section">
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                <button class="btn">Explore Now</button>
+            </div>
+        </div>
+    </div>
 
+      
 
-      <h1>hello</h1>
+<script src="js/flickity.pkgd.js"></script>
 
-
-</body>
-</html>
+<?php include_once 'footer.php'; ?>

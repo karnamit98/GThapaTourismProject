@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
-@import "navbar";
+
 
 * {
   margin: 0;
@@ -13,13 +13,234 @@ html {
 body {
   //  background:#1089ff;
   overflow-x: hidden;
-  display: none;
+}
+
+@mixin displayFlexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.banner {
-  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat !important;
+  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat ;
   //background-size: cover;
   height: 60vh;
   width: 100vw;
   // background:green;
 }
+
+footer{
+  //position:absolute;
+  //bottom:0;
+  width:100vw;
+  background:#1e212d;
+  color:whitesmoke;
+  padding:1.5rem;
+  @include displayFlexCenter();
+
+}
+
+/*****  NAVBAR   **********/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600&display=swap");
+
+.top-nav{
+  width:100vw;
+  height:2rem;
+  background:#000;
+  @include displayFlexCenter();
+  a{
+    text-decoration: none;
+    color:#fff;
+    font-family: "Montserrat", serif;
+    float:right;
+    font-size: .7rem;
+    position:absolute;
+    right:1rem;
+  }
+  .active {
+    text-decoration: underline;
+    font-weight: 300;
+  }
+}
+
+$bgColor: white;
+$bgColorHover: #f2edd7;
+$fgColor: #000;
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: $bgColor;
+  position: relative;
+  font-family: "Cormorant Unicase", serif;
+  font-weight: 500;
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+ // border: 2px solid red;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  // color: #fff;
+  color: $fgColor;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.test-class {
+  width: 100%;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: $fgColor;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: $bgColorHover;
+}
+.nav > .nav-links > .active {
+  text-decoration: underline;
+  font-weight: 400;
+}
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: $bgColorHover;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid $fgColor;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: $bgColor;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+/********* SIGN UP FORM **************/ 
+.registerForm{
+  font-family: "Montserrat", serif;
+  @include displayFlexCenter();
+  flex-direction: column;
+  height:80vh;
+  border:1px solid red;
+  i{
+    position:relative;
+    left:1.5rem;
+  }
+  input[type=text],input[type=password],input[type=email],input[type=checkbox]{
+    border:none;
+    border-bottom: 1px solid #000;
+    padding:.3rem .3rem .3rem 2rem;
+    width:300px;
+    margin-top:2rem;
+  }
+  input[type=checkbox]{padding:0;width:auto;}
+  h2{
+
+  }
+}
+
+
+
+
+/* external css: flickity.css */
+
+.gallery {
+  background: #eee;
+}
+
+.gallery-cell {
+  width: 100vh;
+  height: 70vh ;
+  background: #8c8;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+/** Flickity ends here**/
+.hero-section {
+  background-color: rgba(0, 0, 0, 0.224);
+  position: absolute;
+  top: 100px;
+  right: 5%;
+  width: 50%;
+  padding: 20px;
+  .hero-text {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: "Montserrat", serif;
+  }
+  color: white;
+  .btn{
+    
+    background: #1e212d;
+    padding:.5rem .3rem;
+    color: white;
+    border:0;
+  }
+}
+.flickity-button{
+  background:#eff8ff  !important;
+}
+
+
