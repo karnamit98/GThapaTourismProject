@@ -185,6 +185,7 @@ $fgColor: #000;
 .registerContainer {
   @include displayFlexCenter();
   flex-direction:row;
+  padding-top:2.5rem;
 .loginImage{
   background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
 }
@@ -217,6 +218,7 @@ $fgColor: #000;
     //width:100%;
     h2{font-size: 2rem; }
     padding:3rem;
+    margin-bottom:3rem;
     font-family: "Montserrat", serif;
     @include displayFlexCenter();
     flex-direction: column;
@@ -250,7 +252,30 @@ $fgColor: #000;
       background:#706897;
       cursor:pointer;
       }
-    }
+  }
+
+ 
+.socialSignIn{//border:1px solid red;background:green;
+  @include displayFlexCenter();
+  flex-direction: column;
+  .btnFb,.btnTwitter, .btnGoogle{
+    border-radius:5px;
+    width:fit-content;
+    padding:1rem 1rem 1rem .5rem;
+    margin-top:.5rem;
+    &:hover{
+      background:#000;
+      cursor:pointer;
+      }
+      width:250px;
+  }
+  .btnFb{background:#3B5998;}
+  .btnTwitter{background:#00ACEE;
+      }
+      .btnGoogle{background:#db4a39 ;
+      }
+}
+  
   }
 
 
@@ -353,7 +378,7 @@ $fgColor: #000;
 
 /** Flickity ends here**/
 .hero-section {
-  background: rgba(255, 255, 255, 0.034);
+  background: rgba(255, 255, 255, 0.136);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
   backdrop-filter: blur( 2px );
   border-radius: 10px;
@@ -441,12 +466,14 @@ $fgColor: #000;
 .bg {
  // background-color: rgba(0, 0, 0, 0.3);
  margin-top:3rem;
- background-color: #bbbbbb71;
+ //background-color: #bbbbbb71;
+ background:#000;
  box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
   border-radius: 10px;
-  color:#000;
+  color:#fff;
   height:110%;
   padding-bottom:3rem !important;
+  width:100vw !important;
 }
 .display-inline {
   display: inline;

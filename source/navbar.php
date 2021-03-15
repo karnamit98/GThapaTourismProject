@@ -9,7 +9,9 @@
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
         <div class="nav-title">
-        RIP & ROAR
+        <!-- RIP & ROAR -->
+        <img src="assets/logo.PNG" alt="Logo" style="width:100px;height:100px;position:relative;top:-40px;z-index:9999;
+         ">
         </div>
     </div>
     <div class="nav-btn">

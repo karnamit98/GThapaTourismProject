@@ -9,8 +9,14 @@
 
       <div class="gallery js-flickity"
       data-flickity='{ "wrapAround": true, "autoPlay":3000, "pauseAutoPlayOnHover":false }'>
-    
-        
+<!--     
+        <div class="gallery-cell" style="background-image: url('assets/161229031_208787711029469_1005553149621362289_n_1920x1080.PNG'); background-size:cover;width:85%;">
+                <div class="hero-section">
+                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
+                    <button class="btn">Explore Now</button>
+                </div>
+            </div> -->
+
         <div class="gallery-cell" style="background-image: url('assets/One-day-Trisuli-River-Rafting.jpg'); background-size:cover;width:85%;">
                 <div class="hero-section">
                     <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 

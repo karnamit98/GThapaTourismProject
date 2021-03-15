@@ -1,6 +1,6 @@
 <?php include_once 'header.php'; ?>
 
-    <div class="registerContainer">
+    <div class="registerContainer" style="margin-top:3rem;">
 
         <form name="registerForm" class="registerForm" action="#" method="POST" enctype="multipart/form-data">
             <h2>Sign Up</h2>
@@ -32,15 +32,24 @@
                 <label for="agreeTerms" >I agree to all <a href="#">Terms of service</a></label>
             </div>
 
-            <div>
+            <div style="margin-bottom:2rem;">
                 <button type="submit" name="btnSubmit" > Sign Up </button>
             </div>
+            OR
+            <div class="socialSignIn">
+                <button name="fbSignup" class="btnFb"><i class="fab fa-facebook"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up With Facebook</button>
+                <button name="twitterSignup" class="btnTwitter"><i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up With Twitter</button>
+                <button name="twitterSignup" class="btnGoogle"><i class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up With Google+</button>
+            
+            </div>
+
         </form>
 
-        <div class="registerImage">
+        <div class="registerImage" style="position:relative;top:-4rem;">
   
             <span class="loginLink">Already member? <a href="login.php">Sign In</a></span>
         </div>
+       
 
     </div>
 

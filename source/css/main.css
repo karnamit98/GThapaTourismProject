@@ -190,6 +190,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-top: 2.5rem;
 }
 
 .registerContainer .loginImage {
@@ -228,6 +229,7 @@ footer {
 
 .registerContainer form.registerForm {
   padding: 3rem;
+  margin-bottom: 3rem;
   font-family: "Montserrat", serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +296,49 @@ footer {
 .registerContainer form.registerForm button:hover {
   background: #706897;
   cursor: pointer;
+}
+
+.registerContainer form.registerForm .socialSignIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.registerContainer form.registerForm .socialSignIn .btnFb, .registerContainer form.registerForm .socialSignIn .btnTwitter, .registerContainer form.registerForm .socialSignIn .btnGoogle {
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 1rem 1rem .5rem;
+  margin-top: .5rem;
+  width: 250px;
+}
+
+.registerContainer form.registerForm .socialSignIn .btnFb:hover, .registerContainer form.registerForm .socialSignIn .btnTwitter:hover, .registerContainer form.registerForm .socialSignIn .btnGoogle:hover {
+  background: #000;
+  cursor: pointer;
+}
+
+.registerContainer form.registerForm .socialSignIn .btnFb {
+  background: #3B5998;
+}
+
+.registerContainer form.registerForm .socialSignIn .btnTwitter {
+  background: #00ACEE;
+}
+
+.registerContainer form.registerForm .socialSignIn .btnGoogle {
+  background: #db4a39;
 }
 
 .introText {
@@ -438,7 +483,7 @@ footer {
 
 /** Flickity ends here**/
 .hero-section {
-  background: rgba(255, 255, 255, 0.034);
+  background: rgba(255, 255, 255, 0.136);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
   -webkit-backdrop-filter: blur(2px);
@@ -537,13 +582,14 @@ footer {
 
 .bg {
   margin-top: 3rem;
-  background-color: #bbbbbb71;
+  background: #000;
   -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
           box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  color: #000;
+  color: #fff;
   height: 110%;
   padding-bottom: 3rem !important;
+  width: 100vw !important;
 }
 
 .display-inline {
