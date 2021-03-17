@@ -1,4 +1,4 @@
-    <section class="bg pd-20 mt-20" id="footer">
+    <section class="bg pd-20 mt-20" id="footer" style="border-radius:0;">
         <div class="space-between">
             <div class="pd-20">
                 <div><h3>RIP & ROAR</h3></div>
@@ -33,3 +33,5 @@
 
     </body>
 </html>
+
+<?php //CloseCon($conn); ?>

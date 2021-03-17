@@ -1,29 +1,38 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php'; 
+
+
+
+?>
+
+
 
     <div class="registerContainer">
 
-        <form name="registerForm" class="registerForm" action="#" method="POST" enctype="multipart/form-data">
+        <form name="loginForm" class="registerForm" action="loginProcess.php" method="POST" enctype="multipart/form-data">
             <h2>Sign In</h2>
+            <br />
+            <span style="color:red" > <?php if(isset($_SESSION['loginErrorMessage'])) echo "asd".$_SESSION['loginErrorMessage']; ?></span>
 
             <div>
-                <label for="name"><i class="fas fa-user"></i></label>
-                <input type="text" name="name" value="" placeholder="Email or Username" />
+                <label for="username"><i class="fas fa-user"></i></label>
+                <input type="text" name="username" value="" required placeholder="Email or Username" />
             </div>
 
             <div>
                 <label for="password"><i class="fas fa-lock"></i></label>
-                <input type="password" name="password" value="" placeholder="Password" />
+                <input type="password" name="password" value=""  required placeholder="Password" />
             </div>
             
 
             <div style="margin-bottom:2rem;">
-                <button type="submit" name="btnSubmit" > Sign In </button>
+                <button type="submit" name="btnLoginSubmit" > Sign In </button>
             </div>
             OR
             <div class="socialSignIn">
                 <button name="fbSignin" class="btnFb"><i class="fab fa-facebook"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In With Facebook</button>
                 <button name="twitterSignin" class="btnTwitter"><i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In With Twitter</button>
                 <button name="twitterSignin" class="btnGoogle"><i class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In With Google+</button>
+                <span class="loginLink altLink">Not a member? <a href="register.php">Sign Up</a></span>
             </div>
 
         </form>

@@ -59,16 +59,19 @@ footer{
   width:100vw;
   height:2rem;
   background:#000;
+  //margin-left:10rem;
   @include displayFlexCenter();
+  justify-content: space-between;
   a{
     text-decoration: none;
     color:#fff;
     font-family: "Montserrat", serif;
-    float:right;
+    //float:right;
     font-size: .7rem;
     position:absolute;
     right:1rem;
   }
+  a.logout{}
   .active {
     text-decoration: underline;
     font-weight: 300;
@@ -192,6 +195,7 @@ $fgColor: #000;
 .registerImage{
   background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg") center no-repeat;
 }
+
   .registerImage,.loginImage{
     padding:3rem;
     height:45vh;
@@ -270,10 +274,13 @@ $fgColor: #000;
       width:250px;
   }
   .btnFb{background:#3B5998;}
-  .btnTwitter{background:#00ACEE;
-      }
-      .btnGoogle{background:#db4a39 ;
-      }
+  .btnTwitter{background:#00ACEE;}
+  .btnGoogle{background:#db4a39 ;}
+  
+  .altLink{ display:none;// background:green !important; border:1px soid red;
+   // @include respond(medium) {display: unset;}
+   @include respond(medium) {display: unset;}
+  }
 }
   
   }
@@ -469,7 +476,7 @@ $fgColor: #000;
  //background-color: #bbbbbb71;
  background:#000;
  box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
-  border-radius: 10px;
+ // border-radius: 10px;
   color:#fff;
   height:110%;
   padding-bottom:3rem !important;

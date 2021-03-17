@@ -93,15 +93,15 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
 
 
 
-    <section class="m-20 pd-20">
-        <div class="bg pd-20">
+    <section class="m-20 pd-20" style="padding-left:0 !important;">
+        <div class="bg pd-20" style="border-radius:0;padding-left:0">
 
         <div class="title-text mt-20">
             RECOMMENDED
         </div>
         <div class="title-underline mb-20"></div>
 
-        <div class="sport-carasoul js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true, "pauseAutoPlayOnHover":false }'>
+        <div class="sport-carasoul js-flickity" data-flickity='{ "groupCells": true, "wrapAround": true, "pauseAutoPlayOnHover":false }' style="padding-left:0">
             <div class="sport-box p-20" style="background-image: url('assets/BUNGY-CHRIST-copyright-The-Last-Resort-2.jpg')">
                 <div class="overlay">
                     <span class="sport-title">WALL CLIMBING</span>

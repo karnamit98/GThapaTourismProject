@@ -1,3 +1,8 @@
+<?php //require_once 'db.php';
+   // $conn = OpenCon(); 
+   //session_start();
+   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,8 @@
     <!--CSS File-->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/flickity.css" />
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/86641d4077.js" crossorigin="anonymous"></script>

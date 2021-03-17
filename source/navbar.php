@@ -2,7 +2,20 @@
 
 <div class="top-nav">
     <!-- <p class="" style="color:white;font-size:.8rem;"><i class="fas fa-phone-alt"></i> 9844723612 </p> -->
-    <a href="register.php" class="<?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
+    <?php if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){ ?>
+    <a href="register.php" class="logout <?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
+    <?php } else {
+        include_once('user.php');
+         
+        $user = new User();
+         
+        //fetch user data
+        $userDetailsSql = "SELECT * FROM users WHERE id = '".$_SESSION['user']."'";
+        $userDetailsRow = $user->details($userDetailsSql);
+        ?>
+        <a href="#" class="<?php echo ($curPage == "account.php" ? "active" : "");?>" style="position:absolute;left:100px;top:10px;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
+        <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <?php }?>
 </div>
 
 <div class="nav">
