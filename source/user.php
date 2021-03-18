@@ -40,7 +40,7 @@
          }
 
          public function register_user($name, $username, $email, $password) {
-            $sql = "INSERT INTO users (name, email, username, password) VALUES ($name, $email, $username, $password)";
+            $sql = "INSERT INTO users (name, email, username, password) VALUES ('$name', '$email', '$username', '$password')";
             //$query = $this->connection->query($sql);
             return $this->connection->query($sql);
          }

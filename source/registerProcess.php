@@ -20,16 +20,16 @@
            // header('location:index.php');
            //header("location:login.php");
           // echo 'asfsdf';
-          echo "Registration Failed!";
-          // header("location:register.php");
+         // echo "Registration Failed!";
+           header("location:register.php");
 
         }
         else{
           //  $_SESSION['user'] = $auth;
           //  unset($_SESSION['message']);
           
-           // header('location:login.php');
-          echo "Registration Successfull!";
+            header('location:login.php');
+          //echo "Registration Successfull!";
         }
     }
     else{

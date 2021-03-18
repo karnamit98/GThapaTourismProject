@@ -23,7 +23,7 @@ include_once('header.php');
 		<div class="col-md-4 col-md-offset-4">
 			
 			<h4>User Info: </h4>
-			<p>Member since: <?php echo $userDetailsRow['reg_date']; ?></p>
+			<!-- <p>Member since: <?php echo $userDetailsRow['reg_date']; ?></p> -->
 			<p>Username: <?php echo $userDetailsRow['username']; ?></p>
 			<p>Password: <?php echo $userDetailsRow['password']; ?></p>
 			<a href="logout.php" class="btn btn-danger" style="text-decoration:none;background:#aa2b1d;padding:.5rem 1rem .5rem 1rem;

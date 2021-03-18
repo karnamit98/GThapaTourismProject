@@ -6,7 +6,7 @@
 
     <div class="registerContainer" style="margin-top:3rem;">
 
-        <form name="registerForm" class="registerForm" action="#" method="POST" enctype="multipart/form-data">
+        <form name="registerForm" class="registerForm" action="registerProcess.php" method="POST" enctype="multipart/form-data">
             <h2>Sign Up</h2>
 
             <div>
