@@ -37,5 +37,3 @@
     <script src="js/main.js" defer ></script>
     </body>
 </html>
-
-<?php //CloseCon($conn); ?>

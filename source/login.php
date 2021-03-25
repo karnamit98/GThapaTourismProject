@@ -8,10 +8,10 @@
 
     <div class="registerContainer">
 
-        <form name="loginForm" class="registerForm" action="loginProcess.php" method="POST" enctype="multipart/form-data">
+        <form name="loginForm" class="registerForm"  action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST" enctype="multipart/form-data">
             <h2>Sign In</h2>
             <br />
-            <span style="color:red" > <?php if(isset($_SESSION['loginErrorMessage'])) echo "asd".$_SESSION['loginErrorMessage']; ?></span>
+            <span style="color:red" > <?php if(isset($_SESSION['loginErrorMessage'])) echo $_SESSION['loginErrorMessage']; ?></span>
 
             <div>
                 <label for="username"><i class="fas fa-user"></i></label>

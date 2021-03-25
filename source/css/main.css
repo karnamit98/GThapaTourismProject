@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 /************* RESPONSIVE BREAKPOINTS *************/
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -29,15 +30,9 @@ footer {
   background: #1e212d;
   color: whitesmoke;
   padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*****  NAVBAR   **********/
@@ -86,25 +81,17 @@ footer {
   width: 100vw;
   height: 2rem;
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .top-nav a {
   text-decoration: none;
   color: #fff;
   font-family: "Montserrat", serif;
-  font-size: .7rem;
+  font-size: 0.7rem;
   position: absolute;
   right: 1rem;
 }
@@ -121,8 +108,7 @@ footer {
   position: relative;
   font-family: "Cormorant Unicase", serif;
   font-weight: 500;
-  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -199,7 +185,6 @@ footer {
     width: 100%;
     background-color: #fff3e6;
     height: 0px;
-    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -220,20 +205,10 @@ footer {
 
 /********* SIGN UP FORM **************/
 .registerContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-top: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .registerContainer .loginImage {
@@ -244,50 +219,51 @@ footer {
   background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg") center no-repeat;
 }
 
-.registerContainer .registerImage, .registerContainer .loginImage {
+.registerContainer .registerImage,
+.registerContainer .loginImage {
   padding: 3rem;
   height: 45vh;
   width: 30vw;
   background-size: cover;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
-.registerContainer .registerImage .loginLink, .registerContainer .loginImage .loginLink {
+.registerContainer .registerImage .loginLink,
+.registerContainer .loginImage .loginLink {
   position: relative;
   top: 130%;
   left: 20%;
   font-family: "Montserrat", serif;
 }
 
-.registerContainer .registerImage .loginLink a, .registerContainer .loginImage .loginLink a {
+.registerContainer .registerImage .loginLink a,
+.registerContainer .loginImage .loginLink a {
   color: #000;
 }
 
 @media (max-width: 980px) {
-  .registerContainer .registerImage, .registerContainer .loginImage {
+  .registerContainer .registerImage,
+  .registerContainer .loginImage {
     display: none;
   }
 }
 
 .registerContainer form.registerForm {
+  height: fit-content !important;
   padding: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 0.2rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 80vh;
+}
+
+@media (max-width: 600px) {
+  .registerContainer form.registerForm {
+    margin-top: 2rem !important;
+  }
 }
 
 .registerContainer form.registerForm a {
@@ -299,15 +275,9 @@ footer {
 }
 
 .registerContainer form.registerForm .formGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .registerContainer form.registerForm i {
@@ -315,15 +285,27 @@ footer {
   left: 1.5rem;
 }
 
-.registerContainer form.registerForm input[type=text], .registerContainer form.registerForm input[type=password], .registerContainer form.registerForm input[type=email], .registerContainer form.registerForm input[type=checkbox], .registerContainer form.registerForm input[type=number] {
+@media (max-width: 415px) {
+  .registerContainer form.registerForm i {
+    position: relative;
+    top: 3.3rem;
+    left: -0.05rem;
+  }
+}
+
+.registerContainer form.registerForm input[type="text"],
+.registerContainer form.registerForm input[type="password"],
+.registerContainer form.registerForm input[type="email"],
+.registerContainer form.registerForm input[type="checkbox"],
+.registerContainer form.registerForm input[type="number"] {
   border: none;
   border-bottom: 1px solid #000;
-  padding: .3rem .3rem .3rem 2rem;
+  padding: 0.3rem 0.3rem 0.3rem 2rem;
   width: 300px;
   margin-top: 2rem;
 }
 
-.registerContainer form.registerForm input[type=checkbox] {
+.registerContainer form.registerForm input[type="checkbox"] {
   padding: 0;
   width: auto;
 }
@@ -341,55 +323,104 @@ footer {
   cursor: pointer;
 }
 
-.registerContainer form.registerForm .socialSignIn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.registerContainer form.registerForm .errorText {
+  color: #ff4b5c;
+  font-size: 1rem;
+  font-family: "Rajdhani", sans-serif;
+  margin-left: 1.5rem;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb, .registerContainer form.registerForm .socialSignIn .btnTwitter, .registerContainer form.registerForm .socialSignIn .btnGoogle {
+.registerContainer form.registerForm .iError {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError {
+  border-color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError ::placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerSuccess {
+  background: #f7451d;
+  width: 60%;
+  align-self: center;
+  position: relative;
+  left: 1.5rem;
+  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: "Train One", cursive;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .registerSuccess {
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    left: 0;
+  }
+}
+
+.socialSignIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+@media (max-width: 980px) {
+  .socialSignIn {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+}
+
+.socialSignIn .btnFb,
+.socialSignIn .btnTwitter,
+.socialSignIn .btnGoogle {
   border-radius: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  padding: 1rem 1rem 1rem .5rem;
-  margin-top: .5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
+  border: 0;
+  color: white;
   width: 250px;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb:hover, .registerContainer form.registerForm .socialSignIn .btnTwitter:hover, .registerContainer form.registerForm .socialSignIn .btnGoogle:hover {
+.socialSignIn .btnFb:hover,
+.socialSignIn .btnTwitter:hover,
+.socialSignIn .btnGoogle:hover {
   background: #000;
   cursor: pointer;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb {
-  background: #3B5998;
+.socialSignIn .btnFb {
+  background: #3b5998;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnTwitter {
-  background: #00ACEE;
+.socialSignIn .btnTwitter {
+  background: #00acee;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnGoogle {
+.socialSignIn .btnGoogle {
   background: #db4a39;
 }
 
-.registerContainer form.registerForm .socialSignIn .altLink {
+.socialSignIn .altLink {
   display: none;
 }
 
 @media (max-width: 980px) {
-  .registerContainer form.registerForm .socialSignIn .altLink {
+  .socialSignIn .altLink {
     display: unset;
   }
 }
@@ -397,84 +428,107 @@ footer {
 .introText {
   margin: 3rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .introText h1 {
   font-family: "Cormorant Unicase", serif;
 }
 
-.section1, .section2, .section3 {
+.section1,
+.section2,
+.section3 {
   margin: auto;
   margin-bottom: 4rem;
-  height: 400px;
-  width: 80vw  !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: auto;
+  width: 80vw !important;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Montserrat", serif;
 }
 
-.section1 .left, .section1 .right, .section2 .left, .section2 .right, .section3 .left, .section3 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
+@media (max-width: 980px) {
+  .section1,
+  .section2,
+  .section3 {
+    flex-direction: column;
+    width: 100vw;
+  }
+}
+
+.section1 .left,
+.section1 .right,
+.section2 .left,
+.section2 .right,
+.section3 .left,
+.section3 .right {
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 85%;
   width: 45%;
   text-align: justify;
   padding: 1rem;
 }
 
-.section1 .left h1, .section1 .right h1, .section2 .left h1, .section2 .right h1, .section3 .left h1, .section3 .right h1 {
+.section1 .left h1,
+.section1 .right h1,
+.section2 .left h1,
+.section2 .right h1,
+.section3 .left h1,
+.section3 .right h1 {
   font-family: "Cormorant Unicase", serif;
   color: #c7956d;
   margin-bottom: 1rem;
 }
 
-.section1 .cover1, .section2 .cover1, .section3 .cover1 {
+@media (max-width: 980px) {
+  .section1 .left,
+  .section1 .right,
+  .section2 .left,
+  .section2 .right,
+  .section3 .left,
+  .section3 .right {
+    width: 80vw;
+  }
+}
+
+.section1 .cover1,
+.section2 .cover1,
+.section3 .cover1 {
   background: url("../assets/ski-photo.png") center no-repeat;
   background-size: cover;
+  height: 40vh;
 }
 
-.section1 .cover2, .section2 .cover2, .section3 .cover2 {
+.section1 .cover2,
+.section2 .cover2,
+.section3 .cover2 {
   background: url("../assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp") center no-repeat;
   background-size: cover;
+  height: 40vh;
 }
 
-.section1 .cover3, .section2 .cover3, .section3 .cover3 {
+.section1 .cover3,
+.section2 .cover3,
+.section3 .cover3 {
   background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
   background-size: cover;
+  height: 40vh;
+}
+
+@media (max-width: 980px) {
+  .section1 .coverImg,
+  .section2 .coverImg,
+  .section3 .coverImg {
+    display: none;
+  }
 }
 
 .gallery {
@@ -537,10 +591,8 @@ footer {
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
   position: absolute;
@@ -564,11 +616,19 @@ footer {
   border: 0;
 }
 
+section.sportSlider {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+}
+
 .sport-box {
   height: 400px;
   width: 400px;
   border-radius: 10px;
   color: white;
+  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3rem;
 }
 
 .sport-title {
@@ -577,12 +637,20 @@ footer {
   width: 100%;
   text-align: center;
   font-weight: 600;
-  font-size: 18px;
+  font-family: "Train One", cursive;
+  font-size: 1.6rem;
 }
 
 .title-text {
   font-size: 24px;
   font-weight: 600;
+  color: #000;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rajdhani", sans-serif;
 }
 
 .mt-20 {
@@ -610,34 +678,28 @@ footer {
 }
 
 .space-between {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .title-underline {
   width: 100px;
   height: 3px;
-  background-color: #00B662;
+  background-color: #00b662;
   margin-top: 3px;
 }
 
 .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.183);
+  background-color: rgba(34, 15, 15, 0.183);
+  position: relative;
   position: relative;
   border-radius: 10px;
 }
 
 .bg {
   margin-top: 3rem;
-  background: #000;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   color: #fff;
   height: 110%;
   padding-bottom: 3rem !important;
@@ -656,13 +718,8 @@ footer {
 
 @media only screen and (max-width: 700px) {
   .space-between {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   #footer > div {
     width: 400px;
@@ -671,22 +728,15 @@ footer {
 
 /**PAYMENT PAGE**/
 .paymentContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
 }
 
 .receipt {
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   padding: 1.7rem;
   border-radius: 10px;
   margin: 5vh auto auto auto;
@@ -756,4 +806,3 @@ footer {
 .pay div p {
   color: white;
 }
-/*# sourceMappingURL=main.css.map */

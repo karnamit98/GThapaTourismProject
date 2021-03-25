@@ -1,15 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"); //font-family: 'Rajdhani', sans-serif;
 /************* RESPONSIVE BREAKPOINTS *************/
 @mixin respond($breakpoint) {
-  @if($breakpoint == medium) {
-      @media (max-width: 980px) { @content }
+  @if ($breakpoint == medium) {
+    @media (max-width: 980px) {
+      @content;
+    }
   }
-  @if($breakpoint == small) {
-      @media (max-width: 600px) { @content }
+  @if ($breakpoint == small) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == extrasmall) {
+    @media (max-width: 415px) {
+      @content;
+    }
   }
 }
-
 
 * {
   margin: 0;
@@ -33,25 +42,22 @@ body {
 }
 
 section.banner {
-  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat ;
+  background: url("../assets/everest-tkelly-banner.jpg") center no-repeat;
   //background-size: cover;
   height: 60vh;
   width: 100vw;
   // background:green;
 }
 
-
-
-footer{
+footer {
   //position:absolute;
   //bottom:0;
-  margin-top:1.5rem;  
-  width:100vw;
-  background:#1e212d;
-  color:whitesmoke;
-  padding:1.5rem;
+  margin-top: 1.5rem;
+  width: 100vw;
+  background: #1e212d;
+  color: whitesmoke;
+  padding: 1.5rem;
   @include displayFlexCenter();
-
 }
 
 /*****  NAVBAR   **********/
@@ -67,7 +73,7 @@ footer{
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   //background-color: red; /* Set a background color */
-  background-color:#393232;
+  background-color: #393232;
   color: #f2edd7; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -84,33 +90,34 @@ footer{
   position: fixed !important;
   top: 0;
   width: 100%; //background-color: #db4a39 !important;
-  z-index:999;
+  z-index: 999;
 }
 
-.top-nav{
-  width:100vw;
-  height:2rem;
-  background:#000;
+.top-nav {
+  width: 100vw;
+  height: 2rem;
+  background: #000;
   //margin-left:10rem;
   @include displayFlexCenter();
   justify-content: space-between;
-  a{
+  a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     font-family: "Montserrat", serif;
     //float:right;
-    font-size: .7rem;
-    position:absolute;
-    right:1rem;
+    font-size: 0.7rem;
+    position: absolute;
+    right: 1rem;
   }
-  a.logout{}
+  a.logout {
+  }
   .active {
     text-decoration: underline;
     font-weight: 300;
   }
 }
 
-$bgColor: #fff3e6;//white;
+$bgColor: #fff3e6; //white;
 $bgColorHover: #f2edd7;
 $fgColor: #000;
 .nav {
@@ -121,7 +128,7 @@ $fgColor: #000;
   font-family: "Cormorant Unicase", serif;
   font-weight: 500;
   box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
- // border: 2px solid red;
+  // border: 2px solid red;
 }
 
 .nav > .nav-header {
@@ -215,150 +222,257 @@ $fgColor: #000;
   }
 }
 
-
-/********* SIGN UP FORM **************/ 
+/********* SIGN UP FORM **************/
 .registerContainer {
   @include displayFlexCenter();
-  flex-direction:row;
-  padding-top:2.5rem;
-.loginImage{
-  background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
-}
-.registerImage{
-  background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg") center no-repeat;
-}
-
-  .registerImage,.loginImage{
-    padding:3rem;
-    height:45vh;
-    width:30vw;
-    
-    background-size:cover;
-   // border:1px solid red;
-   box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
-   .loginLink{
-     position:relative;
-     top:130%;
-     left:20%;
-     font-family: "Montserrat", serif;
-     a{
-        color:#000;
-     }
-   }
-
-   @include respond(medium){ display:none; }
+  flex-direction: row;
+  //padding-top:2.5rem;
+  .loginImage {
+    background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
+  }
+  .registerImage {
+    background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg")
+      center no-repeat;
   }
 
-  form.registerForm{
-    a{color:#000;}
+  .registerImage,
+  .loginImage {
+    padding: 3rem;
+    height: 45vh;
+    width: 30vw;
+
+    background-size: cover;
+    // border:1px solid red;
+    box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+    .loginLink {
+      position: relative;
+      top: 130%;
+      left: 20%;
+      font-family: "Montserrat", serif;
+      a {
+        color: #000;
+      }
+    }
+
+    @include respond(medium) {
+      display: none;
+    }
+  }
+
+  form.registerForm {
+    height: fit-content !important;
+    @include respond(small) {
+      margin-top: 2rem !important;
+    }
+    a {
+      color: #000;
+    }
     //width:100%;
-    h2{font-size: 2rem; }
-    padding:3rem;
-    margin-bottom:3rem;
+    h2 {
+      font-size: 2rem;
+    }
+    padding: 3rem;
+    padding-top: 0.2rem;
+    //margin-bottom:3rem;
     font-family: "Montserrat", serif;
     @include displayFlexCenter();
     flex-direction: column;
-    height:80vh;
+    height: 80vh;
     //border:1px solid red;
-    .formGroup{
+    .formGroup {
       @include displayFlexCenter();
-
     }
-    i{
-      position:relative;
-      left:1.5rem;
-      @include respond(small){}
+    i {
+      position: relative;
+      left: 1.5rem;
+      @include respond(extrasmall) {
+        position: relative;
+        top: 3.3rem;
+        left: -0.05rem;
+      }
     }
-    input[type=text],input[type=password],input[type=email],input[type=checkbox],input[type=number]{
-      border:none;
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="checkbox"],
+    input[type="number"] {
+      border: none;
       border-bottom: 1px solid #000;
-      padding:.3rem .3rem .3rem 2rem;
-      width:300px;
-      margin-top:2rem;
-      @include respond(small){  }
+      padding: 0.3rem 0.3rem 0.3rem 2rem;
+      width: 300px;
+      margin-top: 2rem;
+      @include respond(small) {
+      }
     }
-    input[type=checkbox]{padding:0;width:auto;}
-    button{
-      background:#0f1123;
-      color:#fff;
-      padding:1rem 1.4rem 1rem 1.4rem;
-      margin-top:2rem;
-      border:0;
-      &:hover{
-      background:#706897;
-      cursor:pointer;
+    input[type="checkbox"] {
+      padding: 0;
+      width: auto;
+    }
+    button {
+      background: #0f1123;
+      color: #fff;
+      padding: 1rem 1.4rem 1rem 1.4rem;
+      margin-top: 2rem;
+      border: 0;
+      &:hover {
+        background: #706897;
+        cursor: pointer;
       }
-  }
+    }
 
- 
-.socialSignIn{//border:1px solid red;background:green;
+    //social signin
+    .errorText {
+      color: #ff4b5c;
+      font-size: 1rem;
+      font-family: "Rajdhani", sans-serif;
+      margin-left: 1.5rem;
+    }
+    .iError {
+      color: #ff4b5c !important;
+    }
+    .inputError {
+      border-color: #ff4b5c !important;
+      ::placeholder {
+        color: #ff4b5c !important;
+      }
+    }
+  }
+}
+.registerSuccess {
+  background: #f7451d;
+  width: 60%;
+  align-self: center;
+  position: relative;
+  left: 1.5rem;
+  @include respond(medium) {
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    left: 0;
+  }
+  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: "Train One", cursive;
+  //font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
   @include displayFlexCenter();
-  flex-direction: column;
-  .btnFb,.btnTwitter, .btnGoogle{
-    border-radius:5px;
-    width:fit-content;
-    padding:1rem 1rem 1rem .5rem;
-    margin-top:.5rem;
-    &:hover{
-      background:#000;
-      cursor:pointer;
-      }
-      width:250px;
-  }
-  .btnFb{background:#3B5998;}
-  .btnTwitter{background:#00ACEE;}
-  .btnGoogle{background:#db4a39 ;}
-  
-  .altLink{ display:none;// background:green !important; border:1px soid red;
-   // @include respond(medium) {display: unset;}
-   @include respond(medium) {display: unset;}
-  }
-}
-  
-  }
-
-
 }
 
+.socialSignIn {
+  //border:1px solid red;background:green;
+  @include displayFlexCenter();
+  //flex-direction: column;
+  @include respond(medium) {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  column-gap: 2rem;
+  .btnFb,
+  .btnTwitter,
+  .btnGoogle {
+    border-radius: 5px;
+    width: fit-content;
+    padding: 1rem 1rem 1rem 0.5rem;
+    border: 0;
+    color: white;
+    //margin-top:.5rem;
+    &:hover {
+      background: #000;
+      cursor: pointer;
+    }
+    width: 250px;
+  }
+  .btnFb {
+    background: #3b5998;
+  }
+  .btnTwitter {
+    background: #00acee;
+  }
+  .btnGoogle {
+    background: #db4a39;
+  }
 
+  .altLink {
+    display: none; // background:green !important; border:1px soid red;
+    // @include respond(medium) {display: unset;}
+    @include respond(medium) {
+      display: unset;
+    }
+  }
+}
 
-
-
-.introText{
-  margin:3rem;
+.introText {
+  margin: 3rem;
   font-family: "Montserrat", serif;
   @include displayFlexCenter();
   flex-direction: column;
-  
-  h1{
-   // margin-bottom:1.6rem;
+
+  h1 {
+    // margin-bottom:1.6rem;
     font-family: "Cormorant Unicase", serif;
   }
 }
 
-.section1, .section2, .section3{ margin:auto;margin-bottom:4rem;
-    height:400px;
-    width:80vw  !important;
-    @include displayFlexCenter();
-    justify-content: space-between;
-    font-family: "Montserrat", serif;
-    
-    .left,.right{
-      h1{  font-family: "Cormorant Unicase", serif; color:#c7956d; margin-bottom:1rem;   }
-      @include displayFlexCenter();
-      flex-direction: column;
-      height:85%;
-      width: 45%;
-      text-align: justify;
-      padding:1rem;
-  }
-  .cover1{ background: url("../assets/ski-photo.png") center no-repeat; background-size: cover;}
-  .cover2{ background: url("../assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp") center no-repeat; background-size: cover; }
-  .cover3{ background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat; background-size: cover; }
-  .registerImage{
-      }
+.section1,
+.section2,
+.section3 {
+  margin: auto;
+  margin-bottom: 4rem;
+  height: auto;
 
+  width: 80vw !important;
+  @include displayFlexCenter();
+  justify-content: space-between;
+  font-family: "Montserrat", serif;
+  @include respond(medium) {
+    flex-direction: column;
+    width: 100vw;
   }
+
+  .left,
+  .right {
+    h1 {
+      font-family: "Cormorant Unicase", serif;
+      color: #c7956d;
+      margin-bottom: 1rem;
+    }
+    @include displayFlexCenter();
+    flex-direction: column;
+    height: 85%;
+    width: 45%;
+    @include respond(medium) {
+      width: 80vw;
+    }
+    text-align: justify;
+    padding: 1rem;
+  }
+  .cover1 {
+    background: url("../assets/ski-photo.png") center no-repeat;
+    background-size: cover;
+    height: 40vh;
+  }
+  .cover2 {
+    background: url("../assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp")
+      center no-repeat;
+    background-size: cover;
+    height: 40vh;
+  }
+  .cover3 {
+    background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
+    background-size: cover;
+    height: 40vh;
+  }
+  .coverImg {
+    @include respond(medium) {
+      display: none;
+    }
+  }
+}
 
 .gallery {
   background: #eee;
@@ -387,7 +501,7 @@ $fgColor: #000;
 
 .sport-box {
   counter-increment: gallery-cell;
- margin-right: 40px !important;
+  margin-right: 40px !important;
 }
 .container .flickity-page-dots {
   display: none;
@@ -399,10 +513,10 @@ $fgColor: #000;
   font-family: "Montserrat", serif;
   .space-between {
     margin: auto;
-    &>div{
+    & > div {
       width: 300px;
       text-align: center;
-      p{
+      p {
         font-size: 12px;
       }
       a {
@@ -411,18 +525,16 @@ $fgColor: #000;
       }
     }
   }
-
-
 }
 
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  backdrop-filter: blur( 2px );
+  backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
- // background-color: rgba(0, 0, 0, 0.224);
+  // background-color: rgba(0, 0, 0, 0.224);
   position: absolute;
   top: 100px;
   right: 5%;
@@ -442,11 +554,18 @@ $fgColor: #000;
   }
 }
 
+section.sportSlider {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+}
 .sport-box {
   height: 400px;
   width: 400px;
   border-radius: 10px;
-  color:white;
+  color: white;
+  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3rem;
 }
 // .sport-carasoul{
 //   height:480px;
@@ -457,12 +576,18 @@ $fgColor: #000;
   width: 100%;
   text-align: center;
   font-weight: 600;
-  font-size: 18px;
+  font-family: "Train One", cursive;
+  font-size: 1.6rem;
 }
 
 .title-text {
   font-size: 24px;
   font-weight: 600;
+  color: #000;
+  align-self: center;
+  @include displayFlexCenter();
+  flex-direction: column;
+  font-family: "Rajdhani", sans-serif;
 }
 
 .mt-20 {
@@ -490,135 +615,133 @@ $fgColor: #000;
 .title-underline {
   width: 100px;
   height: 3px;
-  background-color: #00B662;
+  background-color: #00b662;
   margin-top: 3px;
 }
 
 .overlay {
   width: 100%;
   height: 100%;
- // background-color: rgba(0, 0, 0, 0.45);
- background-color:rgba(255, 255, 255, 0.183);
+  // background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(34, 15, 15, 0.183);
+  position: relative;
+  //	background-color: rgba(255, 255, 255, 0.183);
   position: relative;
   border-radius: 10px;
 }
 .bg {
- // background-color: rgba(0, 0, 0, 0.3);
- margin-top:3rem;
- //background-color: #bbbbbb71;
- background:#000;
- box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
- // border-radius: 10px;
-  color:#fff;
-  height:110%;
-  padding-bottom:3rem !important;
-  width:100vw !important;
+  // background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 3rem;
+  //background-color: #bbbbbb71;
+  //background: #000;
+  // box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  // border-radius: 10px;
+  color: #fff;
+  height: 110%;
+  padding-bottom: 3rem !important;
+  width: 100vw !important;
 }
 .display-inline {
   display: inline;
   margin-top: 5px;
 }
-#footer{
+#footer {
   background: #000;
-  color:#fff;
+  color: #fff;
 }
 @media only screen and(max-width: 700px) {
-
   .space-between {
     flex-direction: column;
     align-items: center;
   }
   #footer {
-    &>div{
+    & > div {
       width: 400px;
     }
   }
-
 }
-
-
 
 /**PAYMENT PAGE**/
-.paymentContainer{
+.paymentContainer {
   @include displayFlexCenter();
-  width:100vw;
-  height:80vh;
-  
+  width: 100vw;
+  height: 80vh;
 }
 .receipt {
-  box-shadow: 4px 7px 24px -11px rgba(0,0,0,0.75);
-  padding:1.7rem;
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  padding: 1.7rem;
   border-radius: 10px;
-   //position: relative;
+  //position: relative;
   // margin:10% auto 50px 10%;
-  margin:5vh auto auto auto;
+  margin: 5vh auto auto auto;
   // top: 50%;
- //  left: 50%;
-   //transform: translate(-50%, -50%);
+  //  left: 50%;
+  //transform: translate(-50%, -50%);
   // -webkit-transform: translate(-50%, -50%);
-   background-color: white;
-   width: 70vw;
-   height: 90%;
-   //margin: 0 auto;
+  background-color: white;
+  width: 70vw;
+  height: 90%;
+  //margin: 0 auto;
   font-size: 14px;
   font-family: "Montserrat", serif;
 
-   h1 {margin-bottom:3rem;
-      text-align: center;
-      color: red;
-      margin-top: 10px;font-family: "Cormorant Unicase", serif;
-   }
+  h1 {
+    margin-bottom: 3rem;
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+    font-family: "Cormorant Unicase", serif;
+  }
 }
 
 .payments {
-
   td {
     text-align: left;
   }
   color: black;
-   table {
-      width: 90%;
-      margin: 10px auto;
-      tr {
-        margin: 10px 0px;
-         td {
-            margin: 10px 0px !important;
-            padding: 10px 0px;
-         }
+  table {
+    width: 90%;
+    margin: 10px auto;
+    tr {
+      margin: 10px 0px;
+      td {
+        margin: 10px 0px !important;
+        padding: 10px 0px;
       }
-   }
+    }
+  }
 }
 
 .total {
-   background: #aaaaaa;
-   font-weight: 600;
-   width: 100%;
+  background: #aaaaaa;
+  font-weight: 600;
+  width: 100%;
 
-   p {
-      color: #171717;
-   }
-   margin-top: 10px
+  p {
+    color: #171717;
+  }
+  margin-top: 10px;
 }
 
 .pay {
-   &:hover {
-      div {
-         background-color: #3f3b3b;
-         cursor: pointer;
-      }
-   }
+  &:hover {
+    div {
+      background-color: #3f3b3b;
+      cursor: pointer;
+    }
+  }
 
-   div {
-     margin:auto;
-      background-color: #669b7c;
-      width: 20%;
-      height: 40px;
-      text-align: center;
-      padding: 10px 10px;
-      margin-top: 110px;
+  div {
+    margin: auto;
+    background-color: #669b7c;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 110px;
 
-      p {
-         color: white;
-      }
-   }
+    p {
+      color: white;
+    }
+  }
 }
