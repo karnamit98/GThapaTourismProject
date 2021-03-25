@@ -18,7 +18,7 @@
     <?php }?>
 </div>
 
-<div class="nav">
+<div class="nav " >
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
         <div class="nav-title">

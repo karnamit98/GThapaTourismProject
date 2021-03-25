@@ -1,3 +1,7 @@
+   <!--Back To Top Button--> 
+   <button onclick="topFunction()" id="btnBackToTop" title="Go to top"><i class="fas fa-angle-double-up"></i></button> 
+   
+   
     <section class="bg pd-20 mt-20" id="footer" style="border-radius:0;">
         <div class="space-between">
             <div class="pd-20">
@@ -30,7 +34,7 @@
 
     </section>
 
-
+    <script src="js/main.js" defer ></script>
     </body>
 </html>
 
