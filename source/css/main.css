@@ -6,7 +6,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -30,9 +31,15 @@ footer {
   background: #1e212d;
   color: whitesmoke;
   padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /*****  NAVBAR   **********/
@@ -81,10 +88,18 @@ footer {
   width: 100vw;
   height: 2rem;
   background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .top-nav a {
@@ -108,7 +123,8 @@ footer {
   position: relative;
   font-family: "Cormorant Unicase", serif;
   font-weight: 500;
-  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -185,6 +201,7 @@ footer {
     width: 100%;
     background-color: #fff3e6;
     height: 0px;
+    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -205,10 +222,19 @@ footer {
 
 /********* SIGN UP FORM **************/
 .registerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .registerContainer .loginImage {
@@ -225,7 +251,8 @@ footer {
   height: 45vh;
   width: 30vw;
   background-size: cover;
-  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
 .registerContainer .registerImage .loginLink,
@@ -249,14 +276,25 @@ footer {
 }
 
 .registerContainer form.registerForm {
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
   height: fit-content !important;
   padding: 3rem;
   padding-top: 0.2rem;
   font-family: "Montserrat", serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 80vh;
 }
 
@@ -275,9 +313,15 @@ footer {
 }
 
 .registerContainer form.registerForm .formGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .registerContainer form.registerForm i {
@@ -338,6 +382,18 @@ footer {
   border-color: #ff4b5c !important;
 }
 
+.registerContainer form.registerForm .inputError ::-webkit-input-placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError :-ms-input-placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError ::-ms-input-placeholder {
+  color: #ff4b5c !important;
+}
+
 .registerContainer form.registerForm .inputError ::placeholder {
   color: #ff4b5c !important;
 }
@@ -345,10 +401,12 @@ footer {
 .registerSuccess {
   background: #f7451d;
   width: 60%;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   position: relative;
   left: 1.5rem;
-  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
   color: #fff;
   font-family: "Train One", cursive;
   font-weight: 500;
@@ -357,9 +415,15 @@ footer {
   margin-top: 0.4rem;
   margin-bottom: 2rem;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 980px) {
@@ -372,15 +436,25 @@ footer {
 }
 
 .socialSignIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
 }
 
 @media (max-width: 980px) {
   .socialSignIn {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     row-gap: 0.5rem;
   }
 }
@@ -389,6 +463,8 @@ footer {
 .socialSignIn .btnTwitter,
 .socialSignIn .btnGoogle {
   border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 1rem 1rem 0.5rem;
   border: 0;
@@ -428,10 +504,19 @@ footer {
 .introText {
   margin: 3rem;
   font-family: "Montserrat", serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .introText h1 {
@@ -445,10 +530,18 @@ footer {
   margin-bottom: 4rem;
   height: auto;
   width: 80vw !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-family: "Montserrat", serif;
 }
 
@@ -456,7 +549,10 @@ footer {
   .section1,
   .section2,
   .section3 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100vw;
   }
 }
@@ -467,10 +563,19 @@ footer {
 .section2 .right,
 .section3 .left,
 .section3 .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 85%;
   width: 45%;
   text-align: justify;
@@ -591,8 +696,10 @@ footer {
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  backdrop-filter: blur(2px);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
   position: absolute;
@@ -618,8 +725,10 @@ footer {
 
 section.sportSlider {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 
 .sport-box {
@@ -627,7 +736,8 @@ section.sportSlider {
   width: 400px;
   border-radius: 10px;
   color: white;
-  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
   margin-bottom: 3rem;
 }
 
@@ -645,11 +755,21 @@ section.sportSlider {
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -678,8 +798,12 @@ section.sportSlider {
 }
 
 .space-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .title-underline {
@@ -718,8 +842,13 @@ section.sportSlider {
 
 @media only screen and (max-width: 700px) {
   .space-between {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #footer > div {
     width: 400px;
@@ -728,15 +857,22 @@ section.sportSlider {
 
 /**PAYMENT PAGE**/
 .paymentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
   height: 80vh;
 }
 
 .receipt {
-  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   padding: 1.7rem;
   border-radius: 10px;
   margin: 5vh auto auto auto;
@@ -806,3 +942,238 @@ section.sportSlider {
 .pay div p {
   color: white;
 }
+
+/***********PRODUCT PAGE STYLE***************/
+.sportDisplay {
+  padding: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  -ms-grid-columns: (minmax(45%, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+}
+
+@media (max-width: 980px) {
+  .sportDisplay {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .sportDisplay {
+    padding: .6rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .sportDisplay {
+    padding: .1rem;
+  }
+}
+
+.sportDisplay .wrapper {
+  height: 420px;
+  width: 100%;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .wrapper {
+    height: 620px;
+  }
+}
+
+.sportDisplay .product-img {
+  float: left;
+  height: 420px;
+  width: 40%;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-img {
+    display: none;
+  }
+}
+
+.sportDisplay .product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-img img {
+    display: none;
+  }
+}
+
+.sportDisplay .product-info {
+  float: left;
+  height: 420px;
+  width: 60%;
+  border-radius: 0 7px 10px 0px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-info {
+    width: -webkit-fit-content  !important;
+    width: -moz-fit-content  !important;
+    width: fit-content  !important;
+  }
+}
+
+.sportDisplay .product-info img {
+  border-radius: 7px 7px 0px 0;
+  display: none;
+  width: 100%;
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-info img {
+    display: block;
+  }
+}
+
+.sportDisplay .product-text {
+  height: 300px;
+  width: 100%;
+}
+
+.sportDisplay .product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text h1 {
+    margin-left: .5rem;
+  }
+}
+
+.sportDisplay .product-text h1,
+.sportDisplay .product-price-btn p {
+  font-family: 'Bentham', serif;
+}
+
+.sportDisplay .product-text h2 {
+  margin: 0 0 .6rem 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text h2 {
+    margin-left: .5rem;
+  }
+}
+
+.sportDisplay .product-text p {
+  height: 125px;
+  margin: 0 0.6rem 0 38px;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text p {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}
+
+.sportDisplay .product-text p a {
+  color: #3f3b3b;
+  text-decoration: none;
+}
+
+.sportDisplay .product-text p a:hover {
+  color: #db4a39;
+}
+
+.sportDisplay .product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-price-btn {
+    top: 150px;
+  }
+}
+
+.sportDisplay .product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #474747;
+}
+
+.sportDisplay span {
+  display: inline-block;
+  height: 50px;
+  font-family: 'Suranna', serif;
+  font-size: 1.3rem;
+  position: relative;
+  left: -2rem;
+}
+
+.sportDisplay .product-price-btn button {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+}
+
+.sportDisplay .product-price-btn button:hover {
+  background-color: #3f3b3b;
+}
+/*# sourceMappingURL=main.css.map */

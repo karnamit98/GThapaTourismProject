@@ -63,7 +63,7 @@
     </div>
 
 
-    <div class="section1">
+    <!-- <div class="section1">
         <div class="left">
             <h1>Skiing In Nepal</h1>
         A lot has been expected in the sector of skiing in Nepal but very less has been achieved in this sector. The tourism sector in Nepal has been a seasonal business for Nepal. The season mainly runs through October, November and December. In order to promote the winter tourism, ski sporting can be channeled to bring in the off season benefits which Nepal has been lacking for decades in the tourism business. The major trek routes in Nepal face a four month of snow. These routes can be included in the skiing sports tourism to promote the winter tourism in Nepal. Currently, there are no proper infrastructures in Nepal. The adventurers have to trek uphill or drop through helicopters to ski in Nepal. If only the responsible authorities could come up with infrastructures like gondola, chairlifts and hassle free permits in sports tourism then skiing would undeniably prosper in Nepal.
@@ -75,10 +75,10 @@
         <div class="left cover2 coverImg"></div>
         <div class="right ">
         <h1>Sky-diving and Paragliding</h1>
-        <!-- <?php 
-                    $sports = $crud->fetch_all_table_data('sport');
-                    print_r($sports);
-        ?> -->
+        <?php 
+                   // $sports = $crud->fetch_all_table_data('sport');
+                   // print_r($sports);
+        ?> 
         Introduced in Everest region recently, the extreme aerial adventure of ski diving has taken its place on the bucket’s list for every sky diving buff from all over the world. Leaping through, the enthusiasts can now witness the 360 degree view of the 8000plus Himalayas including Everest.
 
 Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts. However, Pokhara is known more for Paragliding. The micro climate of Pokhara makes the paragliding a must do thing for every tourist who are in to sports or just for fun. Pokhara is the only city in Nepal to host the International paragliding competition every year.
@@ -92,7 +92,7 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
             Beyond the shadow of doubt, Nepal has been associated with Trekking. Along with trekking, the tourism sector has proposed a single belt of trail which encompasses a rough 1700km from the east end to the west end of Nepal. This trail is the longest of all in the Great Himalayan Trail. The adventurous trail blazers will now get to experience the comprehensive beauty of Nepal. The proposed trail consists of two belts, i.e. the upper Himalayan Trail and Lower Himalayan Trail which will only limit up to 5000 meters.
         </div>
         <div class="right cover3 coverImg"></div>
-    </div>
+    </div> -->
 
 
     <section class="" style="padding-left:0 !important;margin-left:0 !important;">
@@ -110,7 +110,7 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
 
             foreach($sports as $sport) {
                 ?>
-                <div class="sport-box p-20" style="background-image: url('dbImages/sports/<?php echo $sport['thumbnail1'] ?>');background-size: cover">
+                <div class="sport-box p-20" style="background-image: url('dbImages/sports/<?php echo $sport['thumbnail1'] ?>');background-position:center;background-size: cover">
                     <div class="overlay">
                     <span class="sport-title"><?php echo strtoupper($sport['name']); ?></span>
                     </div>
@@ -118,48 +118,6 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
                 <?php
             }
             ?>
-            <!-- <div class="sport-box p-20" style="background-image: url('assets/BUNGY-CHRIST-copyright-The-Last-Resort-2.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div>
-
-
-            <div class="sport-box p-20" style="background-image: url('assets/annapurna_sanctuary_trek.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div>
-            <div class="sport-box p-20" style="background-image: url('assets/sebastian-pena-lambarri-mGxKdwKhzEU-unsplash.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">BUNGEE JUMPING</span>
-                </div>
-            </div>
-            <div class="sport-box p-20" style="background-image: url('assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div>
-            <div class="sport-box" style="background-image: url('assets/BUNGY-COOL-GUY-copyright-The-Last-Resort-2.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div>
-            <div class="sport-box" style="background-image: url('assets/One-day-Trisuli-River-Rafting.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div>
-            <div class="sport-box" style="background-image: url('assets/sebastian-pena-lambarri-mGxKdwKhzEU-unsplash.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">BUNGEE JUMPING</span>
-                </div>
-            </div>
-            <div class="sport-box" style="background-image: url('assets/annapurna_sanctuary_trek.jpg')">
-                <div class="overlay">
-                    <span class="sport-title">WALL CLIMBING</span>
-                </div>
-            </div> -->
         </div>
         </div>
 
