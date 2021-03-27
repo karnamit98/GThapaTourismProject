@@ -33,6 +33,7 @@ html {
 body {
   //  background:#1089ff;
   overflow-x: hidden;
+  font-family: "Montserrat", serif;
 }
 
 @mixin displayFlexCenter() {
@@ -497,6 +498,8 @@ $fgColor: #000;
   line-height: 200px;
   font-size: 80px;
   color: white;
+
+
 }
 
 .sport-box {
@@ -551,6 +554,18 @@ $fgColor: #000;
     padding: 0.5rem 0.3rem;
     color: white;
     border: 0;
+  }
+  a.btn {
+    text-decoration: none;
+    background: #1e212d;
+    padding: 0.5rem 2rem .5rem 2rem;
+    color: white;
+    border:0;
+    border-radius: 7px;
+    &:hover{
+      background-color: #fff;
+      color:#000;
+    }
   }
 }
 
@@ -946,6 +961,8 @@ section.sportSlider {
 /**CSS FOR MODAL**/
 
 .pop-up-wrapper {
+ // font-family: "Montserrat", serif;
+  font-family: "Cormorant Unicase", serif;
   a {
     color: #235ba8;
     text-decoration: none;
@@ -965,6 +982,7 @@ section.sportSlider {
   margin: 20px auto;
   width: auto;
   position: fixed;
+ 
 }
 
 .pop-up-wrapper.active {
@@ -986,8 +1004,10 @@ section.sportSlider {
   display: none;
   padding: 50px;
   position: fixed;
-  top: 100px;
+  top: 60px;
   left: 30%;
+  @include respond(medium) {left:2%;position: absolute;}
+  // @include respond(small) {}
   width: auto;
   z-index: 99;
 }
@@ -1046,14 +1066,17 @@ section.sportSlider {
 
 .product-manufacturer {
   color: #222;
-  font-size: 70px;
+ // font-size: 70px;
+ font-size:1.8rem;
   font-weight: bold;
   line-height: 1;
   margin: -2px;
+  margin-top:1rem;
 }
 
 .product-title {
-  font-size: 28px;
+  //font-size: 28px;
+  font-size:1.5rem;
   color: #888;
 }
 
@@ -1081,11 +1104,15 @@ section.sportSlider {
 }
 
 .product-description {
-  line-height: 1.5;
+  line-height: 1.5;font-family: "Montserrat", serif;
 }
 
 .product-available {
   margin-top: 25px;
+  a{
+    color:#1e212d;
+    text-decoration: none;
+  }
 }
 
 .product-rating {
@@ -1136,6 +1163,17 @@ i.fa-star.rating {
   display: inline-block;
 }
 .product-checkout-actions {
+  a{
+    color:white;
+    background-color: #f7451d;
+    border-radius: 10px;
+    padding: .5rem 1rem .5rem 1rem;
+    &:hover{
+      background-color: #1e212d;
+      text-decoration: none;
+    }
+
+}
 }
 
 /* 6. Components - buttons, menus, images, etc. */

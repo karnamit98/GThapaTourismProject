@@ -6,13 +6,13 @@
         <div class="product-details">
           <div class="product-left">
             <div class="product-info">
-              <div class="product-manufacturer" id="p-title">NOOK
+              <div class="product-manufacturer" id="p-title">
               </div>
               <div class="product-title" >
-                [LOUNGE CHAIR]
+                
               </div>
-              <div class="product-price" id="p-price">
-                $320<span class="product-price-cents">03</span>
+              <div class="product-price" >
+                <!-- $320<span class="product-price-cents">03</span> -->
               </div>
             </div>
             <div class="product-image">
@@ -20,13 +20,13 @@
             </div>
           </div>
           <div class="product-right">
-            <div class="product-description">
+            <div class="product-description" id="p-description">
               Designer Karim Rashid continues to put his signature spin on all genres of design through various collaborations with top-notch companies. Another one to add to the win column is his work with Italian manufacturer Chateau d’Ax.
             </div>
             <div class="product-available">
-              In stock. <span class="product-extended"><a href="#">Buy Extended Warranty</a></span>
+              Opening Season: <span class="product-extended"><a href="#" id="p-opening-season"></a></span>
             </div>
-            <div class="product-rating">
+            <!-- <div class="product-rating">
               <i class="fa fa-star rating" star-data="1"></i>
               <i class="fa fa-star rating" star-data="2"></i>
               <i class="fa fa-star rating" star-data="3"></i>
@@ -35,9 +35,9 @@
               <div class="product-rating-details">(3.1 - <span class="rating-count">1203</span> reviews)
               </div>
 
-            </div>
-            <div class="product-quantity">
-              <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
+            </div> -->
+            <div class="product-quantity" id="p-duration">
+              <!-- <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
               <div class="product-quantity-subtract">
                 <i class="fa fa-chevron-left"></i>
               </div>
@@ -46,26 +46,28 @@
               </div>
               <div class="product-quantity-add">
                 <i class="fa fa-chevron-right"></i>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="product-bottom">
             <div class="product-checkout">
-              Total Price
+               Price
               <div class="product-checkout-total">
-                <i class="fa fa-usd"></i>
-                <div class="product-checkout-total-amount">
-                  0.00
+                <!-- <i class="fa fa-usd"></i> -->
+                <div class="product-checkout-total-amount" id="p-price">
+                  <!-- 0.00 -->
                 </div>
               </div>
             </div>
             <div class="product-checkout-actions">
-              <a class="add-to-cart" href="#" onclick="AddToCart(event);">Add to Cart</a>
+              <a class="add-to-cart" href="#" onclick="AddToCart(event);">Pay Now</a>
               
             </div>
           </div>
         </div>
       </div>
+
+
     <div class="sportDisplay">
 
         <?php 
@@ -89,7 +91,7 @@
                         </div>
                         <div class="product-price-btn">
                             <p><span>NRS. <?php echo strtoupper($sport['price']); ?></span></p>
-                            <button type="button" onclick="openModal(<?php echo "'".$sport['name'] ."' , '". $sport['price']."' , '". $sport['thumbnail1']."'"; ?>);">Book Now</button>
+                            <button type="button" onclick="openModal(<?php echo "'".$sport['name'] ."' , '". $sport['price']."' ,'". $sport['description']."' , '". $sport['opening_season']."' ,  '". $sport['slot_duration']."' ,'". $sport['thumbnail2']."'"; ?>);">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -101,15 +103,26 @@
     </div>
 
 <script>
-    function openModal(p_name, p_price, p_img) {
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    function openModal(p_name, p_price,p_description, p_opening_season, p_duration, p_img) {
         var modal = document.getElementById('pop-up');
         var title = document.getElementById('p-title');
         var img = document.getElementById('p-img');
         var price = document.getElementById('p-price');
+        var description= document.getElementById('p-description');
+        var duration= document.getElementById('p-duration');
+        var opening_season= document.getElementById('p-opening-season');
+        if(screen.width < 980)
+        window.scrollTo(0, 0);
         modal.classList.add("active");
         console.log(p_name + " " + p_price + " " + p_img);
-        title.innerHTML = p_name;
-        price.innerHTML = "NPR " + p_price;
+        title.innerHTML = p_name.toUpperCase();
+        price.innerHTML = "NPR. " + p_price;
+        description.innerHTML = p_description;
+        duration.innerHTML = "Duration: " + p_duration + " minutes.";
+        opening_season.innerHTML = capitalizeFirstLetter(p_opening_season) ;
         img.src = "dbImages/sports/" + p_img;
     }
 

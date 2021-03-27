@@ -19,20 +19,20 @@
 
         <div class="gallery-cell" style="background-image: url('assets/One-day-Trisuli-River-Rafting.jpg'); background-size:cover;width:85%;">
                 <div class="hero-section">
-                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
-                    <button class="btn">Explore Now</button>
+                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> <br />
+                    <a href= "explore.php" class="btn">Explore Now</a>
                 </div>
             </div>
         <div class="gallery-cell" style="background-image: url('assets/sebastian-pena-lambarri-mGxKdwKhzEU-unsplash.jpg'); background-size:cover;width:85%;">
                 <div class="hero-section">
-                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
-                <button class="btn">Explore Now</button>
+                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div>  <br />
+                    <a href= "explore.php" class="btn">Explore Now</a>
             </div>
         </div>
         <div class="gallery-cell" style="background-image: url('assets/BUNGY-COOL-GUY-copyright-The-Last-Resort-2.jpg'); background-size:cover;width:85%;">
                 <div class="hero-section">
-                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
-                    <button class="btn">Explore Now</button>
+                    <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div>  <br />
+                    <a href= "explore.php" class="btn">Explore Now</a>
                 </div>
             </div>    
    
@@ -40,14 +40,14 @@
        
         <div class="gallery-cell" style="background-image: url('assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp'); background-size:cover;width:85%;">
             <div class="hero-section">
-                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
-                <button class="btn">Explore Now</button>
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div>  <br />
+                <a href= "explore.php" class="btn">Explore Now</a>
             </div>
         </div>
         <div class="gallery-cell" style="background-image: url('assets/BUNGY-CHRIST-copyright-The-Last-Resort-2.jpg'); background-size:cover;width:85%;">
             <div class="hero-section">
-                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div> 
-                <button class="btn">Explore Now</button>
+                <div class="hero-text">EXPLORE TOURISM SPORT IN NEPAL</div>  <br />
+                <a href= "explore.php" class="btn">Explore Now</a>
             </div>
         </div>
     </div>
