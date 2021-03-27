@@ -24,6 +24,7 @@
     <title>Rip & Roar</title>
 </head>
 <body>
+   
    <div class="top-nav">
       <!-- <p class="" style="color:white;font-size:.8rem;"><i class="fas fa-phone-alt"></i> 9844723612 </p> -->
       <?php if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){ ?>

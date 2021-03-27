@@ -6,8 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -31,15 +30,9 @@ footer {
   background: #1e212d;
   color: whitesmoke;
   padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*****  NAVBAR   **********/
@@ -88,18 +81,10 @@ footer {
   width: 100vw;
   height: 2rem;
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .top-nav a {
@@ -123,8 +108,7 @@ footer {
   position: relative;
   font-family: "Cormorant Unicase", serif;
   font-weight: 500;
-  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -201,7 +185,6 @@ footer {
     width: 100%;
     background-color: #fff3e6;
     height: 0px;
-    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -222,19 +205,10 @@ footer {
 
 /********* SIGN UP FORM **************/
 .registerContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .registerContainer .loginImage {
@@ -251,8 +225,7 @@ footer {
   height: 45vh;
   width: 30vw;
   background-size: cover;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
 .registerContainer .registerImage .loginLink,
@@ -276,25 +249,14 @@ footer {
 }
 
 .registerContainer form.registerForm {
-  height: -webkit-fit-content !important;
-  height: -moz-fit-content !important;
   height: fit-content !important;
   padding: 3rem;
   padding-top: 0.2rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 80vh;
 }
 
@@ -313,15 +275,9 @@ footer {
 }
 
 .registerContainer form.registerForm .formGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .registerContainer form.registerForm i {
@@ -382,18 +338,6 @@ footer {
   border-color: #ff4b5c !important;
 }
 
-.registerContainer form.registerForm .inputError ::-webkit-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError :-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError ::-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
 .registerContainer form.registerForm .inputError ::placeholder {
   color: #ff4b5c !important;
 }
@@ -401,12 +345,10 @@ footer {
 .registerSuccess {
   background: #f7451d;
   width: 60%;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   position: relative;
   left: 1.5rem;
-  -webkit-box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
   color: #fff;
   font-family: "Train One", cursive;
   font-weight: 500;
@@ -415,15 +357,9 @@ footer {
   margin-top: 0.4rem;
   margin-bottom: 2rem;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 980px) {
@@ -436,25 +372,15 @@ footer {
 }
 
 .socialSignIn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
 }
 
 @media (max-width: 980px) {
   .socialSignIn {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     row-gap: 0.5rem;
   }
 }
@@ -463,8 +389,6 @@ footer {
 .socialSignIn .btnTwitter,
 .socialSignIn .btnGoogle {
   border-radius: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 1rem 1rem 0.5rem;
   border: 0;
@@ -504,19 +428,10 @@ footer {
 .introText {
   margin: 3rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .introText h1 {
@@ -530,18 +445,10 @@ footer {
   margin-bottom: 4rem;
   height: auto;
   width: 80vw !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Montserrat", serif;
 }
 
@@ -549,10 +456,7 @@ footer {
   .section1,
   .section2,
   .section3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100vw;
   }
 }
@@ -563,19 +467,10 @@ footer {
 .section2 .right,
 .section3 .left,
 .section3 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 85%;
   width: 45%;
   text-align: justify;
@@ -696,10 +591,8 @@ footer {
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
   position: absolute;
@@ -725,10 +618,8 @@ footer {
 
 section.sportSlider {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
 }
 
 .sport-box {
@@ -736,8 +627,7 @@ section.sportSlider {
   width: 400px;
   border-radius: 10px;
   color: white;
-  -webkit-box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
   margin-bottom: 3rem;
 }
 
@@ -755,21 +645,11 @@ section.sportSlider {
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-self: center;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -798,12 +678,8 @@ section.sportSlider {
 }
 
 .space-between {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .title-underline {
@@ -842,13 +718,8 @@ section.sportSlider {
 
 @media only screen and (max-width: 700px) {
   .space-between {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   #footer > div {
     width: 400px;
@@ -857,22 +728,15 @@ section.sportSlider {
 
 /**PAYMENT PAGE**/
 .paymentContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
 }
 
 .receipt {
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   padding: 1.7rem;
   border-radius: 10px;
   margin: 5vh auto auto auto;
@@ -946,12 +810,9 @@ section.sportSlider {
 /***********PRODUCT PAGE STYLE***************/
 .sportDisplay {
   padding: 3rem;
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
-  -ms-grid-columns: (minmax(45%, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
 }
 
 @media (max-width: 980px) {
@@ -962,13 +823,13 @@ section.sportSlider {
 
 @media (max-width: 600px) {
   .sportDisplay {
-    padding: .6rem;
+    padding: 0.6rem;
   }
 }
 
 @media (max-width: 415px) {
   .sportDisplay {
-    padding: .1rem;
+    padding: 0.1rem;
   }
 }
 
@@ -978,7 +839,6 @@ section.sportSlider {
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
-  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -1020,9 +880,7 @@ section.sportSlider {
 
 @media (max-width: 600px) {
   .sportDisplay .product-info {
-    width: -webkit-fit-content  !important;
-    width: -moz-fit-content  !important;
-    width: fit-content  !important;
+    width: fit-content !important;
   }
 }
 
@@ -1053,19 +911,19 @@ section.sportSlider {
 
 @media (max-width: 415px) {
   .sportDisplay .product-text h1 {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 
 .sportDisplay .product-text h1,
 .sportDisplay .product-price-btn p {
-  font-family: 'Bentham', serif;
+  font-family: "Bentham", serif;
 }
 
 .sportDisplay .product-text h2 {
-  margin: 0 0 .6rem 38px;
+  margin: 0 0 0.6rem 38px;
   font-size: 13px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #d2d2d2;
@@ -1074,14 +932,14 @@ section.sportSlider {
 
 @media (max-width: 415px) {
   .sportDisplay .product-text h2 {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 
 .sportDisplay .product-text p {
   height: 125px;
   margin: 0 0.6rem 0 38px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #8d8d8d;
   line-height: 1.7em;
   font-size: 15px;
@@ -1091,8 +949,8 @@ section.sportSlider {
 
 @media (max-width: 415px) {
   .sportDisplay .product-text p {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -1110,19 +968,10 @@ section.sportSlider {
   width: 327px;
   margin-top: 17px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 600px) {
@@ -1136,7 +985,7 @@ section.sportSlider {
   position: absolute;
   top: -15px;
   height: 50px;
-  font-family: 'Trocchi', serif;
+  font-family: "Trocchi", serif;
   margin: 0 0 0 38px;
   font-size: 1rem;
   font-weight: lighter;
@@ -1146,7 +995,7 @@ section.sportSlider {
 .sportDisplay span {
   display: inline-block;
   height: 50px;
-  font-family: 'Suranna', serif;
+  font-family: "Suranna", serif;
   font-size: 1.3rem;
   position: relative;
   left: -2rem;
@@ -1158,11 +1007,10 @@ section.sportSlider {
   height: 50px;
   width: 176px;
   margin: 0 40px 0 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1176,4 +1024,237 @@ section.sportSlider {
 .sportDisplay .product-price-btn button:hover {
   background-color: #3f3b3b;
 }
-/*# sourceMappingURL=main.css.map */
+
+/**TEST CSS FOR MODAL**/
+.pop-up-wrapper {
+  box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  position: fixed;
+}
+
+.pop-up-wrapper a {
+  color: #235ba8;
+  text-decoration: none;
+}
+
+.pop-up-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.pop-up-wrapper i {
+  font-size: 20px;
+}
+
+.pop-up-wrapper.active {
+  display: block;
+}
+
+.go-back {
+  cursor: pointer;
+}
+
+.pop-up-wrapper {
+  background-color: white;
+  display: none;
+  padding: 50px;
+  position: fixed;
+  top: 100px;
+  left: 30%;
+  width: auto;
+  z-index: 99;
+}
+
+.pop-up-wrapper a {
+  color: #235ba8;
+  text-decoration: none;
+}
+
+.pop-up-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.product-details {
+  max-width: 600px;
+  margin: auto;
+}
+
+.product-left {
+  display: inline-block;
+  padding-right: 4%;
+  vertical-align: top;
+  width: 46%;
+}
+
+.product-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.product-bottom {
+  border-top: 1px solid #ccc;
+  position: relative;
+  padding-top: 20px;
+}
+
+@media (max-width: 650px) {
+  .product-left,
+  .product-right,
+  .product-bottom {
+    width: 100%;
+  }
+  .product-left {
+    padding-right: 0;
+  }
+  .product-info {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+  }
+  .product-image {
+    display: inline-block;
+    width: 39%;
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 512px) {
+  .product-info,
+  .product-image {
+    width: 100%;
+  }
+}
+
+.product-manufacturer {
+  color: #222;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 1;
+  margin: -2px;
+}
+
+.product-title {
+  font-size: 28px;
+  color: #888;
+}
+
+.product-price {
+  color: #222;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.product-price-cents {
+  text-decoration: underline;
+  vertical-align: top;
+  padding-left: 3px;
+}
+
+.product-image {
+  padding: 10px 10px 0 10px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  height: 295px;
+}
+
+.product-description {
+  line-height: 1.5;
+}
+
+.product-available {
+  margin-top: 25px;
+}
+
+.product-rating {
+  margin-top: 25px;
+}
+
+i.fa-star {
+  color: #aaa;
+  display: inline-block;
+}
+
+i.fa-star.rating {
+  color: #e8d91f;
+}
+
+.product-rating-details {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+@media (max-width: 515px) {
+  .product-rating-details {
+    padding-left: 0;
+  }
+}
+
+.product-extended {
+  color: #235ba8;
+  padding-left: 5px;
+}
+
+.product-quantity {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.product-checkout {
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.product-checkout-actions {
+  position: absolute;
+  right: 0;
+}
+
+.product-checkout-total,
+.product-checkout-total-amount {
+  font-size: 20px;
+  color: #c17a41;
+}
+
+.product-checkout-total * {
+  display: inline-block;
+}
+
+/* 6. Components - buttons, menus, images, etc. */
+.product-quantity-label {
+  text-transform: uppercase;
+}
+
+.product-quantity * {
+  display: inline-block;
+}
+
+#product-quantity-input {
+  background-color: #eee;
+  border: none;
+  width: 2.5em;
+  text-align: center;
+}
+
+.product-quantity-subtract,
+.product-quantity-add {
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.product-quantity-subtract {
+  margin-right: 20px;
+}
+
+.wrapper-container {
+  width: 100%;
+  position: relative;
+}
