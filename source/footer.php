@@ -35,5 +35,6 @@
     </section>
 
     <script src="js/main.js" defer ></script>
+    <script src="js/flickity.pkgd.js"></script>
     </body>
 </html>

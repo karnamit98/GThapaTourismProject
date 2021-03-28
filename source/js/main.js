@@ -1,3 +1,4 @@
+
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
@@ -20,6 +21,7 @@ function myFunction() { console.log("scrolled!");
     navbar.classList.remove("sticky");
     btnBackToTop.style.display = "none";
   }
+
 }
 
 //var mybutton = document.querySelector("#btnBackToTop");
@@ -41,3 +43,47 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/**
+ * function for openning the modal. 
+ * @param {*} p_name 
+ * @param {*} p_price 
+ * @param {*} p_description 
+ * @param {*} p_opening_season 
+ * @param {*} p_duration 
+ * @param {*} p_img 
+ */
+function openModal(p_name, p_price,p_description, p_opening_season, p_duration, p_img) {
+
+    var modal = document.getElementById('pop-up');
+    modal.classList.add("active");
+    var title = document.getElementById('p-title');
+    var img = document.getElementById('p-img');
+    var price = document.getElementById('p-price');
+    var description= document.getElementById('p-description');
+    var duration= document.getElementById('p-duration');
+    var opening_season= document.getElementById('p-opening-season');
+
+    console.log(img);
+    if(screen.width < 980)
+    window.scrollTo(0, 0);
+
+    console.log(p_name + " " + p_price + " " + p_img);
+    title.innerHTML = p_name.toUpperCase();
+    price.innerHTML = "NPR. " + p_price;
+    description.innerHTML = p_description;
+    duration.innerHTML = "Duration: " + p_duration + " minutes.";
+    opening_season.innerHTML = capitalizeFirstLetter(p_opening_season) ;
+    img.src = "dbImages/sports/" + p_img;
+}
+
+/**
+ * Function for closing the modal.
+ */
+function closeModal() {
+    var modal = document.getElementById('pop-up');
+    modal.classList.remove("active");
+}

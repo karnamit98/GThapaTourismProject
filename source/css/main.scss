@@ -498,8 +498,6 @@ $fgColor: #000;
   line-height: 200px;
   font-size: 80px;
   color: white;
-
-
 }
 
 .sport-box {
@@ -558,13 +556,13 @@ $fgColor: #000;
   a.btn {
     text-decoration: none;
     background: #1e212d;
-    padding: 0.5rem 2rem .5rem 2rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
     color: white;
-    border:0;
+    border: 0;
     border-radius: 7px;
-    &:hover{
+    &:hover {
       background-color: #fff;
-      color:#000;
+      color: #000;
     }
   }
 }
@@ -593,6 +591,7 @@ section.sportSlider {
   font-weight: 600;
   font-family: "Train One", cursive;
   font-size: 1.6rem;
+  z-index: 99;
 }
 
 .title-text {
@@ -961,7 +960,7 @@ section.sportSlider {
 /**CSS FOR MODAL**/
 
 .pop-up-wrapper {
- // font-family: "Montserrat", serif;
+  // font-family: "Montserrat", serif;
   font-family: "Cormorant Unicase", serif;
   a {
     color: #235ba8;
@@ -982,7 +981,6 @@ section.sportSlider {
   margin: 20px auto;
   width: auto;
   position: fixed;
- 
 }
 
 .pop-up-wrapper.active {
@@ -1006,7 +1004,10 @@ section.sportSlider {
   position: fixed;
   top: 60px;
   left: 30%;
-  @include respond(medium) {left:2%;position: absolute;}
+  @include respond(medium) {
+    left: 2%;
+    position: absolute;
+  }
   // @include respond(small) {}
   width: auto;
   z-index: 99;
@@ -1066,17 +1067,17 @@ section.sportSlider {
 
 .product-manufacturer {
   color: #222;
- // font-size: 70px;
- font-size:1.8rem;
+  // font-size: 70px;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 1;
   margin: -2px;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 .product-title {
   //font-size: 28px;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   color: #888;
 }
 
@@ -1104,13 +1105,14 @@ section.sportSlider {
 }
 
 .product-description {
-  line-height: 1.5;font-family: "Montserrat", serif;
+  line-height: 1.5;
+  font-family: "Montserrat", serif;
 }
 
 .product-available {
   margin-top: 25px;
-  a{
-    color:#1e212d;
+  a {
+    color: #1e212d;
     text-decoration: none;
   }
 }
@@ -1163,17 +1165,16 @@ i.fa-star.rating {
   display: inline-block;
 }
 .product-checkout-actions {
-  a{
-    color:white;
+  a {
+    color: white;
     background-color: #f7451d;
     border-radius: 10px;
-    padding: .5rem 1rem .5rem 1rem;
-    &:hover{
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    &:hover {
       background-color: #1e212d;
       text-decoration: none;
     }
-
-}
+  }
 }
 
 /* 6. Components - buttons, menus, images, etc. */
@@ -1203,4 +1204,52 @@ i.fa-star.rating {
 .wrapper-container {
   width: 100%;
   position: relative;
+}
+
+/**PRODUCT DISPLAY PAGE CARASOUL **/
+.product_display_container {
+  width: 50%;
+  margin: 20px auto;
+  .carousel {
+    background: #fafafa;
+    margin-bottom: 10px;
+  }
+
+  .flickity-page-dots,
+  .flickity-button {
+    display: none;
+  }
+
+  .carousel-cell {
+    width: 100%;
+    height: 400px;
+    margin-right: 10px;
+    background: #8c8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+
+  .carousel-nav .carousel-cell {
+    height: 80px;
+    width: 100px;
+  }
+
+  .carousel-nav .carousel-cell:before {
+    font-size: 50px;
+    line-height: 80px;
+  }
+
+  .carousel-nav .carousel-cell.is-nav-selected {
+    background: #ed2;
+  }
 }
