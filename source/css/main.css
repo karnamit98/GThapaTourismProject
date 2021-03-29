@@ -6,8 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -21,27 +20,26 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: .4em;
+  width: 0.4em;
   background-color: #2c061f;
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
-          box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+  box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
   border: 0;
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: #734046;
   outline: 1px solid #2c061f;
-  border-radius: 1rem  !important;
+  border-radius: 1rem !important;
   border: 0;
-  padding: 0 .3rem 0 .3rem;
+  padding: 0 0.3rem 0 0.3rem;
 }
 
-a, button {
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+a,
+button {
+  transition: all 0.4s ease;
 }
 
 section.banner {
@@ -55,15 +53,9 @@ footer {
   background: #1e212d;
   color: whitesmoke;
   padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*****  NAVBAR   **********/
@@ -112,18 +104,10 @@ footer {
   width: 100vw;
   height: 2rem;
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .top-nav a {
@@ -145,9 +129,7 @@ footer {
   left: 0;
   background-color: #fff;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
   transition: all 0.3s ease-in-out;
   border: 0;
 }
@@ -155,8 +137,7 @@ footer {
 .top-nav a:hover::before {
   text-decoration: none;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .top-nav .active {
@@ -169,10 +150,9 @@ footer {
   width: 100%;
   background-color: #fff3e6;
   position: relative;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -217,9 +197,7 @@ footer {
   left: 0;
   background-color: #ff7171;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
   transition: all 0.3s ease-in-out;
   border: 0;
 }
@@ -227,10 +205,8 @@ footer {
 .nav > .nav-links > a:hover {
   background-color: #f2edd7;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
   border-radius: 0px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #000;
@@ -240,20 +216,17 @@ footer {
 .nav > .nav-links > a:hover::before {
   text-decoration: none;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .nav > .nav-links > .active {
   border: 0;
   padding-bottom: 11px;
-  border-bottom: 2px solid  #ff7171;
+  border-bottom: 2px solid #ff7171;
   color: #f6f5f5;
   background: #1a1a2e;
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
 }
 
 .nav > #nav-check {
@@ -289,7 +262,6 @@ footer {
     width: 100%;
     background-color: #fff3e6;
     height: 0px;
-    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -310,19 +282,10 @@ footer {
 
 /********* SIGN UP FORM **************/
 .registerContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .registerContainer .loginImage {
@@ -339,8 +302,7 @@ footer {
   height: 45vh;
   width: 30vw;
   background-size: cover;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
 .registerContainer .registerImage .loginLink,
@@ -364,25 +326,14 @@ footer {
 }
 
 .registerContainer form.registerForm {
-  height: -webkit-fit-content !important;
-  height: -moz-fit-content !important;
   height: fit-content !important;
   padding: 3rem;
   padding-top: 0.2rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 80vh;
 }
 
@@ -401,15 +352,9 @@ footer {
 }
 
 .registerContainer form.registerForm .formGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .registerContainer form.registerForm i {
@@ -470,18 +415,6 @@ footer {
   border-color: #ff4b5c !important;
 }
 
-.registerContainer form.registerForm .inputError ::-webkit-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError :-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError ::-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
 .registerContainer form.registerForm .inputError ::placeholder {
   color: #ff4b5c !important;
 }
@@ -489,12 +422,10 @@ footer {
 .registerSuccess {
   background: #f7451d;
   width: 60%;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   position: relative;
   left: 1.5rem;
-  -webkit-box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
   color: #fff;
   font-family: "Train One", cursive;
   font-weight: 500;
@@ -503,15 +434,9 @@ footer {
   margin-top: 0.4rem;
   margin-bottom: 2rem;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 980px) {
@@ -524,25 +449,15 @@ footer {
 }
 
 .socialSignIn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
 }
 
 @media (max-width: 980px) {
   .socialSignIn {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     row-gap: 0.5rem;
   }
 }
@@ -551,8 +466,6 @@ footer {
 .socialSignIn .btnTwitter,
 .socialSignIn .btnGoogle {
   border-radius: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 1rem 1rem 0.5rem;
   border: 0;
@@ -592,19 +505,10 @@ footer {
 .introText {
   margin: 3rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .introText h1 {
@@ -618,18 +522,10 @@ footer {
   margin-bottom: 4rem;
   height: auto;
   width: 80vw !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Montserrat", serif;
 }
 
@@ -637,10 +533,7 @@ footer {
   .section1,
   .section2,
   .section3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100vw;
   }
 }
@@ -651,19 +544,10 @@ footer {
 .section2 .right,
 .section3 .left,
 .section3 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 85%;
   width: 45%;
   text-align: justify;
@@ -785,10 +669,8 @@ footer {
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
   position: absolute;
@@ -815,7 +697,7 @@ footer {
 .hero-section a.btn {
   text-decoration: none;
   background: #1e212d;
-  padding: 0.5rem 2rem .5rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   color: white;
   border: 0;
   border-radius: 7px;
@@ -828,10 +710,8 @@ footer {
 
 section.sportSlider {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
 }
 
 .sport-box {
@@ -839,8 +719,7 @@ section.sportSlider {
   width: 400px;
   border-radius: 10px;
   color: white;
-  -webkit-box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
   margin-bottom: 3rem;
 }
 
@@ -852,13 +731,10 @@ section.sportSlider {
   font-weight: 600;
   font-family: "Train One", cursive;
   font-size: 1.6rem;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(1.5px);
-          backdrop-filter: blur(1.5px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
   border-radius: 0px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -874,21 +750,11 @@ section.sportSlider {
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-self: center;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -917,12 +783,8 @@ section.sportSlider {
 }
 
 .space-between {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .title-underline {
@@ -961,13 +823,8 @@ section.sportSlider {
 
 @media only screen and (max-width: 700px) {
   .space-between {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   #footer > div {
     width: 400px;
@@ -976,22 +833,15 @@ section.sportSlider {
 
 /**PAYMENT PAGE**/
 .paymentContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
 }
 
 .receipt {
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   padding: 1.7rem;
   border-radius: 10px;
   margin: 5vh auto auto auto;
@@ -1065,12 +915,9 @@ section.sportSlider {
 /***********PRODUCT PAGE STYLE***************/
 .sportDisplay {
   padding: 3rem;
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
-  -ms-grid-columns: (minmax(45%, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
 }
 
 @media (max-width: 980px) {
@@ -1097,7 +944,6 @@ section.sportSlider {
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
-  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -1139,8 +985,6 @@ section.sportSlider {
 
 @media (max-width: 600px) {
   .sportDisplay .product-info {
-    width: -webkit-fit-content !important;
-    width: -moz-fit-content !important;
     width: fit-content !important;
   }
 }
@@ -1198,8 +1042,6 @@ section.sportSlider {
 }
 
 .sportDisplay .product-text p {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin: 0 0.6rem 0 38px;
   font-family: "Playfair Display", serif;
@@ -1227,24 +1069,13 @@ section.sportSlider {
 }
 
 .sportDisplay .product-price-btn {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 600px) {
@@ -1271,8 +1102,7 @@ section.sportSlider {
   display: inline-block;
   height: 50px;
   width: 176px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
   font-family: "Raleway", sans-serif;
@@ -1285,15 +1115,9 @@ section.sportSlider {
   cursor: pointer;
   outline: none;
   text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .sportDisplay .product-price-btn a:hover {
@@ -1303,7 +1127,6 @@ section.sportSlider {
 /**CSS FOR MODAL**/
 .pop-up-wrapper {
   font-family: "Cormorant Unicase", serif;
-  -webkit-box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
   box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
   display: block;
   margin: 20px auto;
@@ -1444,8 +1267,7 @@ section.sportSlider {
 .product-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   height: 295px;
 }
 
@@ -1523,7 +1345,7 @@ i.fa-star.rating {
   color: white;
   background-color: #f7451d;
   border-radius: 10px;
-  padding: .5rem 1rem .5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .product-checkout-actions a:hover {
@@ -1567,32 +1389,19 @@ i.fa-star.rating {
 .productDisplayContainer {
   background: url(../assets/absBG.jpg);
   background-size: cover;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   min-height: 100vh;
   width: 100vw;
   padding: 1rem 1.6rem 1rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start !important;
-      -ms-flex-align: start !important;
-          align-items: flex-start !important;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start !important;
 }
 
 @media (max-width: 600px) {
   .productDisplayContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -1612,7 +1421,7 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer .imageGallery .carousel {
-  background: #fafafa;
+  background: rgba(0, 0, 0, 0);
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -1624,11 +1433,10 @@ i.fa-star.rating {
 
 .productDisplayContainer .imageGallery .carousel-cell {
   width: 100%;
-  height: 500px;
+  height: 450px;
   margin-right: 10px;
   background: #8c8;
   border-radius: 5px;
-  counter-increment: carousel-cell;
 }
 
 @media (max-width: 980px) {
@@ -1640,7 +1448,6 @@ i.fa-star.rating {
 .productDisplayContainer .imageGallery .carousel-cell:before {
   display: block;
   text-align: center;
-  content: counter(carousel-cell);
   line-height: 200px;
   font-size: 80px;
   color: white;
@@ -1661,27 +1468,16 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer .productInfoSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .productDisplayContainer .productInfoSection .productInfo {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #01121398;
@@ -1689,27 +1485,14 @@ i.fa-star.rating {
   height: 100%;
   width: 100%;
   border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 1.4rem 1.5rem 1.4rem 1.5rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-family: 'Rajdhani', sans-serif;
+  justify-content: flex-start;
+  font-family: "Rajdhani", sans-serif;
   row-gap: 1rem;
   margin-top: 1rem;
 }
@@ -1725,10 +1508,8 @@ i.fa-star.rating {
   row-gap: 1rem;
   color: #d3e0ea;
   width: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
 }
 
 .productDisplayContainer .productInfoSection .productInfo .productInfoGrid i {
@@ -1737,7 +1518,7 @@ i.fa-star.rating {
 
 .productDisplayContainer .productInfoSection .productInfo .price {
   font-size: 1.5rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   color: #c39e5c;
 }
 
@@ -1748,12 +1529,10 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer form {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #01121398;
@@ -1766,20 +1545,11 @@ i.fa-star.rating {
   height: 100%;
   padding: 1rem;
   border-radius: 5px;
-  margin-top: .6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  margin-top: 0.6rem;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .productDisplayContainer form h2 {
@@ -1792,19 +1562,13 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer form .form-group select {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2rem;
-  padding: .3rem 1rem .3rem 1rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
   width: 100%;
   min-height: 2.2rem;
   border: 3px solid #fff;
@@ -1819,13 +1583,13 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer form .form-group select option {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   background: #cde3e497;
 }
 
 .productDisplayContainer form a {
   text-decoration: none;
-  padding: .5rem 1.5rem .5rem 1.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   background: #96bb7c;
   border-radius: 5px;
   margin-top: 2rem;
@@ -1835,4 +1599,3 @@ i.fa-star.rating {
 .productDisplayContainer form a:hover {
   background: #1a1c20;
 }
-/*# sourceMappingURL=main.css.map */
