@@ -1,5 +1,6 @@
 <?php 
    include_once 'includes/form.php';
+   $curPage = basename($_SERVER['PHP_SELF']); 
    ?>
 
 <!DOCTYPE html>

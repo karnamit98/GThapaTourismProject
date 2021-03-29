@@ -20,6 +20,30 @@ body {
   font-family: "Montserrat", serif;
 }
 
+body::-webkit-scrollbar {
+  width: .4em;
+  background-color: #2c061f;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+          box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+  border: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #734046;
+  outline: 1px solid #2c061f;
+  border-radius: 1rem  !important;
+  border: 0;
+  padding: 0 .3rem 0 .3rem;
+}
+
+a, button {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
 section.banner {
   background: url("../assets/everest-tkelly-banner.jpg") center no-repeat;
   height: 60vh;
@@ -27,7 +51,6 @@ section.banner {
 }
 
 footer {
-  margin-top: 1.5rem;
   width: 100vw;
   background: #1e212d;
   color: whitesmoke;
@@ -110,10 +133,34 @@ footer {
   font-size: 0.7rem;
   position: absolute;
   right: 1rem;
+  padding-bottom: 2px;
+}
+
+.top-nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 0;
+}
+
+.top-nav a:hover::before {
+  text-decoration: none;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .top-nav .active {
-  text-decoration: underline;
+  border-bottom: 2px solid #fff;
   font-weight: 300;
 }
 
@@ -122,7 +169,7 @@ footer {
   width: 100%;
   background-color: #fff3e6;
   position: relative;
-  font-family: "Cormorant Unicase", serif;
+  font-family: 'Rajdhani', sans-serif;
   font-weight: 500;
   -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
@@ -158,15 +205,55 @@ footer {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #000;
+  position: relative;
+}
+
+.nav > .nav-links > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff7171;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 0;
 }
 
 .nav > .nav-links > a:hover {
   background-color: #f2edd7;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #000;
+  border: 0;
+}
+
+.nav > .nav-links > a:hover::before {
+  text-decoration: none;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .nav > .nav-links > .active {
-  text-decoration: underline;
-  font-weight: 400;
+  border: 0;
+  padding-bottom: 11px;
+  border-bottom: 2px solid  #ff7171;
+  color: #f6f5f5;
+  background: #1a1a2e;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 .nav > #nav-check {
@@ -673,6 +760,7 @@ footer {
 
 #footer {
   width: 100%;
+  margin-top: 0 !important;
   font-family: "Montserrat", serif;
 }
 
@@ -764,6 +852,22 @@ section.sportSlider {
   font-weight: 600;
   font-family: "Train One", cursive;
   font-size: 1.6rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sport-title:hover {
+  cursor: pointer;
+  background: #151515;
+  color: #f8f1f1;
+  padding-left: 2rem;
 }
 
 .title-text {
@@ -1061,7 +1165,7 @@ section.sportSlider {
 
 .sportDisplay .product-text h1 {
   margin: 0 0 0 38px;
-  padding-top: 52px;
+  padding-top: 40px;
   font-size: 34px;
   color: #474747;
 }
@@ -1094,7 +1198,9 @@ section.sportSlider {
 }
 
 .sportDisplay .product-text p {
-  height: 125px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 0 0.6rem 0 38px;
   font-family: "Playfair Display", serif;
   color: #8d8d8d;
@@ -1121,9 +1227,10 @@ section.sportSlider {
 }
 
 .sportDisplay .product-price-btn {
-  height: 103px;
-  width: 327px;
-  margin-top: 17px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1148,31 +1255,22 @@ section.sportSlider {
 
 .sportDisplay .product-price-btn p {
   display: inline-block;
-  position: absolute;
-  top: -15px;
-  height: 50px;
   font-family: "Trocchi", serif;
-  margin: 0 0 0 38px;
   font-size: 1rem;
   font-weight: lighter;
-  color: #474747;
+  color: #8f4f4f;
 }
 
 .sportDisplay span {
   display: inline-block;
-  height: 50px;
   font-family: "Suranna", serif;
   font-size: 1.3rem;
-  position: relative;
-  left: -2rem;
 }
 
-.sportDisplay .product-price-btn button {
-  float: right;
+.sportDisplay .product-price-btn a {
   display: inline-block;
   height: 50px;
   width: 176px;
-  margin: 0 40px 0 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: transparent;
@@ -1186,9 +1284,19 @@ section.sportSlider {
   background-color: #9cebd5;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.sportDisplay .product-price-btn button:hover {
+.sportDisplay .product-price-btn a:hover {
   background-color: #3f3b3b;
 }
 
@@ -1453,5 +1561,278 @@ i.fa-star.rating {
 .wrapper-container {
   width: 100%;
   position: relative;
+}
+
+/****PRODUCT DISPLAY PAGE*******/
+.productDisplayContainer {
+  background: url(../assets/absBG.jpg);
+  background-size: cover;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 1rem 1.6rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+@media (max-width: 600px) {
+  .productDisplayContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.productDisplayContainer .imageGallery {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  width: 75%;
+  /* cell number */
+}
+
+@media (max-width: 980px) {
+  .productDisplayContainer .imageGallery {
+    width: 100%;
+  }
+}
+
+.productDisplayContainer .imageGallery .carousel {
+  background: #fafafa;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.productDisplayContainer .imageGallery .flickity-page-dots,
+.productDisplayContainer .imageGallery .flickity-button {
+  display: none;
+}
+
+.productDisplayContainer .imageGallery .carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+@media (max-width: 980px) {
+  .productDisplayContainer .imageGallery .carousel-cell {
+    height: 300px;
+  }
+}
+
+.productDisplayContainer .imageGallery .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell:before {
+  font-size: 50px;
+  line-height: 80px;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell.is-nav-selected {
+  background: #ed2;
+}
+
+.productDisplayContainer .productInfoSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDisplayContainer .productInfoSection .productInfo {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #01121398;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.4rem 1.5rem 1.4rem 1.5rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-family: 'Rajdhani', sans-serif;
+  row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.productDisplayContainer .productInfoSection .productInfo h1.title {
+  font-family: "Montserrat", serif;
+  font-size: 2rem;
+  color: #fdffbc;
+  border-radius: 15px;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .productInfoGrid {
+  row-gap: 1rem;
+  color: #d3e0ea;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .productInfoGrid i {
+  color: #fdffbc;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .price {
+  font-size: 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #c39e5c;
+}
+
+.productDisplayContainer .productInfoSection .productInfo hr {
+  width: 100%;
+  height: 3px;
+  border-color: #fdffbc;
+}
+
+.productDisplayContainer form {
+  font-family: 'Rajdhani', sans-serif;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #01121398;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  border: 2px solid #aaaaaa;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: .6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDisplayContainer form h2 {
+  color: #fdffbc;
+  font-family: "Montserrat", serif;
+}
+
+.productDisplayContainer form .form-group {
+  width: 100%;
+}
+
+.productDisplayContainer form .form-group select {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  padding: .3rem 1rem .3rem 1rem;
+  width: 100%;
+  min-height: 2.2rem;
+  border: 3px solid #fff;
+  color: #171717;
+  border: 1.5px solid #cde3e497;
+  border-radius: 5px;
+  color: #171717;
+}
+
+.productDisplayContainer form .form-group select:focus {
+  border: 0;
+}
+
+.productDisplayContainer form .form-group select option {
+  font-family: 'Rajdhani', sans-serif;
+  background: #cde3e497;
+}
+
+.productDisplayContainer form a {
+  text-decoration: none;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  background: #96bb7c;
+  border-radius: 5px;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.productDisplayContainer form a:hover {
+  background: #1a1c20;
 }
 /*# sourceMappingURL=main.css.map */

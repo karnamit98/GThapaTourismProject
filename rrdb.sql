@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2021 at 03:41 PM
+-- Generation Time: Mar 27, 2021 at 03:39 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -84,24 +84,25 @@ CREATE TABLE `sport` (
   `price` double NOT NULL,
   `thumbnail1` varchar(500) NOT NULL,
   `thumbnail2` varchar(500) NOT NULL,
-  `thumbnail3` varchar(500) NOT NULL
+  `thumbnail3` varchar(500) NOT NULL,
+  `description` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sport`
 --
 
-INSERT INTO `sport` (`sport_id`, `name`, `opening_season`, `slot_duration`, `price`, `thumbnail1`, `thumbnail2`, `thumbnail3`) VALUES
-(1, 'zipline', 'winter', 10, 3500, 'zipline1.jpg', 'zipline12.jpg', 'zipline13.jpg'),
-(2, 'bunjee jumping', 'summer', 15, 3500, 'bunjee1.jpg', 'bunjee2.jpg', 'bunjee3.jpg'),
-(3, 'paragliding', 'spring', 10, 6500, 'paragliding1.jpg', 'paragliding2.jpg', 'paragliding3.jpg'),
-(4, 'skydiving', 'summer', 120, 35000, 'skydiving1.jpg', 'skydiving2.jpg', 'skydiving3.jpg'),
-(5, 'paramotor gliding', 'summer', 30, 25000, 'paramotorgliding1.jpg', 'paramotorgliding2.jpg', 'paramotorgliding3.jpg'),
-(6, 'kayaking and canyoning', 'summer', 60, 500, 'kayakingandcanyoning1.jpg', 'kayakingandcanyoning2.jpg', 'kayakingandcanyoning3.jpg'),
-(7, 'ice climbing', 'winter', 420, 1000, 'iceclimbing1.jpg', 'iceclimbing2.jpg', 'iceclimbing3.jpg'),
-(8, 'rock climbing', 'summer', 360, 5000, 'rockclimbing1.jpg', 'rockclimbing2.jpg', 'rockclimbing3.jpg'),
-(9, 'mountain biking', 'summer', 60, 200, 'mountainbiking1.jpg', 'mountainbiking2.jpg', 'mountainbiking3.jpg'),
-(10, 'white-water rafting', 'summer', 480, 5000, 'rafting1.jpg', 'rafting2.jpg', 'rafting3.jpg');
+INSERT INTO `sport` (`sport_id`, `name`, `opening_season`, `slot_duration`, `price`, `thumbnail1`, `thumbnail2`, `thumbnail3`, `description`) VALUES
+(1, 'zipline', 'winter', 10, 3500, 'zipline1.jpg', 'zipline2.jpg', 'zipline3.jpg', 'A zip line, zip-line, zipline, zip wire, or aerial runway, is a pulley suspended on a cable, usually made of stainless steel, mounted on a slope.'),
+(2, 'bunjee jumping', 'summer', 15, 3500, 'bunjee1.jpg', 'bunjee2.jpg', 'bunjee3.jpg', 'Bungee jumping, also spelt bungy jumping, is an activity that involves a person jumping from a great height while connected to a large elastic cord. The launching pad is usually erected on a tall structure such as a building or crane, a bridge across a deep ravine, or on a natural geographic feature such as a cliff. '),
+(3, 'paragliding', 'spring', 10, 6500, 'paragliding1.jpg', 'paragliding2.jpg', 'paragliding3.jpg', 'Paragliding is the recreational and competitive adventure sport of flying paragliders: lightweight, free-flying, foot-launched glider aircraft with no rigid primary structure. The pilot sits in a harness or lies supine in a cocoon-like speed bag suspended below a fabric wing. '),
+(4, 'skydiving', 'summer', 120, 35000, 'skydiving1.jpg', 'skydiving2.jpg', 'skydiving3.jpg', 'Sky Diving in Nepal An excitingly extreme aerial adventure, Everest skydiving is an amazingly unique experience in the world. Skydiving is done from a plane or a chopper onto the worlds highest drop zone at Gorak Shep, Kala Patthar.'),
+(5, 'paramotor gliding', 'summer', 30, 25000, 'paramotorgliding1.jpg', 'paramotorgliding2.jpg', 'paramotorgliding3.jpg', 'Powered paragliding, also known as paramotoring or PPG, is a form of ultralight aviation where the pilot wears a back-mounted motor which provides enough thrust to take off using a paraglider. It can be launched in still air, and on level ground, by the pilot alone — no assistance is required. '),
+(6, 'kayaking and canyoning', 'summer', 60, 500, 'kayakingandcanyoning1.jpg', 'kayakingandcanyoning2.jpg', 'kayakingandcanyoning3.jpg', 'A kayak is a small, narrow watercraft which is typically propelled by means of a double-bladed paddle. The word kayak originates from the Greenlandic word qajaq. The traditional kayak has a covered deck and one or more cockpits, each seating one paddler. '),
+(7, 'ice climbing', 'winter', 420, 1000, 'iceclimbing1.jpg', 'iceclimbing2.jpg', 'iceclimbing3.jpg', 'Ice climbing is the activity of ascending inclined ice formations. Usually, ice climbing refers to roped and protected climbing of features such as icefalls, frozen waterfalls, and cliffs and rock slabs covered with ice refrozen from flows of water. '),
+(8, 'rock climbing', 'summer', 360, 5000, 'rockclimbing1.jpg', 'rockclimbing2.jpg', 'rockclimbing3.jpg', 'Rock climbing is a sport in which participants climb up, down or across natural rock formations or artificial rock walls. The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling.'),
+(9, 'mountain biking', 'summer', 60, 200, 'mountainbiking1.jpeg', 'mountainbiking2.jpg', 'mountainbiking3.jpg', 'Mountain biking is a sport of riding bicycles off-road, often over rough terrain, usually using specially designed mountain bikes.'),
+(10, 'white-water rafting', 'summer', 480, 5000, 'rafting1.jpg', 'rafting2.jpg', 'rafting3.jpg', 'Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience.');
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `password`, `role`, `status`) VALUES
-(2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 0);
+(2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 0),
+(3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -229,7 +231,7 @@ ALTER TABLE `sport_detail`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

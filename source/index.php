@@ -1,7 +1,6 @@
 <?php include_once 'header.php'; ?>
 
    <!-- <section class="banner">
-
    </section> -->
 
 <!-- 
@@ -70,7 +69,6 @@
         </div>
         <div class="right cover1 coverImg"></div>
     </div>
-
     <div class="section2">
         <div class="left cover2 coverImg"></div>
         <div class="right ">
@@ -80,12 +78,9 @@
                    // print_r($sports);
         ?> 
         Introduced in Everest region recently, the extreme aerial adventure of ski diving has taken its place on the bucket’s list for every sky diving buff from all over the world. Leaping through, the enthusiasts can now witness the 360 degree view of the 8000plus Himalayas including Everest.
-
 Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts. However, Pokhara is known more for Paragliding. The micro climate of Pokhara makes the paragliding a must do thing for every tourist who are in to sports or just for fun. Pokhara is the only city in Nepal to host the International paragliding competition every year.
-
         </div>
     </div>
-
     <div class="section3">
         <div class="left ">
             <h1>Great Himalayan Trek (GHT) </h1>
@@ -94,6 +89,71 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
         <div class="right cover3 coverImg"></div>
     </div> -->
 
+    <div class="pop-up-wrapper " id="pop-up">
+        <div class="go-back" onclick="closeModal();"><i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="product-details">
+          <div class="product-left">
+            <div class="product-info">
+              <div class="product-manufacturer" id="p-title">
+              </div>
+              <div class="product-title" >
+                
+              </div>
+              <div class="product-price" >
+                <!-- $320<span class="product-price-cents">03</span> -->
+              </div>
+            </div>
+            <div class="product-image">
+              <img src="https://via.placeholder.com/300" id="p-img"/>
+            </div>
+          </div>
+          <div class="product-right">
+            <div class="product-description" id="p-description">
+              Designer Karim Rashid continues to put his signature spin on all genres of design through various collaborations with top-notch companies. Another one to add to the win column is his work with Italian manufacturer Chateau d’Ax.
+            </div>
+            <div class="product-available">
+              Available Seasons: <span class="product-extended"><a href="#" id="p-opening-season"></a></span>
+            </div>
+            <!-- <div class="product-rating">
+              <i class="fa fa-star rating" star-data="1"></i>
+              <i class="fa fa-star rating" star-data="2"></i>
+              <i class="fa fa-star rating" star-data="3"></i>
+              <i class="fa fa-star" star-data="4"></i>
+              <i class="fa fa-star" star-data="5"></i>
+              <div class="product-rating-details">(3.1 - <span class="rating-count">1203</span> reviews)
+              </div>
+            </div> -->
+            <div class="product-quantity" id="p-duration">
+              <!-- <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
+              <div class="product-quantity-subtract">
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <div>
+                <input type="text" id="product-quantity-input" placeholder="0" value="0" />
+              </div>
+              <div class="product-quantity-add">
+                <i class="fa fa-chevron-right"></i>
+              </div> -->
+            </div>
+          </div>
+          <div class="product-bottom">
+            <div class="product-checkout">
+               Price
+              <div class="product-checkout-total">
+                <!-- <i class="fa fa-usd"></i> -->
+                <div class="product-checkout-total-amount" id="p-price">
+                  <!-- 0.00 -->
+                </div>
+              </div>
+            </div>
+            <div class="product-checkout-actions">
+              <a class="add-to-cart" href="#"   id="aLink"  >Book Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
 
     <section class="" style="padding-left:0 !important;margin-left:0 !important;">
         <div class="bg" style="border-radius:0;padding-left:0;">
@@ -110,10 +170,12 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
 
             foreach($sports as $sport) {
                 ?>
-                <div class="sport-box p-20" style="background-image: url('dbImages/sports/<?php echo $sport['thumbnail1'] ?>');background-position:center;background-size: cover">
+                <div class="sport-box p-20" style="background-image: url('dbImages/sports/<?php echo $sport['thumbnail1'] ?>');background-position:center;background-size: cover" >
                     <div class="overlay">
-                    <span class="sport-title"><?php echo strtoupper($sport['name']); ?></span>
+                    <button class="sport-title" onclick="openModal(<?php echo "'".$sport['name'] ."' , '". $sport['price']."' ,'". $sport['description']."' , '". $sport['available_season']."' ,  '". $sport['slot_duration']."' ,'". $sport['sport_id']."' ,'". $sport['thumbnail2']."'"; ?>);" ><?php echo strtoupper($sport['name']); ?>
+                    <i class="fas fa-arrow-right"></i></button>
                     </div>
+
                 </div>
                 <?php
             }
@@ -124,6 +186,5 @@ Pokhara, the beautiful lake city also offers the sky diving for the enthusiasts.
 
     </section>
 
-<script src="js/flickity.pkgd.js"></script>
 
 <?php include_once 'footer.php'; ?>
