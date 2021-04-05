@@ -1,6 +1,6 @@
-<?php //require_once 'db.php';
-   // $conn = OpenCon(); 
-   //session_start();
+<?php 
+   include_once 'includes/form.php';
+   $curPage = basename($_SERVER['PHP_SELF']); 
    ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/flickity.css" />
 
+   <!--Font--> 
+   <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!--Fontawesome-->
@@ -22,4 +25,46 @@
     <title>Rip & Roar</title>
 </head>
 <body>
-   <?php include 'navbar.php'; ?>
+   
+   <div class="top-nav">
+      <!-- <p class="" style="color:white;font-size:.8rem;"><i class="fas fa-phone-alt"></i> 9844723612 </p> -->
+      <?php if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){ ?>
+      <a href="register.php" class="logout <?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
+      <?php } else {
+
+            
+         //fetch user data
+         $userDetailsRow = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
+         ?>
+         <a href="#" class="<?php echo ($curPage == "account.php" ? "active" : "");?>" style="position:absolute;left:100px;top:10px;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
+         <a href="index.php?logout='1'" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <?php }?>
+   </div>
+
+   <div class="nav " >
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+         <div class="nav-title">
+         <!-- RIP & ROAR -->
+         <img src="assets/logo.PNG" alt="Logo" style="width:100px;height:100px;position:relative;top:-40px;z-index:9999;
+            ">
+         </div>
+      </div>
+      <div class="nav-btn">
+         <label for="nav-check">
+         <span></span>
+         <span></span>
+         <span></span>
+         </label>
+      </div>
+         
+      
+
+      <div class="nav-links">
+         <a href="index.php" class="<?php echo ($curPage == "index.php" ? "active" : "");?>" >Home</a>
+         <a href="about.php" class="<?php echo ($curPage == "about.php" ? "active" : "");?>">About Us</a>
+         <a href="contact.php" class="<?php echo ($curPage == "contact.php" ? "active" : "");?>"> Contact Us</a>
+      </div>
+
+      
+   </div>

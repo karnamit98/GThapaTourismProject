@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 /************* RESPONSIVE BREAKPOINTS *************/
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600&display=swap");
 * {
@@ -15,6 +17,31 @@ html {
 
 body {
   overflow-x: hidden;
+  font-family: "Montserrat", serif;
+}
+
+body::-webkit-scrollbar {
+  width: .4em;
+  background-color: #2c061f;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+          box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+  border: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #734046;
+  outline: 1px solid #2c061f;
+  border-radius: 1rem  !important;
+  border: 0;
+  padding: 0 .3rem 0 .3rem;
+}
+
+a, button {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 section.banner {
@@ -24,7 +51,6 @@ section.banner {
 }
 
 footer {
-  margin-top: 1.5rem;
   width: 100vw;
   background: #1e212d;
   color: whitesmoke;
@@ -104,13 +130,37 @@ footer {
   text-decoration: none;
   color: #fff;
   font-family: "Montserrat", serif;
-  font-size: .7rem;
+  font-size: 0.7rem;
   position: absolute;
   right: 1rem;
+  padding-bottom: 2px;
+}
+
+.top-nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 0;
+}
+
+.top-nav a:hover::before {
+  text-decoration: none;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .top-nav .active {
-  text-decoration: underline;
+  border-bottom: 2px solid #fff;
   font-weight: 300;
 }
 
@@ -119,7 +169,7 @@ footer {
   width: 100%;
   background-color: #fff3e6;
   position: relative;
-  font-family: "Cormorant Unicase", serif;
+  font-family: 'Rajdhani', sans-serif;
   font-weight: 500;
   -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
@@ -155,15 +205,55 @@ footer {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #000;
+  position: relative;
+}
+
+.nav > .nav-links > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff7171;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 0;
 }
 
 .nav > .nav-links > a:hover {
   background-color: #f2edd7;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #000;
+  border: 0;
+}
+
+.nav > .nav-links > a:hover::before {
+  text-decoration: none;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .nav > .nav-links > .active {
-  text-decoration: underline;
-  font-weight: 400;
+  border: 0;
+  padding-bottom: 11px;
+  border-bottom: 2px solid  #ff7171;
+  color: #f6f5f5;
+  background: #1a1a2e;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 .nav > #nav-check {
@@ -233,7 +323,6 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-top: 2.5rem;
 }
 
 .registerContainer .loginImage {
@@ -244,7 +333,8 @@ footer {
   background: url("../assets/madhushree-narayan-CadLQADJKzQ-unsplash.jpg") center no-repeat;
 }
 
-.registerContainer .registerImage, .registerContainer .loginImage {
+.registerContainer .registerImage,
+.registerContainer .loginImage {
   padding: 3rem;
   height: 45vh;
   width: 30vw;
@@ -253,26 +343,32 @@ footer {
           box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
-.registerContainer .registerImage .loginLink, .registerContainer .loginImage .loginLink {
+.registerContainer .registerImage .loginLink,
+.registerContainer .loginImage .loginLink {
   position: relative;
   top: 130%;
   left: 20%;
   font-family: "Montserrat", serif;
 }
 
-.registerContainer .registerImage .loginLink a, .registerContainer .loginImage .loginLink a {
+.registerContainer .registerImage .loginLink a,
+.registerContainer .loginImage .loginLink a {
   color: #000;
 }
 
 @media (max-width: 980px) {
-  .registerContainer .registerImage, .registerContainer .loginImage {
+  .registerContainer .registerImage,
+  .registerContainer .loginImage {
     display: none;
   }
 }
 
 .registerContainer form.registerForm {
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
   padding: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 0.2rem;
   font-family: "Montserrat", serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -288,6 +384,12 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 80vh;
+}
+
+@media (max-width: 600px) {
+  .registerContainer form.registerForm {
+    margin-top: 2rem !important;
+  }
 }
 
 .registerContainer form.registerForm a {
@@ -315,15 +417,27 @@ footer {
   left: 1.5rem;
 }
 
-.registerContainer form.registerForm input[type=text], .registerContainer form.registerForm input[type=password], .registerContainer form.registerForm input[type=email], .registerContainer form.registerForm input[type=checkbox], .registerContainer form.registerForm input[type=number] {
+@media (max-width: 415px) {
+  .registerContainer form.registerForm i {
+    position: relative;
+    top: 3.3rem;
+    left: -0.05rem;
+  }
+}
+
+.registerContainer form.registerForm input[type="text"],
+.registerContainer form.registerForm input[type="password"],
+.registerContainer form.registerForm input[type="email"],
+.registerContainer form.registerForm input[type="checkbox"],
+.registerContainer form.registerForm input[type="number"] {
   border: none;
   border-bottom: 1px solid #000;
-  padding: .3rem .3rem .3rem 2rem;
+  padding: 0.3rem 0.3rem 0.3rem 2rem;
   width: 300px;
   margin-top: 2rem;
 }
 
-.registerContainer form.registerForm input[type=checkbox] {
+.registerContainer form.registerForm input[type="checkbox"] {
   padding: 0;
   width: auto;
 }
@@ -341,7 +455,54 @@ footer {
   cursor: pointer;
 }
 
-.registerContainer form.registerForm .socialSignIn {
+.registerContainer form.registerForm .errorText {
+  color: #ff4b5c;
+  font-size: 1rem;
+  font-family: "Rajdhani", sans-serif;
+  margin-left: 1.5rem;
+}
+
+.registerContainer form.registerForm .iError {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError {
+  border-color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError ::-webkit-input-placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError :-ms-input-placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError ::-ms-input-placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerContainer form.registerForm .inputError ::placeholder {
+  color: #ff4b5c !important;
+}
+
+.registerSuccess {
+  background: #f7451d;
+  width: 60%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: relative;
+  left: 1.5rem;
+  -webkit-box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: "Train One", cursive;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -351,45 +512,79 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb, .registerContainer form.registerForm .socialSignIn .btnTwitter, .registerContainer form.registerForm .socialSignIn .btnGoogle {
+@media (max-width: 980px) {
+  .registerSuccess {
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    left: 0;
+  }
+}
+
+.socialSignIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+@media (max-width: 980px) {
+  .socialSignIn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.5rem;
+  }
+}
+
+.socialSignIn .btnFb,
+.socialSignIn .btnTwitter,
+.socialSignIn .btnGoogle {
   border-radius: 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 1rem 1rem 1rem .5rem;
-  margin-top: .5rem;
+  padding: 1rem 1rem 1rem 0.5rem;
+  border: 0;
+  color: white;
   width: 250px;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb:hover, .registerContainer form.registerForm .socialSignIn .btnTwitter:hover, .registerContainer form.registerForm .socialSignIn .btnGoogle:hover {
+.socialSignIn .btnFb:hover,
+.socialSignIn .btnTwitter:hover,
+.socialSignIn .btnGoogle:hover {
   background: #000;
   cursor: pointer;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnFb {
-  background: #3B5998;
+.socialSignIn .btnFb {
+  background: #3b5998;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnTwitter {
-  background: #00ACEE;
+.socialSignIn .btnTwitter {
+  background: #00acee;
 }
 
-.registerContainer form.registerForm .socialSignIn .btnGoogle {
+.socialSignIn .btnGoogle {
   background: #db4a39;
 }
 
-.registerContainer form.registerForm .socialSignIn .altLink {
+.socialSignIn .altLink {
   display: none;
 }
 
 @media (max-width: 980px) {
-  .registerContainer form.registerForm .socialSignIn .altLink {
+  .socialSignIn .altLink {
     display: unset;
   }
 }
@@ -416,11 +611,13 @@ footer {
   font-family: "Cormorant Unicase", serif;
 }
 
-.section1, .section2, .section3 {
+.section1,
+.section2,
+.section3 {
   margin: auto;
   margin-bottom: 4rem;
-  height: 400px;
-  width: 80vw  !important;
+  height: auto;
+  width: 80vw !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,7 +633,24 @@ footer {
   font-family: "Montserrat", serif;
 }
 
-.section1 .left, .section1 .right, .section2 .left, .section2 .right, .section3 .left, .section3 .right {
+@media (max-width: 980px) {
+  .section1,
+  .section2,
+  .section3 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100vw;
+  }
+}
+
+.section1 .left,
+.section1 .right,
+.section2 .left,
+.section2 .right,
+.section3 .left,
+.section3 .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,25 +670,58 @@ footer {
   padding: 1rem;
 }
 
-.section1 .left h1, .section1 .right h1, .section2 .left h1, .section2 .right h1, .section3 .left h1, .section3 .right h1 {
+.section1 .left h1,
+.section1 .right h1,
+.section2 .left h1,
+.section2 .right h1,
+.section3 .left h1,
+.section3 .right h1 {
   font-family: "Cormorant Unicase", serif;
   color: #c7956d;
   margin-bottom: 1rem;
 }
 
-.section1 .cover1, .section2 .cover1, .section3 .cover1 {
+@media (max-width: 980px) {
+  .section1 .left,
+  .section1 .right,
+  .section2 .left,
+  .section2 .right,
+  .section3 .left,
+  .section3 .right {
+    width: 80vw;
+  }
+}
+
+.section1 .cover1,
+.section2 .cover1,
+.section3 .cover1 {
   background: url("../assets/ski-photo.png") center no-repeat;
   background-size: cover;
+  height: 40vh;
 }
 
-.section1 .cover2, .section2 .cover2, .section3 .cover2 {
+.section1 .cover2,
+.section2 .cover2,
+.section3 .cover2 {
   background: url("../assets/Paragliding_Feltre_331_MS_6142_cropped_1920x1080.webp") center no-repeat;
   background-size: cover;
+  height: 40vh;
 }
 
-.section1 .cover3, .section2 .cover3, .section3 .cover3 {
+.section1 .cover3,
+.section2 .cover3,
+.section3 .cover3 {
   background: url("../assets/annapurna_sanctuary_trek.jpg") center no-repeat;
   background-size: cover;
+  height: 40vh;
+}
+
+@media (max-width: 980px) {
+  .section1 .coverImg,
+  .section2 .coverImg,
+  .section3 .coverImg {
+    display: none;
+  }
 }
 
 .gallery {
@@ -513,6 +760,7 @@ footer {
 
 #footer {
   width: 100%;
+  margin-top: 0 !important;
   font-family: "Montserrat", serif;
 }
 
@@ -564,11 +812,36 @@ footer {
   border: 0;
 }
 
+.hero-section a.btn {
+  text-decoration: none;
+  background: #1e212d;
+  padding: 0.5rem 2rem .5rem 2rem;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+}
+
+.hero-section a.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+section.sportSlider {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+
 .sport-box {
   height: 400px;
   width: 400px;
   border-radius: 10px;
   color: white;
+  -webkit-box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3rem;
 }
 
 .sport-title {
@@ -577,12 +850,46 @@ footer {
   width: 100%;
   text-align: center;
   font-weight: 600;
-  font-size: 18px;
+  font-family: "Train One", cursive;
+  font-size: 1.6rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sport-title:hover {
+  cursor: pointer;
+  background: #151515;
+  color: #f8f1f1;
+  padding-left: 2rem;
 }
 
 .title-text {
   font-size: 24px;
   font-weight: 600;
+  color: #000;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Rajdhani", sans-serif;
 }
 
 .mt-20 {
@@ -621,23 +928,21 @@ footer {
 .title-underline {
   width: 100px;
   height: 3px;
-  background-color: #00B662;
+  background-color: #00b662;
   margin-top: 3px;
 }
 
 .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.183);
+  background-color: rgba(34, 15, 15, 0.183);
+  position: relative;
   position: relative;
   border-radius: 10px;
 }
 
 .bg {
   margin-top: 3rem;
-  background: #000;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   color: #fff;
   height: 110%;
   padding-bottom: 3rem !important;
@@ -755,5 +1060,779 @@ footer {
 
 .pay div p {
   color: white;
+}
+
+/***********PRODUCT PAGE STYLE***************/
+.sportDisplay {
+  padding: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  -ms-grid-columns: (minmax(45%, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+}
+
+@media (max-width: 980px) {
+  .sportDisplay {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .sportDisplay {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .sportDisplay {
+    padding: 0.1rem;
+  }
+}
+
+.sportDisplay .wrapper {
+  height: 420px;
+  width: 100%;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .wrapper {
+    height: 620px;
+  }
+}
+
+.sportDisplay .product-img {
+  float: left;
+  height: 420px;
+  width: 40%;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-img {
+    display: none;
+  }
+}
+
+.sportDisplay .product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-img img {
+    display: none;
+  }
+}
+
+.sportDisplay .product-info {
+  float: left;
+  height: 420px;
+  width: 60%;
+  border-radius: 0 7px 10px 0px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-info {
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+}
+
+.sportDisplay .product-info img {
+  border-radius: 7px 7px 0px 0;
+  display: none;
+  width: 100%;
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-info img {
+    display: block;
+  }
+}
+
+.sportDisplay .product-text {
+  height: 300px;
+  width: 100%;
+}
+
+.sportDisplay .product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 40px;
+  font-size: 34px;
+  color: #474747;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text h1 {
+    margin-left: 0.5rem;
+  }
+}
+
+.sportDisplay .product-text h1,
+.sportDisplay .product-price-btn p {
+  font-family: "Bentham", serif;
+}
+
+.sportDisplay .product-text h2 {
+  margin: 0 0 0.6rem 38px;
+  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text h2 {
+    margin-left: 0.5rem;
+  }
+}
+
+.sportDisplay .product-text p {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 0.6rem 0 38px;
+  font-family: "Playfair Display", serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+@media (max-width: 415px) {
+  .sportDisplay .product-text p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.sportDisplay .product-text p a {
+  color: #3f3b3b;
+  text-decoration: none;
+}
+
+.sportDisplay .product-text p a:hover {
+  color: #db4a39;
+}
+
+.sportDisplay .product-price-btn {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .sportDisplay .product-price-btn {
+    top: 150px;
+  }
+}
+
+.sportDisplay .product-price-btn p {
+  display: inline-block;
+  font-family: "Trocchi", serif;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #8f4f4f;
+}
+
+.sportDisplay span {
+  display: inline-block;
+  font-family: "Suranna", serif;
+  font-size: 1.3rem;
+}
+
+.sportDisplay .product-price-btn a {
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sportDisplay .product-price-btn a:hover {
+  background-color: #3f3b3b;
+}
+
+/**CSS FOR MODAL**/
+.pop-up-wrapper {
+  font-family: "Cormorant Unicase", serif;
+  -webkit-box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  position: fixed;
+}
+
+.pop-up-wrapper a {
+  color: #235ba8;
+  text-decoration: none;
+}
+
+.pop-up-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.pop-up-wrapper i {
+  font-size: 20px;
+}
+
+.pop-up-wrapper.active {
+  display: block;
+}
+
+.go-back {
+  cursor: pointer;
+}
+
+.pop-up-wrapper {
+  background-color: white;
+  display: none;
+  padding: 50px;
+  position: fixed;
+  top: 60px;
+  left: 30%;
+  width: auto;
+  z-index: 99;
+}
+
+.pop-up-wrapper a {
+  color: #235ba8;
+  text-decoration: none;
+}
+
+.pop-up-wrapper a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .pop-up-wrapper {
+    left: 2%;
+    position: absolute;
+  }
+}
+
+.product-details {
+  max-width: 600px;
+  margin: auto;
+}
+
+.product-left {
+  display: inline-block;
+  padding-right: 4%;
+  vertical-align: top;
+  width: 46%;
+}
+
+.product-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.product-bottom {
+  border-top: 1px solid #ccc;
+  position: relative;
+  padding-top: 20px;
+}
+
+@media (max-width: 650px) {
+  .product-left,
+  .product-right,
+  .product-bottom {
+    width: 100%;
+  }
+  .product-left {
+    padding-right: 0;
+  }
+  .product-info {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+  }
+  .product-image {
+    display: inline-block;
+    width: 39%;
+    vertical-align: top;
+  }
+}
+
+@media (max-width: 512px) {
+  .product-info,
+  .product-image {
+    width: 100%;
+  }
+}
+
+.product-manufacturer {
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: -2px;
+  margin-top: 1rem;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.product-price {
+  color: #222;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.product-price-cents {
+  text-decoration: underline;
+  vertical-align: top;
+  padding-left: 3px;
+}
+
+.product-image {
+  padding: 10px 10px 0 10px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 295px;
+}
+
+.product-description {
+  line-height: 1.5;
+  font-family: "Montserrat", serif;
+}
+
+.product-available {
+  margin-top: 25px;
+}
+
+.product-available a {
+  color: #1e212d;
+  text-decoration: none;
+}
+
+.product-rating {
+  margin-top: 25px;
+}
+
+i.fa-star {
+  color: #aaa;
+  display: inline-block;
+}
+
+i.fa-star.rating {
+  color: #e8d91f;
+}
+
+.product-rating-details {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+@media (max-width: 515px) {
+  .product-rating-details {
+    padding-left: 0;
+  }
+}
+
+.product-extended {
+  color: #235ba8;
+  padding-left: 5px;
+}
+
+.product-quantity {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.product-checkout {
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.product-checkout-actions {
+  position: absolute;
+  right: 0;
+}
+
+.product-checkout-total,
+.product-checkout-total-amount {
+  font-size: 20px;
+  color: #c17a41;
+}
+
+.product-checkout-total * {
+  display: inline-block;
+}
+
+.product-checkout-actions a {
+  color: white;
+  background-color: #f7451d;
+  border-radius: 10px;
+  padding: .5rem 1rem .5rem 1rem;
+}
+
+.product-checkout-actions a:hover {
+  background-color: #1e212d;
+  text-decoration: none;
+}
+
+/* 6. Components - buttons, menus, images, etc. */
+.product-quantity-label {
+  text-transform: uppercase;
+}
+
+.product-quantity * {
+  display: inline-block;
+}
+
+#product-quantity-input {
+  background-color: #eee;
+  border: none;
+  width: 2.5em;
+  text-align: center;
+}
+
+.product-quantity-subtract,
+.product-quantity-add {
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.product-quantity-subtract {
+  margin-right: 20px;
+}
+
+.wrapper-container {
+  width: 100%;
+  position: relative;
+}
+
+/****PRODUCT DISPLAY PAGE*******/
+.productDisplayContainer {
+  background: url(../assets/absBG.jpg);
+  background-size: cover;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 1rem 1.6rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+@media (max-width: 600px) {
+  .productDisplayContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.productDisplayContainer .imageGallery {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  width: 75%;
+  /* cell number */
+}
+
+@media (max-width: 980px) {
+  .productDisplayContainer .imageGallery {
+    width: 100%;
+  }
+}
+
+.productDisplayContainer .imageGallery .carousel {
+  background: #fafafa;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.productDisplayContainer .imageGallery .flickity-page-dots,
+.productDisplayContainer .imageGallery .flickity-button {
+  display: none;
+}
+
+.productDisplayContainer .imageGallery .carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+@media (max-width: 980px) {
+  .productDisplayContainer .imageGallery .carousel-cell {
+    height: 300px;
+  }
+}
+
+.productDisplayContainer .imageGallery .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell:before {
+  font-size: 50px;
+  line-height: 80px;
+}
+
+.productDisplayContainer .imageGallery .carousel-nav .carousel-cell.is-nav-selected {
+  background: #ed2;
+}
+
+.productDisplayContainer .productInfoSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDisplayContainer .productInfoSection .productInfo {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #01121398;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.4rem 1.5rem 1.4rem 1.5rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-family: 'Rajdhani', sans-serif;
+  row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.productDisplayContainer .productInfoSection .productInfo h1.title {
+  font-family: "Montserrat", serif;
+  font-size: 2rem;
+  color: #fdffbc;
+  border-radius: 15px;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .productInfoGrid {
+  row-gap: 1rem;
+  color: #d3e0ea;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .productInfoGrid i {
+  color: #fdffbc;
+}
+
+.productDisplayContainer .productInfoSection .productInfo .price {
+  font-size: 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: #c39e5c;
+}
+
+.productDisplayContainer .productInfoSection .productInfo hr {
+  width: 100%;
+  height: 3px;
+  border-color: #fdffbc;
+}
+
+.productDisplayContainer form {
+  font-family: 'Rajdhani', sans-serif;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #01121398;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  border: 2px solid #aaaaaa;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: .6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productDisplayContainer form h2 {
+  color: #fdffbc;
+  font-family: "Montserrat", serif;
+}
+
+.productDisplayContainer form .form-group {
+  width: 100%;
+}
+
+.productDisplayContainer form .form-group select {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  padding: .3rem 1rem .3rem 1rem;
+  width: 100%;
+  min-height: 2.2rem;
+  border: 3px solid #fff;
+  color: #171717;
+  border: 1.5px solid #cde3e497;
+  border-radius: 5px;
+  color: #171717;
+}
+
+.productDisplayContainer form .form-group select:focus {
+  border: 0;
+}
+
+.productDisplayContainer form .form-group select option {
+  font-family: 'Rajdhani', sans-serif;
+  background: #cde3e497;
+}
+
+.productDisplayContainer form a {
+  text-decoration: none;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  background: #96bb7c;
+  border-radius: 5px;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.productDisplayContainer form a:hover {
+  background: #1a1c20;
 }
 /*# sourceMappingURL=main.css.map */
