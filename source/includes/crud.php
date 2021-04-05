@@ -67,6 +67,19 @@
      
          }
 
+       
+
+         public function fetch_datas_with_column($table_name, $column_name, $id) {
+                $sql = "SELECT * FROM $table_name WHERE $column_name = '$id'";
+            $query = $this->connection->query($sql);
+      
+         
+            while($row = mysqli_fetch_assoc($query)){
+                $array[] = $row;
+            }
+            return $array;
+         }
+
      }
 
 

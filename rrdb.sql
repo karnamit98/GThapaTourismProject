@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 12:57 PM
+-- Generation Time: Apr 05, 2021 at 06:47 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -31,7 +31,8 @@ CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `sport_detail_id` int(11) NOT NULL,
-  `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `no_of_people` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

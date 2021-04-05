@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,500;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"); //font-family: 'Rajdhani', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap'); //font-family: 'Play', sans-serif
 /************* RESPONSIVE BREAKPOINTS *************/
 @mixin respond($breakpoint) {
   @if ($breakpoint == medium) {
@@ -60,13 +61,24 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   // background-color: darkgrey;
-  background-color: #734046;
+  background-color: #e2703a;
   outline: 1px solid #2c061f;
   border-radius: 1rem !important;
   border: 0;
   padding: 0 0.3rem 0 0.3rem;
 }
 
+h1.errorLoadingPage{
+ // margin:1.5rem;
+  height:50vh;
+  @include displayFlexCenter();
+  background-image:linear-gradient(to bottom right, #870000,#190a05);
+  color: #eff8ff;
+  font-family: 'Play', sans-serif;
+  margin-bottom:5rem;
+  box-shadow: inset 1px -7px 62px 3px rgba(0,0,0,1);
+  i{color:#ffd66b;margin-right: 1.2rem;}
+}
 a,
 button {
   transition: all 0.4s ease;
@@ -455,7 +467,7 @@ $fgColor: #000;
   @include displayFlexCenter();
 }
 
-.socialSignIn {
+.socialSignIn { margin-bottom: 20px;
   //border:1px solid red;background:green;
   @include displayFlexCenter();
   //flex-direction: column;
@@ -1309,12 +1321,15 @@ i.fa-star.rating {
   position: relative;
 }
 
-/****PRODUCT DISPLAY PAGE*******/
+/****SPORT DISPLAY PAGE*******/
+
+
+
 .productDisplayContainer {
   //background:#171717;
   //height:90vh;
   // color: #fff;
-  background: url(../assets/absBG.jpg);
+   background: url(../assets/absBG.jpg);
   background-size: cover;
   height: fit-content;
   min-height: 100vh;
@@ -1329,6 +1344,8 @@ i.fa-star.rating {
 
   //  justify-content: flex-start !important;
   align-items: flex-start !important;
+
+
   .imageGallery {
     padding: 1rem;
     //background: yellow;
@@ -1375,7 +1392,7 @@ i.fa-star.rating {
       font-size: 80px;
       color: white;
     }
-
+.carousel-nav{ background: transparent !important;}
     .carousel-nav .carousel-cell {
       height: 80px;
       width: 100px;
@@ -1416,6 +1433,7 @@ i.fa-star.rating {
         color: #fdffbc;
         //border-bottom: 2.5px solid #5a5b5a;
         border-radius: 15px;
+      
       }
       .product-description {
       }
@@ -1499,17 +1517,263 @@ i.fa-star.rating {
       }
     }
 
-    a {
+    button[type=submit] {
       text-decoration: none;
       padding: 0.5rem 1.5rem 0.5rem 1.5rem;
       //background:#f9813a;
       background: #96bb7c;
       border-radius: 5px;
+      border:0;
       margin-top: 2rem;
       color: #fff;
       &:hover {
+        cursor: pointer;
         background: #1a1c20;
       }
     }
   }
+}
+
+/*****SPORT DETAIL PAGE******/ 
+.titleMain{
+  text-align: center;
+   margin:auto;
+   font-family: "Cormorant Unicase", serif;
+   background:#351f39;
+  //background-image: linear-gradient(to right, #312c51,  #000);
+   padding-top:1.2rem !important;
+   padding-bottom: 1.2rem !important;
+   color:#ffe227;
+   width: 100%;box-shadow: inset 1px -7px 62px 3px rgba(0,0,0,0.75);
+ }
+.sportDetailPageContainer{ 
+  @include displayFlexCenter();
+  flex-direction:column;
+  .header{
+  @include displayFlexCenter(); align-items: flex-start;
+  @include respond(medium) {flex-direction: column;}
+  background:transparent;
+  .imageGallery {//box-shadow: inset 1px -7px 62px 3px rgba(0,0,0,0.75); 
+    @include respond(medium) {width:100%;}
+    //margin: auto;
+    //background: #351f39;
+    //background-image: linear-gradient(to right, #312c51,   #000);
+    height: 100%;
+   // width: 100%;
+   padding: 10px;
+
+    //border-radius: 5px;
+    @include respond(medium) {
+      width: 100%;
+    }
+    // @include respond(small) {height:300px;}
+
+    width: 55%;
+    // margin: 20px auto;
+    .carousel {
+      background: rgba(0, 0, 0, 0);
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .flickity-page-dots,
+    .flickity-button {
+      display: none;
+    }
+
+    .carousel-cell {
+      width: 100%;
+      //height: 300px;
+      //height:260px;
+      height: 450px;
+      @include respond(medium) {
+        height: 300px;
+      }
+      margin-right: 10px;
+      background: #8c8;
+      border-radius: 5px;box-shadow: inset 1px -7px 62px 3px rgba(0,0,0,0.75);
+    }
+
+    /* cell number */
+    .carousel-cell:before {
+      display: block;
+      text-align: center;
+      line-height: 200px;
+      font-size: 80px;
+      color: white;
+    }
+.carousel-nav{ background: transparent !important;}
+    .carousel-nav .carousel-cell {
+      height: 80px;
+      width: 100px;
+    }
+
+    .carousel-nav .carousel-cell:before {
+      font-size: 50px;
+      line-height: 80px;
+    }
+
+    .carousel-nav .carousel-cell.is-nav-selected {
+      background: #ed2;
+    }
+  }
+
+  .productInfoSection{
+    width:45%;height: 100% !important; padding:1rem;
+    @include respond(medium) {width:100%;}
+    //background-image: linear-gradient(to right, #312c51,   #000);color:#fff;
+    //box-shadow: 1px 9px 44px -11px rgba(0,0,0,0.63);
+    margin-top:.5rem;margin-right: 1rem;
+   @include glassmorphism(2px,4px );
+    padding-top:0;
+    .productInfo {
+     // @include glassmorphism(5px, 4px);
+      //background: #01121398;
+     // color: #fff;
+      height: 100%;
+      width: 100%;
+      border: 0;
+      @include displayFlexCenter();
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0rem 1.5rem 1.4rem 1.5rem;
+      justify-content: flex-start;
+      font-family: "Rajdhani", sans-serif;
+      row-gap: 1rem;
+      margin-top: 1rem;
+      h1.title {
+        //font-family: "Cormorant Unicase", serif;
+        font-family: "Montserrat", serif;
+        font-size: 2rem;
+        color: #005086;
+        //border-bottom: 2.5px solid #5a5b5a;
+        //border-radius: 15px;
+        //background:#351f39;
+      }
+      .product-description {
+      }
+
+      .productInfoGrid {
+        //background:black;
+        i {
+          color: #351f39;
+        }
+        row-gap: 1rem;
+        //color: #d3e0ea;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-family: "Rajdhani", sans-serif;
+        color: #351f39;
+        // position:relative;
+        // left:-40%;
+        @include respond(medium) {
+        }
+      }
+      hr {
+        width: 100%;
+        height: 3px;
+        border-color: #351f39;
+      }
+    }
+  }
+
+} //header
+
+.bookingForm{
+  @include displayFlexCenter();
+ flex-direction: column;
+  background:#1a1a2e;
+  width:100%;
+  //height: fit-content;
+  padding:1rem 1rem 1rem 2rem;
+  //margin:auto;
+  margin-bottom: 2rem;
+  margin-top:2rem;
+  color:#fff;
+  h1{
+    color:#f8f1f1;
+    text-align: center;
+    font-family:  "Rajdhani", serif;
+    font-size: 2.3rem;
+    font-weight: lighter;
+  }
+  form{
+   // height: 10rem;
+    //width:300px;
+    padding:1.5rem;
+  //  background:#00acee;
+    //max-width: 400px;
+    // border:2px solid #ffcb8e;
+
+   @include displayFlexCenter(); column-gap: 1rem;
+  @include respond(medium){flex-direction: column;}
+  // flex-direction: column;
+  .formGroup{
+    padding:1rem;
+    border:2px solid #ffcb8e;  @include displayFlexCenter();flex-direction:column;
+    label{padding:1rem; font-family: "Rajdhani", serif;font-size: 1.7rem;}
+    i{font-size: 2rem; //box-shadow: 1px 23px 44px -11px rgba(0,0,0,0.63);
+    }
+    input[type="date"] {
+        position: relative;
+        border:0;
+        width:11rem;
+        height:2.2rem;
+        font-size: 2rem;
+        padding:.6rem .3rem .6rem .5rem;
+        font-family:  "Rajdhani", serif; //box-shadow: inset 14px -15px 24px -17px rgba(0,0,0,0.63);
+    }
+
+    select{
+      width:11rem;
+      height:2.2rem; //box-shadow: inset 14px -15px 24px -17px rgba(0,0,0,0.63);
+      option{height: 2.2rem;}font-size: 1.6rem;padding-left: 1rem;
+      font-family:  "Rajdhani", serif; 
+    }
+  }
+  /* create a new arrow, because we are going to mess up the native one
+  see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
+  input[type="date"]:after {
+      //content: "\25BC"; 
+      //content:"\0xF0";
+      color: #555;
+      padding: 0 5px;
+  }
+  
+  /* change color of symbol on hover */
+  input[type="date"]:hover:after {
+      color: #bf1400;
+  }
+  
+  /* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+  input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      color: transparent;
+      background: transparent;
+  }
+  
+  /* adjust increase/decrease button */
+  input[type="date"]::-webkit-inner-spin-button {
+      z-index: 1;
+  }
+  
+   /* adjust clear button */
+   input[type="date"]::-webkit-clear-button {
+       z-index: 1;
+   }
+
+  }
+
+}
+
 }

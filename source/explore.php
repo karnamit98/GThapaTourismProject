@@ -6,7 +6,7 @@
 
         <?php 
             $sports = $crud->fetch_all_table_data('sport');
-
+          //  print_r($sports);
             foreach($sports as $sport) {
                 ?>
 
