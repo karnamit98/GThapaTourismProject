@@ -70,3 +70,7 @@ if(isset($_GET['logout'])) {
     header('location: index.php');
 
 }
+
+if(isset($_POST['booking_chechout'])) {
+    
+}

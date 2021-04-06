@@ -49,12 +49,18 @@
          public function fetch_data_with_id($table_name, $column_name, $id) {
 
             $sql = "SELECT * FROM $table_name WHERE $column_name = '$id'";
+
             $query = $this->connection->query($sql);
+            if($query){
+                $row = $query->fetch_array();
+                return $row;
+            }
+            else 
+            echo "Invalid sql ".$sql;
+
       
-            $row = $query->fetch_array();
-     
-            return $row;      
          }
+
 
          public function fetch_all_table_data($table_name) {
             $sql = "SELECT * FROM $table_name";
