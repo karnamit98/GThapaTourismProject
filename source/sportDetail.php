@@ -81,17 +81,15 @@
             <div class="formGroup">
                 <i class="fas fa-calendar-alt"></i>
                 <label for="bookingDate"> Pick a Date </label>
-                <input id="bookingDate"type="date" name="bookingDate" min="<?php echo date('Y-m-d',strtotime('+1 day')) ; ?>" onkeydown="return false" max="<?php echo date('Y-m-d',strtotime('+14 day'));?>" required/>
-                <button  name="submit_date" onclick="dateform()">Submit</button>
+                <input id="bookingDate"type="date" onchange="dateform(<?php echo $sport_detail_Id;?>)" name="bookingDate" min="<?php echo date('Y-m-d',strtotime('+1 day')) ; ?>" onkeydown="return false" max="<?php echo date('Y-m-d',strtotime('+14 day'));?>" required/>
+                <button  name="submit_date" >Submit</button>
             </div>
 
         </form>
 
-        <?php
-        // if(isset($_POST["submit_date"])) {
-            ?>
-            <!--Booking Form--> 
-            <div  class="bookingForm displayNone" id="bookingForm">
+
+
+        <div  class="bookingForm" id="bookingForm">
                     <h1>Reserve a slot and date </h1>
                 <form name = form1 action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="GET" enctype="multipart/formdata">
                     <!-- <span>&#128197;</span> -->
@@ -104,29 +102,18 @@
                     <div class="formGroup">
                     <i class="fas fa-layer-group"></i>
                         <label for="slotSchedule">Select Your Schedule</label>
-
-                            <?php
-                            $total_schedule = $sport_detail['total_slots'];
-                            $starting_time = new DateTime($sport_detail['opening_time']);
-                            $closing_time = new DateTime($sport_detail['closing_time']);
-                            $duration = $sport_detail['slot_duration'];
-                            $max = 3;
-
-                            for($i = 0; $i < $total_schedule; $i++) {
-
-                                ?>
-                            
-                            <input type="checkbox" name=ckb onclick='chkcontrol(<?php echo $i;?>, <?php echo $max; ?>)'style="padding:5px 10px;"/><?php echo $starting_time->format('h:i') . ' - '. $starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i'); ?><br>
-                                <?php
-                                if($starting_time->format('h:i') == $closing_time->format('h:i')) break;
-                            }
-                            ?>
-
+                        <div id="sportBookingForm"> </div>
                     </div>
                     <button type="submit" name="booking_checkout">Submit</button>
 
                 </form>
             </div>
+
+        <?php
+        // if(isset($_POST["submit_date"])) {
+            ?>
+            <!--Booking Form--> 
+
         </div>
             <?php
         }
@@ -136,15 +123,16 @@
 
 <script type="text/javascript">
 
-function dateform() {
-    var bookingForm = document.getElementById('bookingForm');
+function dateform(sport_detail_id) {
+    // var bookingForm = document.getElementById('bookingForm');
     var bookingDate = document.getElementById('bookingDate');
     var current_date = new Date();
     var selected_date = new Date(bookingDate.value);
 
     if(current_date < selected_date){
 
-        bookingForm.classList.remove("displayNone");
+        // bookingForm.classList.remove("displayNone");
+        showCustomer(bookingDate.value, sport_detail_id)
     }
 
 
@@ -166,6 +154,19 @@ function chkcontrol(j, max) {
         }
     }
 } 
+
+function showCustomer(date, id) {
+  var xhttp;  
+
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("sportBookingForm").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
+  xhttp.send();
+}
 </script>
 
 <?php include_once 'footer.php'; ?>

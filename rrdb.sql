@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 06:47 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Apr 07, 2021 at 09:14 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,30 @@ CREATE TABLE `booking` (
   `user_id` int(11) NOT NULL,
   `sport_detail_id` int(11) NOT NULL,
   `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `no_of_people` int(11) NOT NULL
+  `price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date`, `price`) VALUES
+(1, 3, 1, '2021-04-06 21:50:24', 30),
+(2, 2, 2, '2021-04-06 21:50:24', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `booking_detail`
+-- (See below for the actual view)
+--
+CREATE TABLE `booking_detail` (
+`booking_id` int(11)
+,`sport_detail_id` int(11)
+,`start_time` timestamp
+,`end_time` timestamp
+,`slot_date` date
+);
 
 -- --------------------------------------------------------
 
@@ -74,8 +96,18 @@ CREATE TABLE `slot` (
   `slot_id` int(11) NOT NULL,
   `start_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `end_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `slot_date` date NOT NULL,
   `booking_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slot`
+--
+
+INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `slot_date`, `booking_id`) VALUES
+(1, '2021-04-07 01:15:00', '2021-04-07 01:25:00', '2021-04-09', 1),
+(2, '2021-04-07 01:15:00', '2021-04-07 01:25:00', '2021-04-09', 2),
+(3, '2021-04-07 01:25:00', '2021-04-07 01:35:00', '2021-04-09', 1);
 
 -- --------------------------------------------------------
 
@@ -151,6 +183,35 @@ INSERT INTO `sport_detail` (`sport_detail_id`, `location_id`, `sport_id`, `name`
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `sport_detail_ko_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `sport_detail_ko_view` (
+`name` varchar(255)
+,`price` double
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `sport_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `sport_view` (
+`sport_detail_id` int(11)
+,`name` varchar(255)
+,`price` double
+,`opening_time` time
+,`closing_time` time
+,`slot_duration` int(11)
+,`total_slots` int(11)
+,`max_slot_capacity` int(11)
+,`location` varchar(255)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -173,6 +234,33 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `password`, `role`, `status`) VALUES
 (2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 0),
 (3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `booking_detail`
+--
+DROP TABLE IF EXISTS `booking_detail`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `booking_detail`  AS SELECT `booking`.`booking_id` AS `booking_id`, `booking`.`sport_detail_id` AS `sport_detail_id`, `slot`.`start_time` AS `start_time`, `slot`.`end_time` AS `end_time`, `slot`.`slot_date` AS `slot_date` FROM (`slot` join `booking`) WHERE `booking`.`booking_id` = `slot`.`booking_id` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `sport_detail_ko_view`
+--
+DROP TABLE IF EXISTS `sport_detail_ko_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sport_detail_ko_view`  AS SELECT `sport`.`name` AS `name`, `sport`.`price` AS `price` FROM (`sport` join `sport_detail`) WHERE `sport`.`sport_id` = `sport_detail`.`sport_id` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `sport_view`
+--
+DROP TABLE IF EXISTS `sport_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sport_view`  AS SELECT `sd`.`sport_detail_id` AS `sport_detail_id`, `sd`.`name` AS `name`, `s`.`price` AS `price`, `s`.`opening_time` AS `opening_time`, `s`.`closing_time` AS `closing_time`, `s`.`slot_duration` AS `slot_duration`, `s`.`total_slots` AS `total_slots`, `s`.`max_slot_capacity` AS `max_slot_capacity`, `l`.`location` AS `location` FROM ((`sport_detail` `sd` join `sport` `s`) join `location` `l`) WHERE `sd`.`sport_id` = `s`.`sport_id` AND `sd`.`location_id` = `l`.`location_id` ;
 
 --
 -- Indexes for dumped tables
@@ -227,7 +315,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -239,7 +327,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sport`
