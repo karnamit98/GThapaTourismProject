@@ -1,5 +1,24 @@
-<?php include_once "header.php"; ?>
-    <div class="paymentContainer">
+<?php include_once "header.php";
+if(!isset($_SESSION['user'])) header('Location: login.php');
+
+if(isset($_POST['bookingConfirmation'])) {
+    $date = $_POST['bookingDate'];
+    $checkedBox = $_POST['ckb'];
+    echo nl2br(" date : ".$date . "\n quantity:  ". 
+    count($checkedBox). "\n sport_detail_id:  ".
+    $_SESSION["sport_detail_id"] . "\n user_id:  ". $_SESSION['user']);
+
+    $user_details = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
+    echo nl2br("\nUsername: ".$user_details['name']);
+    echo nl2br("\nStart time and end time of all check boxes just add duration to get the end time");
+    foreach($checkedBox as $checked) {
+         echo "<br> start time : ".$checked;
+    }
+
+
+}
+?>
+<div class="paymentContainer">
     <div class="receipt">
     <h1 style="color:#669b7c">Your Payment was successful</h1>
     <div class="payments m-20">

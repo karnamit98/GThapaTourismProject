@@ -1796,5 +1796,169 @@ i.fa-star.rating {
 }
 
 .sportDetailPageContainer .displayNone {
-  display: none;
+  display: none !important;
+}
+
+.sportDetailPageContainer .bookingForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #1a1a2e;
+  width: 100%;
+  padding: 1rem 1rem 1rem 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.sportDetailPageContainer .bookingForm h1 {
+  color: #f8f1f1;
+  text-align: center;
+  font-family: "Rajdhani", serif;
+  font-size: 2.3rem;
+  font-weight: lighter;
+}
+
+.sportDetailPageContainer .bookingForm form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.6rem;
+  /* create a new arrow, because we are going to mess up the native one
+    see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
+  /* change color of symbol on hover */
+  /* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+  /* adjust increase/decrease button */
+  /* adjust clear button */
+  width: 100%;
+}
+
+.sportDetailPageContainer .bookingForm form .btnSheduleSubmit {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0;
+  border-radius: 5px;
+  background: #f9813a;
+  color: #fff;
+  font-family: "Rajdhani", serif;
+  font-size: 1.2rem;
+}
+
+.sportDetailPageContainer .bookingForm form .btnSheduleSubmit:hover {
+  background: #6886c5;
+  cursor: pointer;
+  transform: translateY(-0.4rem);
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup {
+  margin: 1rem;
+  padding: 1rem;
+  width: fit-content;
+  border: 2px solid #ffcb8e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup label {
+  padding: 1rem;
+  font-family: "Rajdhani", serif;
+  font-size: 1.7rem;
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup i {
+  font-size: 2rem;
+  color: #d1c145;
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup input[type="date"] {
+  position: relative;
+  border: 0;
+  width: 11rem;
+  height: 2.2rem;
+  font-size: 2rem;
+  padding: 0.6rem 0.3rem 0.6rem 0.5rem;
+  font-family: "Rajdhani", serif;
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup select {
+  width: 11rem;
+  height: 2.2rem;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  font-family: "Rajdhani", serif;
+}
+
+.sportDetailPageContainer .bookingForm form .formGroup select option {
+  height: 2.2rem;
+}
+
+.sportDetailPageContainer .bookingForm form input[type="date"]:after {
+  color: #555;
+  padding: 0 5px;
+}
+
+.sportDetailPageContainer .bookingForm form input[type="date"]:hover:after {
+  color: #bf1400;
+}
+
+.sportDetailPageContainer .bookingForm form input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+.sportDetailPageContainer .bookingForm form input[type="date"]::-webkit-inner-spin-button {
+  z-index: 1;
+}
+
+.sportDetailPageContainer .bookingForm form input[type="date"]::-webkit-clear-button {
+  z-index: 1;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect {
+  width: 98%;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection {
+  width: 98% !important;
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  row-gap: 1rem;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection .sheduleCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.6rem;
+  padding: 1rem;
+  box-shadow: inset -3px -2px 45px -2px rgba(0, 0, 0, 0.75);
+  background: #54e346;
+  color: #fff;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection .sheduleCheckbox input[type="checkbox"] {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection .sheduleCheckbox input[type="checkbox"]:checked {
+  color: #f00;
+  font-style: normal;
+  background: #000;
+}
+
+.sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection .sheduleCheckboxDisabled {
+  background: #f05945;
+  color: #fff;
 }

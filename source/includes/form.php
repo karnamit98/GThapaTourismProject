@@ -71,6 +71,3 @@ if(isset($_GET['logout'])) {
 
 }
 
-if(isset($_POST['booking_chechout'])) {
-    
-}

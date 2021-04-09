@@ -76,38 +76,32 @@
 
             
         </div>
-        </div><!--Header--> 
-        <form   onsubmit="event.preventDefault();" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="POST" enctype="multipart/formdata">
-            <div class="formGroup">
-                <i class="fas fa-calendar-alt"></i>
-                <label for="bookingDate"> Pick a Date </label>
-                <input id="bookingDate"type="date" onchange="dateform(<?php echo $sport_detail_Id;?>)" name="bookingDate" min="<?php echo date('Y-m-d',strtotime('+1 day')) ; ?>" onkeydown="return false" max="<?php echo date('Y-m-d',strtotime('+14 day'));?>" required/>
-                <button  name="submit_date" >Submit</button>
-            </div>
-
-        </form>
-
-
+        </div>
 
         <div  class="bookingForm" id="bookingForm">
                     <h1>Reserve a slot and date </h1>
-                <form name = form1 action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="GET" enctype="multipart/formdata">
-                    <!-- <span>&#128197;</span> -->
+                <form method="POST" name = form1 action='paymentConfirmation.php' enctype="multipart/formdata">
+
                     <div class="formGroup">
                         <i class="fas fa-calendar-alt"></i>
                         <label for="bookingDate"> Pick a Date </label>
-                        <input type="date" name="bookingDate" min="<?php echo date('Y-m-d',strtotime('+1 day')) ; ?>" onkeydown="return false" max="<?php echo date('Y-m-d',strtotime('+14 day'));?>" />
+                        <input id="bookingDate"type="date" onchange="dateform(<?php echo $sport_detail_Id;?>)" name="bookingDate" min="<?php echo date('Y-m-d',strtotime('+1 day')) ; ?>" onkeydown="return false" max="<?php echo date('Y-m-d',strtotime('+14 day'));?>" required/>
+                        <!-- <button  name="submit_date" >Submit</button> -->
                     </div>
 
-                    <div class="formGroup">
-                    <i class="fas fa-layer-group"></i>
-                        <label for="slotSchedule">Select Your Schedule</label>
-                        <div id="sportBookingForm"> </div>
+                    <div class="formGroup sheduleSelect displayNone" id="sheduleSelect">
+                    <i class="far fa-clock"></i>
+                        <label for="slotSchedule">Select Your Schedules/Slots</label>
+                        <div id="sportBookingForm" class="sheduleSelection"> </div>
                     </div>
-                    <button type="submit" name="booking_checkout">Submit</button>
+
+
+                    <button type="submit" name="bookingConfirmation" class=" displayNone btnSheduleSubmit" id="btnSheduleSubmit">Proceed to Payment</button>
 
                 </form>
             </div>
+
+
 
         <?php
         // if(isset($_POST["submit_date"])) {
@@ -126,13 +120,18 @@
 function dateform(sport_detail_id) {
     // var bookingForm = document.getElementById('bookingForm');
     var bookingDate = document.getElementById('bookingDate');
+    var sheduleSelect = document.getElementById('sheduleSelect');
+    var btnSheduleSubmit = document.getElementById('btnSheduleSubmit');
     var current_date = new Date();
     var selected_date = new Date(bookingDate.value);
 
     if(current_date < selected_date){
-
+        sheduleSelect.classList.remove('displayNone');
+        btnSheduleSubmit.classList.remove('displayNone');
         // bookingForm.classList.remove("displayNone");
-        showCustomer(bookingDate.value, sport_detail_id)
+        showSchedule(bookingDate.value, sport_detail_id);
+
+       // window.scroll(0, 400);
     }
 
 
@@ -141,7 +140,7 @@ function dateform(sport_detail_id) {
 }
 
 function chkcontrol(j, max) {
-    console.log("hello");
+    console.log(document.form1.ckb[j].value);
     var total=0;
     for(var i=0; i < document.form1.ckb.length; i++){
         if(document.form1.ckb[i].checked){
@@ -155,7 +154,7 @@ function chkcontrol(j, max) {
     }
 } 
 
-function showCustomer(date, id) {
+function showSchedule(date, id) {
   var xhttp;  
 
   xhttp = new XMLHttpRequest();
@@ -166,6 +165,19 @@ function showCustomer(date, id) {
   };
   xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
   xhttp.send();
+}
+
+function showNumberOFPeople(id, start_time, date) {
+    var xhttp;  
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("sportBookingForm").innerHTML = this.responseText;
+    }
+    };
+    xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
+    xhttp.send();
 }
 </script>
 

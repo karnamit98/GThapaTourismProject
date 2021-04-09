@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2021 at 09:14 AM
+-- Generation Time: Apr 09, 2021 at 02:14 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `booked_slot`
+--
+
+CREATE TABLE `booked_slot` (
+  `slot_id` int(11) NOT NULL,
+  `booking_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booked_slot`
+--
+
+INSERT INTO `booked_slot` (`slot_id`, `booking_id`) VALUES
+(1, 1),
+(2, 2),
+(4, 4),
+(3, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `booking`
 --
 
@@ -32,16 +53,19 @@ CREATE TABLE `booking` (
   `user_id` int(11) NOT NULL,
   `sport_detail_id` int(11) NOT NULL,
   `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `price` double NOT NULL
+  `price` double NOT NULL,
+  `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date`, `price`) VALUES
-(1, 3, 1, '2021-04-06 21:50:24', 30),
-(2, 2, 2, '2021-04-06 21:50:24', 20);
+INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date`, `price`, `quantity`) VALUES
+(1, 3, 1, '2021-04-08 18:34:49', 30, 1),
+(2, 2, 2, '2021-04-08 18:34:51', 20, 1),
+(3, 3, 8, '2021-04-08 18:34:59', 5000, 3),
+(4, 2, 8, '2021-04-08 18:35:09', 5000, 6);
 
 -- --------------------------------------------------------
 
@@ -52,8 +76,11 @@ INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date
 CREATE TABLE `booking_detail` (
 `booking_id` int(11)
 ,`sport_detail_id` int(11)
+,`slot_id` int(11)
+,`name` varchar(255)
 ,`start_time` timestamp
-,`end_time` timestamp
+,`number_of_people` int(11)
+,`quantity` int(11)
 ,`slot_date` date
 );
 
@@ -96,18 +123,19 @@ CREATE TABLE `slot` (
   `slot_id` int(11) NOT NULL,
   `start_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `end_time` timestamp NOT NULL DEFAULT current_timestamp(),
-  `slot_date` date NOT NULL,
-  `booking_id` int(11) NOT NULL
+  `number_of_people` int(11) DEFAULT NULL,
+  `slot_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `slot`
 --
 
-INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `slot_date`, `booking_id`) VALUES
-(1, '2021-04-07 01:15:00', '2021-04-07 01:25:00', '2021-04-09', 1),
-(2, '2021-04-07 01:15:00', '2021-04-07 01:25:00', '2021-04-09', 2),
-(3, '2021-04-07 01:25:00', '2021-04-07 01:35:00', '2021-04-09', 1);
+INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `number_of_people`, `slot_date`) VALUES
+(1, '2021-04-09 01:15:00', '2021-04-07 01:25:00', 0, '2021-04-09'),
+(2, '2021-04-09 01:15:00', '2021-04-07 01:25:00', 0, '2021-04-09'),
+(3, '2021-04-09 03:15:00', '2021-04-09 09:15:00', 47, '2021-04-12'),
+(4, '2021-04-09 03:30:00', '2021-04-09 03:45:00', 44, '2021-04-13');
 
 -- --------------------------------------------------------
 
@@ -242,7 +270,7 @@ INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `
 --
 DROP TABLE IF EXISTS `booking_detail`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `booking_detail`  AS SELECT `booking`.`booking_id` AS `booking_id`, `booking`.`sport_detail_id` AS `sport_detail_id`, `slot`.`start_time` AS `start_time`, `slot`.`end_time` AS `end_time`, `slot`.`slot_date` AS `slot_date` FROM (`slot` join `booking`) WHERE `booking`.`booking_id` = `slot`.`booking_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `booking_detail`  AS SELECT `booking`.`booking_id` AS `booking_id`, `booking`.`sport_detail_id` AS `sport_detail_id`, `slot`.`slot_id` AS `slot_id`, `sport_detail`.`name` AS `name`, `slot`.`start_time` AS `start_time`, `slot`.`number_of_people` AS `number_of_people`, `booking`.`quantity` AS `quantity`, `slot`.`slot_date` AS `slot_date` FROM (((`slot` join `booked_slot`) join `booking`) join `sport_detail`) WHERE `sport_detail`.`sport_detail_id` = `booking`.`sport_detail_id` AND `booking`.`booking_id` = `booked_slot`.`booking_id` AND `booked_slot`.`slot_id` = `slot`.`slot_id` ;
 
 -- --------------------------------------------------------
 
@@ -284,8 +312,7 @@ ALTER TABLE `location`
 -- Indexes for table `slot`
 --
 ALTER TABLE `slot`
-  ADD PRIMARY KEY (`slot_id`),
-  ADD KEY `ForeignKeyBookingId` (`booking_id`);
+  ADD PRIMARY KEY (`slot_id`);
 
 --
 -- Indexes for table `sport`
@@ -315,7 +342,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -327,7 +354,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sport`
