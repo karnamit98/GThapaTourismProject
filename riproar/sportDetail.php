@@ -90,12 +90,13 @@
                     </div>
 
                     <div class="formGroup sheduleSelect displayNone" id="sheduleSelect">
+                    
                     <i class="far fa-clock"></i>
                         <label for="slotSchedule">Select Your Schedules/Slots</label>
                         <div id="sportBookingForm" class="sheduleSelection"> </div>
                     </div>
 
-
+                    <div id="checkboxError"class="error_msg displayNone"><i class="fas fa-exclamation-triangle"></i> &nbsp;No schedule selected.</div>
                     <button type="submit" name="bookingConfirmation" class=" displayNone btnSheduleSubmit" id="btnSheduleSubmit">Proceed to Payment</button>
 
                 </form>
@@ -117,69 +118,111 @@
 
 <script type="text/javascript">
 
-function dateform(sport_detail_id) {
-    // var bookingForm = document.getElementById('bookingForm');
-    var bookingDate = document.getElementById('bookingDate');
-    var sheduleSelect = document.getElementById('sheduleSelect');
-    var btnSheduleSubmit = document.getElementById('btnSheduleSubmit');
-    var current_date = new Date();
-    var selected_date = new Date(bookingDate.value);
+    function dateform(sport_detail_id) {
+        // var bookingForm = document.getElementById('bookingForm');
+        var bookingDate = document.getElementById('bookingDate');
+        var sheduleSelect = document.getElementById('sheduleSelect');
+        var btnSheduleSubmit = document.getElementById('btnSheduleSubmit');
+        var current_date = new Date();
+        var selected_date = new Date(bookingDate.value);
 
-    if(current_date < selected_date){
-        sheduleSelect.classList.remove('displayNone');
-        btnSheduleSubmit.classList.remove('displayNone');
-        // bookingForm.classList.remove("displayNone");
-        showSchedule(bookingDate.value, sport_detail_id);
+        if(current_date < selected_date){
+            sheduleSelect.classList.remove('displayNone');
+            btnSheduleSubmit.classList.remove('displayNone');
+            // bookingForm.classList.remove("displayNone");
+            showSchedule(bookingDate.value, sport_detail_id);
 
-       // window.scroll(0, 400);
-    }
-
-
-    console.log(bookingDate.value);
-    console.log("hlw");
-}
-
-function chkcontrol(chkbox) {
-    var total=0;
-    allCheckbox = document.getElementsByClassName('multiSelect');
-    
-    for(var i=0; i < allCheckbox.length; i++){
-        if(allCheckbox[i].checked) { 
-            total++;
-            console.log(total);
+        // window.scroll(0, 400);
         }
+
+
+        console.log(bookingDate.value);
+        console.log("hlw");
     }
 
-    if(total > 1)
-    chkbox.checked = false;
+    function chkcontrol(chkbox, max_amount) {
+        var total=0;
+        allCheckbox = document.getElementsByClassName('multiSelect');
+        
+        for(var i=0; i < allCheckbox.length; i++){
+            if(allCheckbox[i].checked) { 
+                total++;
+                console.log(total);
+            }
+        }
 
-} 
+        if(total > 1)
+        chkbox.checked = false;
+        else {
+            numberField = document.getElementById('numberField');
+            numberField.setAttribute("max", max_amount);
+            console.log("number field max amount should be changed?");
+        }
 
-function showSchedule(date, id) {
-  var xhttp;  
+    } 
 
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("sportBookingForm").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
-  xhttp.send();
-}
+    // function formSubmission() {
+    //     date = form1.bookingDate.value;
+    //     schedule = form1.ckb[].value;
 
-function showNumberOFPeople(id, start_time, date) {
+    //     var totalChecked = 0;
+    //     allCheckbox = document.getElementsByClassName('multiSelect');
+    //     for(var i=0; i < allCheckbox.length; i++){
+    //         if(allCheckbox[i].checked) { 
+    //             totalChecked++;
+    //         }
+
+    //         if(totalChecked) {
+    //             window.location.replace("paymentConfirmation.php");
+    //         } 
+    //     }
+
+    // }
+    form1.addEventListener('submit', (e)=> {
+        checkboxError = document.getElementById('checkboxError');
+        var totalChecked = 0;
+        allCheckbox = document.getElementsByClassName('multiSelect');
+        console.log(allCheckbox);
+        for(var i=0; i < allCheckbox.length; i++){
+
+            if(allCheckbox[i].checked) { 
+                totalChecked++;
+            }
+        }
+        if(totalChecked == 0) {
+            e.preventDefault();
+            checkboxError.classList.remove('displayNone');
+        } 
+
+    });
+
+
+    function showSchedule(date, id) {
     var xhttp;  
 
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) {
         document.getElementById("sportBookingForm").innerHTML = this.responseText;
-    }
+        }
     };
     xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
     xhttp.send();
-}
+    }
+
+
+    function showNumberOFPeople(id, start_time, date) {
+        var xhttp;  
+
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("sportBookingForm").innerHTML = this.responseText;
+        }
+        };
+        xhttp.open("GET", "getSchedule.php?date=" + date + "&id=" + id, true);
+        xhttp.send();
+    }
 </script>
 
 <?php include_once 'footer.php'; ?>

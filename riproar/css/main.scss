@@ -1732,6 +1732,11 @@ i.fa-star.rating {
       flex-direction: column;
       row-gap: 0.6rem;
       // flex-direction: column;
+      .error_msg {
+        color: red;
+        padding: 10px 20px;
+        margin: 10px 20px;
+      }
       .btnSheduleSubmit {
         padding: 0.5rem 1rem 0.5rem 1rem;
         // border:5px solid #cbbcb1;
@@ -1782,7 +1787,7 @@ i.fa-star.rating {
           border: 0;
           width: 11rem;
           height: 2.2rem;
-          font-size: 2rem;
+          font-size: 1.3rem;
           padding: 0.6rem 0.3rem 0.6rem 0.5rem;
           font-family: "Rajdhani", serif; //box-shadow: inset 14px -15px 24px -17px rgba(0,0,0,0.63);
         }
@@ -2004,3 +2009,118 @@ i.fa-star.rating {
 .colorRed {
   color: #a9294f;
 }
+
+
+
+/******RECIEPT INVOICE PAGE******/
+section.invoiceContainer{
+  background: linear-gradient(to right, #e43a15,  #e65245);
+  width:100%;
+  height:100%;
+  padding:2rem;
+  @include displayFlexCenter();
+  .invoicePage{border:0px !important;
+    @include displayFlexCenter();
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include glassmorphism(3px, 3px );
+    background: #f3f4ed;
+    width:70%;
+    height:100%;
+    @include respond(medium){width:95%;}
+    @include respond(small){width:99%;}
+    //padding:2rem;
+    .invoiceHeader{
+      padding:1.4rem;
+      border-bottom: 1.8px solid #1e212d;
+      height:5rem;
+      width:100%;
+      font-family: 'Rajdhani', sans-serif ;
+      @include displayFlexCenter();
+      button{
+        background:#5b5b5b;
+        color:#fff;
+        border-radius: 3px;
+        font-size:1rem;
+        padding:.6rem;
+        border:0px;
+        font-family: 'Rajdhani', sans-serif ;
+        &:hover{cursor: pointer;
+          background:#f05454;
+          transform: translateY(-.05rem);
+          box-shadow: 0px 24px 32px 2px rgba(0,0,0,0.75);
+        }
+      }
+      h1{
+        width:100%;font-size: 2.5rem;@include respond(small){font-size: 1rem;}
+      }
+      .logo{
+        height:1.6rem;
+        //height:50px;width:30px;
+        background: url('../assets/invoiceLogo.png') center no-repeat;
+        background-size:contain;
+        width:6%;
+
+      }
+    } //invoiceHeader
+
+    .invoiceBody{
+      padding:1.5rem;
+      width: 100%;
+      @include displayFlexCenter();
+      .left{width:100%;
+        @include displayFlexCenter();
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        span{color:#8e7f7f; }
+        span.name{color:#1b1717;font-size: 1.7rem;line-height: 3rem;}
+      }
+      .right{
+        width:100%;
+      }
+    }//invoiceBody
+   
+    .bookingDetails{padding:1.5rem;
+      width:100%;
+      background:#f0e4d7;
+      color:#6e7582;
+      @include displayFlexCenter(); @include displayFlexCenter();flex-direction: column;
+
+      h2{font-family: 'Rajdhani', sans-serif;color:#6e7c7c;}
+      .bookingDetailsBody{width:100%;
+        @include displayFlexCenter();
+        .left{  width:100%;
+          @include displayFlexCenter(); @include displayFlexCenter(); justify-content: flex-start; align-items: flex-start;
+          flex-direction: column;
+          h3{font-weight: 200;color:#383e56;padding:.5em;}
+          div{ width:100%;border-bottom: 1px solid #c2b092;
+            padding:1rem; @include displayFlexCenter();
+            .tHead{width:100%; @include displayFlexCenter(); 
+              }
+          .content{width:100%; @include displayFlexCenter(); font-weight: 400;
+            }
+          }
+        }
+        .right{ width:100%;
+          @include displayFlexCenter(); @include displayFlexCenter();justify-content: flex-start; align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    }//bookingDetails
+
+    .totalPrice{
+      @include displayFlexCenter();
+      justify-content: flex-end;
+      background:linear-gradient(to bottom left,  #000000,  #434343);
+      color: #fff;font-family: 'Rajdhani', sans-serif;font-size: 2rem;
+      width: 100%;
+      height:100%;
+      padding:2rem;
+      padding-right:2rem;
+    }//totalPrice
+
+  }
+}
+*{border:0px;}

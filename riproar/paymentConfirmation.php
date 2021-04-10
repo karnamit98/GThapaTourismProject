@@ -2,6 +2,7 @@
 if(!isset($_SESSION['user'])) header('Location: login.php');
 
 if(isset($_POST['bookingConfirmation'])) {
+   // echo "Num of People: ".$_POST['number_of_people'];
     $date = $_POST['bookingDate'];
     $checkedBox = $_POST['ckb'];
    // echo nl2br("<br><br><br> date : ".$date . "\n quantity:  ". 
@@ -42,34 +43,71 @@ if(isset($_POST['bookingConfirmation'])) {
                     </div>
                     <div class="middleContainerChild2">
                 <h2>Number Of Slots: <b><?php echo count($checkedBox); ?></b> </h2>
-               <?php foreach($checkedBox as $checked) {
+               <?php 
+                $slots = array();
+               foreach($checkedBox as $checked) {
                    $startTime = strtotime($checked);
                    $durationSeconds = $sport['slot_duration'] * 60;
                 //    $endTime = date("H:i", time() + $durationSeconds ) ;
                 $endTime = date("H:i", $startTime + $durationSeconds ) ;
+                 array_push($slots,$checked,  $endTime);
                         echo "<span>( ".$checked." - ".$endTime ." )</span> ";
                     } ?>
-                <?php if(isset($_POST['number_of_people'])) { ?><h2>Number Of People: <b><?php echo $_POST['number_of_people']; ?></b> </h2> <?php } ?>  
+                <?php if(isset($_POST['number_of_people'])) { ?><h2>Number Of People per Slot: <b><?php echo $_POST['number_of_people']; ?></b> </h2> <?php } else { ?>  
+                    <h2>Number Of People per Slot: <b>1</b> </h2> <?php }  ?>  
                     </div>
 
                 </div>
+
+                <?php 
+                        if(isset($_POST['number_of_people'])){
+                            $price=$sport['price'] * $_POST['number_of_people'];
+                            $_SESSION['totalPrice'] = $price;
+                        }
+                        else{
+                            $price=($sport['price'] * count($checkedBox));
+                            $_SESSION['totalPrice'] = $price;
+                        }
+                ?>
 
                 <div class="bottomContainer">
                     <div class="priceContainer">
                         <div class="left"></div>
                         <div class="right">
                             <div class="label">Total: &nbsp;</div>
-                            <div class="price"><b><?php $price=($sport['price'] * count($checkedBox)); echo " NPR.".$price; ?></b></div>
+                            <div class="price"><b><?php  echo " NPR.".$price; ?></b></div>
                         </div>
                     </div>
-                        <?php $_SESSION['totalPrice'] = $price; ?>
+                        
                     <form class="paypalContainer" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+
+                        <?php 
+                            if(isset($_POST['number_of_people']))
+                            {
+                                $_SESSION['booking_data'] = array("date" => $date,
+                                                             "total" => $_SESSION['totalPrice'],
+                                                            "numPeople" => $_POST['number_of_people'],
+                                                                "numSlots" => count($checkedBox),
+                                                                "slots" => $slots);
+                            }
+                            else{
+                                $_SESSION['booking_data'] = array("date" => $date,
+                                                             "total" => $_SESSION['totalPrice'],
+                                                            "numPeople" => 1,
+                                                                "numSlots" => count($checkedBox),
+                                                                "slots" => $slots);
+                            }
+
+                            
+                           // print_r($_SESSION['booking_data']);
+                        ?>
 
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="upload" value="1">
                         <input type="hidden" name="business" value="riproar12@gmail.com">
-                        <input type="hidden" name="return" value="http://localhost/GTTourismProject/GThapaTourismProject/source/payment.php?payment=<?php echo $_SESSION['totalPrice']; ?>">
-                        <input type="hidden" name="cancel_return" value="http://localhost/GTTourismProject/GThapaTourismProject/source/paymentConfirmation.php">
+                        <!-- <input type="hidden" name="return" value="http://localhost/riproar/payment.php?payment=<?php //echo $_SESSION['totalPrice']; ?>"> -->
+                        <input type="hidden" name="return" value="http://localhost/riproar/reciept.php">
+                        <input type="hidden" name="cancel_return" value="http://localhost/riproar/sportDetail.php">
 
                         <!-- <input type="hidden" name="bookingDate" value="<?php echo $date; ?>"> -->
                         <input type="hidden" name="item_name_1" value="<?php echo $sport_details['name']; ?>">
@@ -78,9 +116,14 @@ if(isset($_POST['bookingConfirmation'])) {
                             ?>
                                 <input type="hidden" name="quantity_1" value="<?php echo  $_POST['number_of_people']; ?>">
                             <?php
-                        }?>
+                        }else{?>
+                             <input type="hidden" name="quantity_1" value="<?php echo count($checkedBox); ?>">
+                        <?php }?>
 
-                        <input type="hidden" name="amount_1" value="<?php echo $_SESSION['totalPrice']/119; ?>">
+
+                        <input type="hidden" name="amount_1" value="<?php echo $sport['price']/119; ?>">
+
+                       
 
                         <button name="checkout" type="paypal" value="PayPal" ><i class="fab fa-paypal"></i> Pay with Paypal</button>
                     </form>

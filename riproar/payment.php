@@ -1,5 +1,8 @@
 <?php include_once "header.php"; ?>
     <div class="paymentContainer">
+
+    <?php print_r($_SESSION['booking_data']); ?>
+
     <div class="receipt">
     <h1>Order Summary</h1>
     <div class="payments m-20">

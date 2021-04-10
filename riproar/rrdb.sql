@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2021 at 02:14 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Apr 10, 2021 at 03:36 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,10 +37,15 @@ CREATE TABLE `booked_slot` (
 --
 
 INSERT INTO `booked_slot` (`slot_id`, `booking_id`) VALUES
-(1, 1),
-(2, 2),
-(4, 4),
-(3, 3);
+(10, 31),
+(11, 31),
+(12, 32),
+(13, 33),
+(14, 33),
+(15, 33),
+(16, 33),
+(18, 36),
+(19, 37);
 
 -- --------------------------------------------------------
 
@@ -62,10 +67,11 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date`, `price`, `quantity`) VALUES
-(1, 3, 1, '2021-04-08 18:34:49', 30, 1),
-(2, 2, 2, '2021-04-08 18:34:51', 20, 1),
-(3, 3, 8, '2021-04-08 18:34:59', 5000, 3),
-(4, 2, 8, '2021-04-08 18:35:09', 5000, 6);
+(31, 3, 2, '2021-04-10 03:19:08', 7000, 2),
+(32, 3, 2, '2021-04-10 03:25:01', 3500, 1),
+(33, 3, 1, '2021-04-10 03:29:53', 14000, 4),
+(36, 3, 3, '2021-04-10 03:47:40', 210000, 1),
+(37, 3, 3, '2021-04-10 03:50:22', 105000, 1);
 
 -- --------------------------------------------------------
 
@@ -121,8 +127,8 @@ INSERT INTO `location` (`location_id`, `location`, `desctiption`, `thumbnail`) V
 
 CREATE TABLE `slot` (
   `slot_id` int(11) NOT NULL,
-  `start_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `end_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `start_time` timestamp NULL DEFAULT NULL,
+  `end_time` timestamp NULL DEFAULT NULL,
   `number_of_people` int(11) DEFAULT NULL,
   `slot_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -132,10 +138,15 @@ CREATE TABLE `slot` (
 --
 
 INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `number_of_people`, `slot_date`) VALUES
-(1, '2021-04-09 01:15:00', '2021-04-07 01:25:00', 0, '2021-04-09'),
-(2, '2021-04-09 01:15:00', '2021-04-07 01:25:00', 0, '2021-04-09'),
-(3, '2021-04-09 03:15:00', '2021-04-09 09:15:00', 47, '2021-04-12'),
-(4, '2021-04-09 03:30:00', '2021-04-09 03:45:00', 44, '2021-04-13');
+(10, '2021-04-12 01:15:00', '2021-04-12 01:30:00', 0, '2021-04-12'),
+(11, '2021-04-12 01:30:00', '2021-04-12 01:45:00', 0, '2021-04-12'),
+(12, '2021-04-12 01:45:00', '2021-04-12 02:00:00', 0, '2021-04-12'),
+(13, '2021-04-11 01:15:00', '2021-04-11 01:25:00', 0, '2021-04-11'),
+(14, '2021-04-11 01:25:00', '2021-04-11 01:35:00', 0, '2021-04-11'),
+(15, '2021-04-11 01:35:00', '2021-04-11 01:45:00', 0, '2021-04-11'),
+(16, '2021-04-11 01:45:00', '2021-04-11 01:55:00', 0, '2021-04-11'),
+(18, '2021-04-11 04:15:00', '2021-04-11 06:15:00', 0, '2021-04-11'),
+(19, '2021-04-11 06:15:00', '2021-04-11 08:15:00', 3, '2021-04-11');
 
 -- --------------------------------------------------------
 
@@ -206,7 +217,7 @@ INSERT INTO `sport_detail` (`sport_detail_id`, `location_id`, `sport_id`, `name`
 (5, 1, 5, 'Paddling Nepal', 'If you are already part of the international paddling community, then you know Nepal is the ultimate whitewater playground. Kayaking in Nepal is not just about the thrill of running rapids, but about sharing a unique river culture, good times with new friends from around the world, riverside camping, exploring authentic places and cultures, challenging yourself and embracing nature at its best in the heart of the Himalayas.\r\n\r\nAnd if you are not yet part of this community – here’s your chance to join one of the coolest outdoor adventure scenes on the planet! Take the thrill of whitewater into your own hands and learn to kayak with members of Nepal’s National White Water Team! Whether you are a beginner looking for an introduction to river kayaking or an experienced paddler looking to develop your skills, our internationally trained instructors will help you realize your dreams on some of the best rivers in the world. Our courses take place on Himalayan lakes and rivers allowing you to really experience Nepal and enjoy the diversity of our scenery, culture and outstanding white water!\r\n\r\nExperienced kayakers are invited to join any of our commercial whitewater rafting adventures and enjoy the comforts and safety of the group environment. Alternatively we offer kayak and guide hire to help you run your own self-supported eco-adventure.\r\n\r\n', 'kayaking1.jpg', 'kayaking2.jpg', 'kayaking3.jpg', 'https://www.paddlenepal.com/kayaking/'),
 (6, 3, 8, 'Nagarjun Rock Climbing', 'Nagarjun Rock Climbing is one of the popular and closet Climbing Site of Kathmandu valley. It is located 3km in the northwest of Kathmandu valley in Nagarjun Forest Reserve. From you can continue to sacred Buddhist site Langlungten, Padmasambhava (Guru Rinpoche in Tibetan) took his meditation there. Beside, you will see good view of the Annapurna, Langtang, Machhapuchare, Manaslu and Ganesh Himal, Kathmandu valley.\r\n\r\nWe ascend more than 21 routes about 55m high on a dizzying limestone cliff. Nagarjun Rock climbing is suitable for all sorts of climbers from beginners to experts. Rock climbing is appreciated outdoor activities, it evaluates your strength, tolerance, activity and balance.\r\n\r\nAll our treks can be booked as private trips - no large, impersonal groups but small, individual experiences. Let Incredible Himalayan Sherpa Adventure take you on your very own adventure climb to Nagarjun Rock Climbing.', 'nagarjunrockclimbing1.jpg', 'nagarjunrockclimbing2.jpg', 'nagarjunrockclimbing3.jpg', 'https://www.himalayansherpaadventure.com/nagarjun-rock-climbing.html'),
 (7, 4, 8, 'Hattiban Rock Climbing', 'Rock climbing is a sport to climb up, down or across the rock formations/walls. The goal is to summit the endpoint pre-defined route without falling. Rock climbing is a physically and mentally demanding sport, tests a climber\'s strength, endurance, agility, and balance along with mental control. Knowledge of proper climbing techniques and the use of specialized climbing equipment are crucial for the safe completion of routes. Due to the wide range and variety of rock formations around the world, rock climbing has been separated into several different styles and sub-disciplines.\r\n\r\nHattiban climbing offers an advanced level climb. The area is located 26km south-west of Kathmandu valley on the way to Dakshinkali temple, where we enjoy top-level grade climbing. Along the way, pass by Samye Monastery, and get a great view of the Kathmandu Valley. The climbing grades start from 5a to 6b. This place is very good in winter because it is south face and sunlight all day. We start hiking with a beautiful village under the lush pine forest and monasteries. Crossing village with short uphill walking around 30min gaining an elevation of around 2000ft we reach the spot named big crag.\r\n\r\nA short private 1hr drive through the city and beautiful village brings us to Hattiban. Hattiban is a beautiful destination offering a great view of Kathmandu city. Then a short uphill walk around 25min through the jungle to the climbing ground named big crag. Cliff has 10 intermediate to advanced single-pitch climbing routes, all bolted for sport climbing with bolted anchors at the top of each route. The cliff is vertical, with slight overhangs. Hattiban Rock climbing is suitable for all sorts of climbers from beginners to experts.', 'hattibanrockclimbing1.jpg', 'hattibanrockclimbing2.jpg', 'hattibanrockclimbing3.jpg', 'https://www.himalayansherpaadventure.com/hattiban-rock-climbing.html'),
-(8, 5, 8, 'Nagarkot Rock Climbint', 'The mountainous Nepal, which hosts the majority of the highest mountain peaks worldwide, is the perfect destination for extreme mountain activities. Rock climbing here acquires a different meaning. In a land where the hill\'s altitude ranges between 3500 m/11482 ft and 1000 m/3280 ft, climbing in the rock of the \'\'next door\'\' seems so natural!\r\nThe Nagarkot area, northeast of Kathmandu Valley, is literally the hottest point to admire the magnificent Himalayas. The most impressive ranges such as Annapurna, Manaslu, Ganesh, Langtang, Jugal, Mahalangur (Everest peak), Numbur and Rolwaling can be viewed from there. Nagarkot lies in the hilly zone of Nepal, surrounded by the most impressive and grandiose summits worldwide.\r\nThe morphology of the region due to its position is shaped by the weather conditions, the climate zones and the routes created by the melting snow of the neighboring mountain glaciers. Spectacular rock formations with slippery surface and sharp edges lies all over in the entire area. Their average altitude is around 25 m/82 ft high. Many and very professional training centers are operating in the zone.', 'nagarkotrockclimbing1.jpg', 'nagarkotrockclimbing2.jpg', 'nagarkotrockclimbing3.jpg', 'http://www.xtremespots.com/mountain-sports/rock-climbing/nagarkot-bhaktapur-district-nepal/');
+(8, 5, 8, 'Nagarkot Rock Climbing', 'The mountainous Nepal, which hosts the majority of the highest mountain peaks worldwide, is the perfect destination for extreme mountain activities. Rock climbing here acquires a different meaning. In a land where the hill\'s altitude ranges between 3500 m/11482 ft and 1000 m/3280 ft, climbing in the rock of the \'\'next door\'\' seems so natural!\r\nThe Nagarkot area, northeast of Kathmandu Valley, is literally the hottest point to admire the magnificent Himalayas. The most impressive ranges such as Annapurna, Manaslu, Ganesh, Langtang, Jugal, Mahalangur (Everest peak), Numbur and Rolwaling can be viewed from there. Nagarkot lies in the hilly zone of Nepal, surrounded by the most impressive and grandiose summits worldwide.\r\nThe morphology of the region due to its position is shaped by the weather conditions, the climate zones and the routes created by the melting snow of the neighboring mountain glaciers. Spectacular rock formations with slippery surface and sharp edges lies all over in the entire area. Their average altitude is around 25 m/82 ft high. Many and very professional training centers are operating in the zone.', 'nagarkotrockclimbing1.jpg', 'nagarkotrockclimbing2.jpg', 'nagarkotrockclimbing3.jpg', 'http://www.xtremespots.com/mountain-sports/rock-climbing/nagarkot-bhaktapur-district-nepal/');
 
 -- --------------------------------------------------------
 
@@ -342,7 +353,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -354,7 +365,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `sport`
@@ -384,19 +395,6 @@ ALTER TABLE `users`
 ALTER TABLE `booking`
   ADD CONSTRAINT `ForeignKeySportDetailId` FOREIGN KEY (`sport_detail_id`) REFERENCES `sport` (`sport_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ForeignKeyUserId` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `slot`
---
-ALTER TABLE `slot`
-  ADD CONSTRAINT `ForeignKeyBookingId` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`booking_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `sport_detail`
---
-ALTER TABLE `sport_detail`
-  ADD CONSTRAINT `ForeignKeyLocationId` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ForeignKeySportId` FOREIGN KEY (`sport_id`) REFERENCES `sport` (`sport_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
