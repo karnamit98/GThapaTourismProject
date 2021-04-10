@@ -139,19 +139,20 @@ function dateform(sport_detail_id) {
     console.log("hlw");
 }
 
-function chkcontrol(j, max) {
-    console.log(document.form1.ckb[j].value);
+function chkcontrol(chkbox) {
     var total=0;
-    for(var i=0; i < document.form1.ckb.length; i++){
-        if(document.form1.ckb[i].checked){
-            total =total +1;
-        }
-        if(total > max){
-        alert("Please Select only three") 
-            document.form1.ckb[j].checked = false ;
-            return false;
+    allCheckbox = document.getElementsByClassName('multiSelect');
+    
+    for(var i=0; i < allCheckbox.length; i++){
+        if(allCheckbox[i].checked) { 
+            total++;
+            console.log(total);
         }
     }
+
+    if(total > 1)
+    chkbox.checked = false;
+
 } 
 
 function showSchedule(date, id) {

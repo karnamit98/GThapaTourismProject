@@ -5,7 +5,7 @@
      //include_once('DbConnection.php');
       
      class CrudOperation extends DbConnection{
-        public $array = [];
+        public $array;
          public function __construct(){
       
              parent::__construct();
@@ -76,14 +76,17 @@
        
 
          public function fetch_datas_with_column($table_name, $column_name, $id) {
-                $sql = "SELECT * FROM $table_name WHERE $column_name = '$id'";
+            $array = [];
+
+            $sql = "SELECT * FROM $table_name WHERE $column_name = '$id'";
             $query = $this->connection->query($sql);
       
          
             while($row = mysqli_fetch_assoc($query)){
-                $array[] = $row;
+                if($row != null) $array[] = $row;
             }
             return $array;
+
          }
 
      }

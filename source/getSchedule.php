@@ -22,8 +22,7 @@ $starting_time = new DateTime($sport_detail['opening_time']);
 $closing_time = new DateTime($sport_detail['closing_time']);
 //duration of each checkbox
 $duration = $sport_detail['slot_duration'];
-$max = 3;
-
+$max = 1;
 
 
 
@@ -35,65 +34,59 @@ for($i = 0; $i < $total_schedule; $i++) {
      * start_time of current checkbox which is being created with slot_start time, if these two mactches then that
      * slot is booked!
     */
-    foreach($datas as $data) {
-        $slot_start = new DateTime($data['start_time']);
-        $slot_date = new DateTime($data['slot_date']);
 
-        // echo $date->format('y-m-d'). " == ". $slot_date->format('y-m-d'). "<br>";
-
-        if($slot_start->format('h:i') == $starting_time->format('h:i') && $date->format('y-m-d') == $slot_date->format('y-m-d')) $is_booked = true;
-
-    }
-    /**
-     * if the current checkbox is not booked then check max_num_of people for this checkbox if it's one then not need to
-     * show number form.
-     * If current checkbox is booked then check number_of_people left for this checkbox to be full. If not full then show
-     * number form
-     */
-    if(!$is_booked) {
-        //show the form if number of people is more than 1
-        if($max_num_of_people != 1) {
-            $show_number_form = true;
-            echo "<div class='sheduleCheckbox'><input type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' checked/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+        foreach($datas as $data) {
+            $slot_start = new DateTime($data['start_time']);
+            $slot_date = new DateTime($data['slot_date']);
+    
+            // echo $date->format('y-m-d'). " == ". $slot_date->format('y-m-d'). "<br>";
+            // echo $slot_start->format('h:i'). "== " .$starting_time->format('h:i'). "<br>";
+    
+            if($slot_start->format('h:i') == $starting_time->format('h:i') && $date->format('y-m-d') == $slot_date->format('y-m-d')) $is_booked = true;
+    
         }
-        else 
-        echo "<div class='sheduleCheckbox'><input type='checkbox' name='ckb[]' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
 
-        //if not booked show normal checkbox
-        
-        
-    }
-    else {
-        //number_of_people zero means it's full
-        if($data['number_of_people'] == 0) //if number_of_people is full i.e. 0 then show checked status
-        echo "<div class='sheduleCheckbox sheduleCheckboxDisabled' ><input type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' disabled checked/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+        /**
+         * if the current checkbox is not booked then check max_num_of people for this checkbox if it's one then not need to
+         * show number form.
+         * If current checkbox is booked then check number_of_people left for this checkbox to be full. If not full then show
+         * number form
+         */
+        if(!$is_booked) {
+            //show the form if number of people is more than 1
+            if($max_num_of_people != 1) {
+                $show_number_form = true;
+                echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this)' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+            }
+            else 
+            echo "<div class='sheduleCheckbox'><input type='checkbox' name='ckb[]' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+
+            //if not booked show normal checkbox
+            
+            
+        }
         else {
-            $show_number_form = true;
-            echo "<div class='sheduleCheckbox sheduleCheckboxDisabled'><input type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' checked/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
-        }//else respond to event 
+            //number_of_people zero means it's full
+            if($data['number_of_people'] == 0) //if number_of_people is full i.e. 0 then show checked status
+            echo "<div class='sheduleCheckbox sheduleCheckboxDisabled' ><input type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' disabled checked/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+            else {
+                $show_number_form = true;
+                echo "<div class='sheduleCheckbox sheduleCheckboxDisabled'><input type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' checked/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+            }//else respond to event 
+
+        }
 
     }
-
     if($show_number_form) {
         echo "
-        </>
+        </br>
             <div class='formGroup'>
             <i class='fas fa-layer-group'></i>
-            <label for='slotSchedule'></label>
+            <label for='slotSchedule'>Number Of People</label>
 
             <div id='numberOfPeople'> <input type='number' name='number_of_people' min='1' max='".$sport_detail['max_slot_capacity']."'/> </div>
             </div>
         ";
     }
-
-    
-        
-        
-        
-
-
-
-}
-
 
 ?>
