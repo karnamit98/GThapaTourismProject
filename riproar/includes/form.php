@@ -71,3 +71,37 @@ if(isset($_GET['logout'])) {
 
 }
 
+if(isset($_POST['user_edit'])) {
+    $user_info = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
+
+    if(!empty($_POST['name'])) {
+        $crud->edit_table_info('users', 'name', $_POST['name'], 'user_id', $_SESSION['user']);
+        $msg="User info edited!";
+    }
+    if(!empty($_POST['username'])) {
+      $crud->edit_table_info('users', 'username', $_POST['username'], 'user_id', $_SESSION['user']);
+      $msg="User info edited!";
+    }
+    if(!empty($_POST['pass1']) and !empty($_POST['pass2'])) {
+        if($pass1 == $pass2) {
+          $crud->edit_table_info('users', 'password', md5($_POST['pass1']), 'user_id', $_SESSION['user']);
+        }
+        $msg="User info edited!";
+    }
+    if(!empty($_POST['age'])) {
+      
+        $crud->edit_table_info('users', 'age', $_POST['age'], 'user_id', $_SESSION['user']);
+        $msg="User info edited!";
+  }
+}
+
+if(isset($_GET['deactivate']) && isset($_GET['user'])) {
+    $crud->edit_table_info('users', 'status', '0', 'user_id', $_GET['user']);
+    $msg="User Deactivated!";
+}
+
+if(isset($_GET['activate']) && isset($_GET['user'])) {
+    $crud->edit_table_info('users', 'status', '1', 'user_id', $_GET['user']);
+    $msg="User Activated!";
+}
+

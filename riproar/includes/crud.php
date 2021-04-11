@@ -119,6 +119,13 @@
              return $this->connection->query($sql);
          }
          
+         public function edit_table_info($table, $column, $data, $key, $value) {
+            $sql = "UPDATE $table SET ";
+            $sql .= "$column= '". $data;
+            $sql .= "' WHERE $key = ". $value;
+
+            return $this->connection->query($sql);
+         }
          public function fetch_data_from_booking_detail($sport_detail_id, $start_time){
             $array = [];
 

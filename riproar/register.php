@@ -6,7 +6,7 @@
     <?php 
     if($register_errors['password'] != null || $register_errors['confirm_password'] != null) {
         ?>
-        <div class="registerSuccess">REGISTRATION FAILED</div>
+        <div class="registerFailed">REGISTRATION FAILED</div>
         <?php
     }
     ?>

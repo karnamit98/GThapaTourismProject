@@ -8,8 +8,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -28,8 +27,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
-          box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
+  box-shadow: inset 0 0 6px rgba(102, 88, 209, 0.3);
   border: 0;
 }
 
@@ -43,22 +41,14 @@ body::-webkit-scrollbar-thumb {
 
 h1.errorLoadingPage {
   height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#870000), to(#190a05));
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(to bottom right, #870000, #190a05);
   color: #eff8ff;
   font-family: "Play", sans-serif;
   margin-bottom: 5rem;
-  -webkit-box-shadow: inset 1px -7px 62px 3px black;
-          box-shadow: inset 1px -7px 62px 3px black;
+  box-shadow: inset 1px -7px 62px 3px black;
 }
 
 h1.errorLoadingPage i {
@@ -68,7 +58,6 @@ h1.errorLoadingPage i {
 
 a,
 button {
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
@@ -83,15 +72,9 @@ footer {
   background: #1e212d;
   color: whitesmoke;
   padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*****  NAVBAR   **********/
@@ -140,18 +123,10 @@ footer {
   width: 100vw;
   height: 2rem;
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .top-nav a {
@@ -173,9 +148,7 @@ footer {
   left: 0;
   background-color: #fff;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
   transition: all 0.3s ease-in-out;
   border: 0;
 }
@@ -183,8 +156,7 @@ footer {
 .top-nav a:hover::before {
   text-decoration: none;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .top-nav .active {
@@ -199,8 +171,7 @@ footer {
   position: relative;
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  -webkit-box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 44px -16px rgba(0, 0, 0, 0.75);
 }
 
 .nav > .nav-header {
@@ -245,9 +216,7 @@ footer {
   left: 0;
   background-color: #ff7171;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
   transition: all 0.3s ease-in-out;
   border: 0;
 }
@@ -255,10 +224,8 @@ footer {
 .nav > .nav-links > a:hover {
   background-color: #f2edd7;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
   border-radius: 0px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #000;
@@ -269,8 +236,7 @@ footer {
 .nav > .nav-links > a:hover::before {
   text-decoration: none;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .nav > .nav-links > .active {
@@ -279,10 +245,8 @@ footer {
   border-bottom: 2px solid #ff7171;
   color: #f6f5f5;
   background: #1a1a2e;
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
 }
 
 .nav > #nav-check {
@@ -318,7 +282,6 @@ footer {
     width: 100%;
     background-color: #fff3e6;
     height: 0px;
-    -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
@@ -339,19 +302,10 @@ footer {
 
 /********* SIGN UP FORM **************/
 .registerContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .registerContainer .loginImage {
@@ -368,8 +322,7 @@ footer {
   height: 45vh;
   width: 30vw;
   background-size: cover;
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
 }
 
 .registerContainer .registerImage .loginLink,
@@ -393,25 +346,14 @@ footer {
 }
 
 .registerContainer form.registerForm {
-  height: -webkit-fit-content !important;
-  height: -moz-fit-content !important;
   height: fit-content !important;
   padding: 3rem;
   padding-top: 0.2rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 80vh;
 }
 
@@ -430,15 +372,9 @@ footer {
 }
 
 .registerContainer form.registerForm .formGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .registerContainer form.registerForm i {
@@ -499,80 +435,21 @@ footer {
   border-color: #ff4b5c !important;
 }
 
-.registerContainer form.registerForm .inputError ::-webkit-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError :-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
-.registerContainer form.registerForm .inputError ::-ms-input-placeholder {
-  color: #ff4b5c !important;
-}
-
 .registerContainer form.registerForm .inputError ::placeholder {
   color: #ff4b5c !important;
 }
 
-.registerSuccess {
-  background: #f7451d;
-  width: 60%;
-  -ms-flex-item-align: center;
-      align-self: center;
-  position: relative;
-  left: 1.5rem;
-  -webkit-box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
-  color: #fff;
-  font-family: "Train One", cursive;
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin: auto;
-  margin-top: 0.4rem;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 980px) {
-  .registerSuccess {
-    width: 100%;
-    border-radius: 0;
-    margin: auto;
-    left: 0;
-  }
-}
-
 .socialSignIn {
   margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
 }
 
 @media (max-width: 980px) {
   .socialSignIn {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     row-gap: 0.5rem;
   }
 }
@@ -581,8 +458,6 @@ footer {
 .socialSignIn .btnTwitter,
 .socialSignIn .btnGoogle {
   border-radius: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 1rem 1rem 0.5rem;
   border: 0;
@@ -622,19 +497,10 @@ footer {
 .introText {
   margin: 3rem;
   font-family: "Montserrat", serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .introText h1 {
@@ -648,18 +514,10 @@ footer {
   margin-bottom: 4rem;
   height: auto;
   width: 80vw !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Montserrat", serif;
 }
 
@@ -667,10 +525,7 @@ footer {
   .section1,
   .section2,
   .section3 {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100vw;
   }
 }
@@ -681,19 +536,10 @@ footer {
 .section2 .right,
 .section3 .left,
 .section3 .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 85%;
   width: 45%;
   text-align: justify;
@@ -791,7 +637,7 @@ footer {
 #footer {
   width: 100%;
   margin-top: 0 !important;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
 }
 
 #footer .space-between {
@@ -815,10 +661,8 @@ footer {
 /** Flickity ends here**/
 .hero-section {
   background: rgba(255, 255, 255, 0.136);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.176);
+  backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.054);
   position: absolute;
@@ -839,7 +683,7 @@ footer {
 .hero-section .hero-text {
   font-size: 2.2rem;
   font-weight: 400;
-  font-family: 'Train One', cursive;
+  font-family: "Train One", cursive;
   text-shadow: 3px 3px 4px black;
 }
 
@@ -851,30 +695,25 @@ footer {
 
 .hero-section a.btn {
   text-decoration: none;
-  background: -webkit-gradient(linear, left top, right top, from(#1d4350), to(#a43931));
   background: linear-gradient(to right, #1d4350, #a43931);
-  padding: .6rem 2rem .6rem 2rem;
-  font-family: 'Cookie', cursive;
+  padding: 0.6rem 2rem 0.6rem 2rem;
+  font-family: "Cookie", cursive;
   font-size: 1.5rem;
   color: white;
   border-radius: 7px;
-  -webkit-transition: .2s all ease;
-  transition: .2s all ease;
+  transition: 0.2s all ease;
 }
 
 .hero-section a.btn:hover {
-  -webkit-transform: translateX(-0.3rem);
-          transform: translateX(-0.3rem);
+  transform: translateX(-0.3rem);
   background: #fff;
   color: #000;
 }
 
 section.sportSlider {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
 }
 
 .sport-box {
@@ -882,8 +721,7 @@ section.sportSlider {
   width: 400px;
   border-radius: 10px;
   color: white;
-  -webkit-box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
-          box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 10px 39px -12px rgba(0, 0, 0, 0.75);
   margin-bottom: 3rem;
 }
 
@@ -895,13 +733,10 @@ section.sportSlider {
   font-weight: 600;
   font-family: "Train One", cursive;
   font-size: 1.6rem;
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(1.5px);
-          backdrop-filter: blur(1.5px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
   border-radius: 0px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -917,26 +752,16 @@ section.sportSlider {
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  -ms-flex-item-align: center;
-      align-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-self: center;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Rajdhani", sans-serif;
 }
 
 .mt-20 {
-  margin-top: 20px;
+  margin-top: 20px !important;
 }
 
 .mb-20 {
@@ -960,12 +785,8 @@ section.sportSlider {
 }
 
 .space-between {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .title-underline {
@@ -1004,13 +825,8 @@ section.sportSlider {
 
 @media only screen and (max-width: 700px) {
   .space-between {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   #footer > div {
     width: 400px;
@@ -1018,49 +834,38 @@ section.sportSlider {
 }
 
 .footer-social-link {
-  font-family: 'Rajdhani', sans-serif;
-  -webkit-transition: .2s all ease;
-  transition: .2s all ease;
+  font-family: "Rajdhani", sans-serif;
+  transition: 0.2s all ease;
 }
 
 .footer-social-link:hover {
   cursor: pointer;
   color: #ffc93c !important;
-  -webkit-transform: translateY(-0.2rem);
-          transform: translateY(-0.2rem);
+  transform: translateY(-0.2rem);
 }
 
 .footer-link {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-size: 1.1rem;
-  -webkit-transition: .2s all ease;
-  transition: .2s all ease;
+  transition: 0.2s all ease;
 }
 
 .footer-link:hover {
   color: #ffc93c !important;
-  -webkit-transform: translateY(-0.2rem) !important;
-          transform: translateY(-0.2rem) !important;
+  transform: translateY(-0.2rem) !important;
 }
 
 /**PAYMENT PAGE**/
 .paymentContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
 }
 
 .receipt {
-  -webkit-box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
-          box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 7px 24px -11px rgba(0, 0, 0, 0.75);
   padding: 1.7rem;
   border-radius: 10px;
   margin: 5vh auto auto auto;
@@ -1133,34 +938,23 @@ section.sportSlider {
 
 /***********PRODUCT PAGE STYLE***************/
 .exploreTitle {
-  background: -webkit-gradient(linear, left top, right top, from(#8E0E00), to(#1F1C18));
-  background: linear-gradient(to right, #8E0E00, #1F1C18);
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
   padding-top: 3rem;
   color: #fcf8e8;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Rajdhani', sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani", sans-serif;
   font-weight: 200;
 }
 
 .sportDisplay {
   padding: 3rem;
   padding-top: 0;
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
-  -ms-grid-columns: (minmax(45%, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-  background: -webkit-gradient(linear, left top, right top, from(#8E0E00), to(#1F1C18));
-  background: linear-gradient(to right, #8E0E00, #1F1C18);
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
 }
 
 @media (max-width: 980px) {
@@ -1185,19 +979,15 @@ section.sportSlider {
   height: 420px;
   width: 100%;
   margin: 50px auto;
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   border-radius: 7px 7px 7px 7px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
-  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 
 .sportDisplay .wrapper:hover {
-  -webkit-transform: translateY(-0.3rem);
-          transform: translateY(-0.3rem);
-  -webkit-box-shadow: 0px 24px 92px -37px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 24px 92px -37px rgba(0, 0, 0, 0.75);
+  transform: translateY(-0.3rem);
+  box-shadow: 0px 24px 92px -37px rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 600px) {
@@ -1213,8 +1003,7 @@ section.sportSlider {
 }
 
 .sportDisplay .product-img .img-wrapper {
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   display: inline-block;
   overflow: hidden !important;
 }
@@ -1245,8 +1034,6 @@ section.sportSlider {
 
 @media (max-width: 600px) {
   .sportDisplay .product-info {
-    width: -webkit-fit-content !important;
-    width: -moz-fit-content !important;
     width: fit-content !important;
   }
 }
@@ -1304,8 +1091,6 @@ section.sportSlider {
 }
 
 .sportDisplay .product-text p {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin: 0 0.6rem 0 38px;
   font-family: "Playfair Display", serif;
@@ -1333,24 +1118,13 @@ section.sportSlider {
 }
 
 .sportDisplay .product-price-btn {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   width: 100%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 600px) {
@@ -1377,8 +1151,7 @@ section.sportSlider {
   display: inline-block;
   height: 50px;
   width: 176px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
   font-family: "Raleway", sans-serif;
@@ -1387,37 +1160,25 @@ section.sportSlider {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#8E0E00), to(#1F1C18));
-  background: linear-gradient(to right, #8E0E00, #1F1C18);
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
   cursor: pointer;
   outline: none;
   text-decoration: none;
-  -webkit-transition: .2s all ease;
-  transition: .2s all ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transition: 0.2s all ease;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .sportDisplay .product-price-btn a:hover {
-  -webkit-transform: translateY(-0.1rem);
-          transform: translateY(-0.1rem);
-  -webkit-box-shadow: 0px 20px 28px -4px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 20px 28px -4px rgba(0, 0, 0, 0.75);
-  background: -webkit-gradient(linear, right top, left top, from(#000000), to(#434343));
+  transform: translateY(-0.1rem);
+  box-shadow: 0px 20px 28px -4px rgba(0, 0, 0, 0.75);
   background: linear-gradient(to left, #000000, #434343);
 }
 
 /**CSS FOR MODAL**/
 .pop-up-wrapper {
   font-family: "Cormorant Unicase", serif;
-  -webkit-box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
   box-shadow: -45px 49px 83px 1px rgba(0, 0, 0, 0.45);
   display: block;
   margin: 20px auto;
@@ -1558,8 +1319,7 @@ section.sportSlider {
 .product-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   height: 295px;
 }
 
@@ -1681,32 +1441,19 @@ i.fa-star.rating {
 .productDisplayContainer {
   background: url(../assets/absBG.jpg);
   background-size: cover;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   min-height: 100vh;
   width: 100vw;
   padding: 1rem 1.6rem 1rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start !important;
-      -ms-flex-align: start !important;
-          align-items: flex-start !important;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start !important;
 }
 
 @media (max-width: 600px) {
   .productDisplayContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -1777,27 +1524,16 @@ i.fa-star.rating {
 }
 
 .productDisplayContainer .productInfoSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .productDisplayContainer .productInfoSection .productInfo {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #01121398;
@@ -1805,26 +1541,13 @@ i.fa-star.rating {
   height: 100%;
   width: 100%;
   border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 1.4rem 1.5rem 1.4rem 1.5rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   font-family: "Rajdhani", sans-serif;
   row-gap: 1rem;
   margin-top: 1rem;
@@ -1841,10 +1564,8 @@ i.fa-star.rating {
   row-gap: 1rem;
   color: #d3e0ea;
   width: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
 }
 
 .productDisplayContainer .productInfoSection .productInfo .productInfoGrid i {
@@ -1866,10 +1587,8 @@ i.fa-star.rating {
 .productDisplayContainer form {
   font-family: "Rajdhani", sans-serif;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #01121398;
@@ -1883,19 +1602,10 @@ i.fa-star.rating {
   padding: 1rem;
   border-radius: 5px;
   margin-top: 0.6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .productDisplayContainer form h2 {
@@ -1910,15 +1620,9 @@ i.fa-star.rating {
 .productDisplayContainer form .form-group select {
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2rem;
   padding: 0.3rem 1rem 0.3rem 1rem;
   width: 100%;
@@ -1964,48 +1668,27 @@ i.fa-star.rating {
   padding-bottom: 1.2rem !important;
   color: #ffe227;
   width: 100%;
-  -webkit-box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
 }
 
 .sportDetailPageContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sportDetailPageContainer .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
   background: transparent;
 }
 
 @media (max-width: 980px) {
   .sportDetailPageContainer .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -2045,8 +1728,7 @@ i.fa-star.rating {
   margin-right: 10px;
   background: #8c8;
   border-radius: 5px;
-  -webkit-box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px -7px 62px 3px rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 980px) {
@@ -2088,10 +1770,8 @@ i.fa-star.rating {
   margin-top: 0.5rem;
   margin-right: 1rem;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding-top: 0;
@@ -2107,26 +1787,13 @@ i.fa-star.rating {
   height: 100%;
   width: 100%;
   border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   padding: 0rem 1.5rem 1.4rem 1.5rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   font-family: "Rajdhani", sans-serif;
   row-gap: 1rem;
   margin-top: 1rem;
@@ -2141,10 +1808,8 @@ i.fa-star.rating {
 .sportDetailPageContainer .header .productInfoSection .productInfo .productInfoGrid {
   row-gap: 1rem;
   width: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
 }
 
 .sportDetailPageContainer .header .productInfoSection .productInfo .productInfoGrid i {
@@ -2168,19 +1833,10 @@ i.fa-star.rating {
 }
 
 .sportDetailPageContainer .bookingForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #1a1a2e;
   width: 100%;
   padding: 1rem 1rem 1rem 2rem;
@@ -2198,19 +1854,10 @@ i.fa-star.rating {
 }
 
 .sportDetailPageContainer .bookingForm form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   row-gap: 0.6rem;
   /* create a new arrow, because we are going to mess up the native one
     see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
@@ -2240,30 +1887,18 @@ i.fa-star.rating {
 .sportDetailPageContainer .bookingForm form .btnSheduleSubmit:hover {
   background: #6886c5;
   cursor: pointer;
-  -webkit-transform: translateY(-0.4rem);
-          transform: translateY(-0.4rem);
+  transform: translateY(-0.4rem);
 }
 
 .sportDetailPageContainer .bookingForm form .formGroup {
   margin: 1rem;
   padding: 1rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border: 2px solid #ffcb8e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sportDetailPageContainer .bookingForm form .formGroup label {
@@ -2347,30 +1982,19 @@ i.fa-star.rating {
 
 .sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection {
   width: 98% !important;
-  display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
-  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  column-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   row-gap: 1rem;
 }
 
 .sportDetailPageContainer .bookingForm form .sheduleSelect .sheduleSelection .sheduleCheckbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 0.6rem;
-          column-gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.6rem;
   padding: 1rem;
-  -webkit-box-shadow: inset -3px -2px 45px -2px rgba(0, 0, 0, 0.75);
-          box-shadow: inset -3px -2px 45px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -3px -2px 45px -2px rgba(0, 0, 0, 0.75);
   background: #54e346;
   color: #fff;
 }
@@ -2393,33 +2017,20 @@ i.fa-star.rating {
 
 /*****Booking Payment Confirmation Page*****/
 .confirmationPage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 1rem;
   padding: 1rem;
   font-family: "Rajdhani", sans-serif;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .confirmationPage .confirmationDetails {
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 5px;
@@ -2444,75 +2055,40 @@ i.fa-star.rating {
 .confirmationPage .confirmationDetails .detailsInner .middleContainer {
   background: #f4f4f4;
   border-bottom: 2px solid #d4e2d4;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
   .confirmationPage .confirmationDetails .detailsInner .middleContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
 .confirmationPage .confirmationDetails .detailsInner .middleContainer .middleContainerChild1 {
   background: #f4f4f4;
   padding: 1.4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .confirmationPage .confirmationDetails .detailsInner .middleContainer .middleContainerChild2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 1.4rem;
   height: 100% !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
   background: #d6e0f0;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .confirmationPage .confirmationDetails .detailsInner .middleContainer .middleContainerChild2 span {
@@ -2520,39 +2096,20 @@ i.fa-star.rating {
 }
 
 .confirmationPage .confirmationDetails .detailsInner .bottomContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .confirmationPage .confirmationDetails .detailsInner .bottomContainer .priceContainer {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   border-bottom: 2px solid #d4e2d4;
 }
 
@@ -2563,18 +2120,10 @@ i.fa-star.rating {
 .confirmationPage .confirmationDetails .detailsInner .bottomContainer .priceContainer .right {
   font-family: "Play", sans-serif;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
   padding: 1.4rem;
 }
 
@@ -2591,15 +2140,9 @@ i.fa-star.rating {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .confirmationPage .confirmationDetails .detailsInner .bottomContainer form.paypalContainer button {
@@ -2615,10 +2158,8 @@ i.fa-star.rating {
 .confirmationPage .confirmationDetails .detailsInner .bottomContainer form.paypalContainer button:hover {
   background: #382933;
   cursor: pointer;
-  -webkit-transform: translateY(-0.1rem);
-          transform: translateY(-0.1rem);
-  -webkit-box-shadow: 0px 24px 32px -6px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 24px 32px -6px rgba(0, 0, 0, 0.75);
+  transform: translateY(-0.1rem);
+  box-shadow: 0px 24px 32px -6px rgba(0, 0, 0, 0.75);
 }
 
 .colorRed {
@@ -2627,48 +2168,26 @@ i.fa-star.rating {
 
 /******RECIEPT INVOICE PAGE******/
 section.invoiceContainer {
-  background: -webkit-gradient(linear, left top, right top, from(#e43a15), to(#e65245));
   background: linear-gradient(to right, #e43a15, #e65245);
   width: 100%;
   height: 100%;
   padding: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage {
   border: 0px !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #f3f4ed;
@@ -2693,16 +2212,10 @@ section.invoiceContainer .invoicePage .invoiceHeader {
   border-bottom: 1.8px solid #1e212d;
   height: 5rem;
   width: 100%;
-  font-family: 'Rajdhani', sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  font-family: "Rajdhani", sans-serif;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage .invoiceHeader button {
@@ -2710,18 +2223,16 @@ section.invoiceContainer .invoicePage .invoiceHeader button {
   color: #fff;
   border-radius: 3px;
   font-size: 1rem;
-  padding: .6rem;
+  padding: 0.6rem;
   border: 0px;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
 }
 
 section.invoiceContainer .invoicePage .invoiceHeader button:hover {
   cursor: pointer;
   background: #f05454;
-  -webkit-transform: translateY(-0.05rem);
-          transform: translateY(-0.05rem);
-  -webkit-box-shadow: 0px 24px 32px 2px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 24px 32px 2px rgba(0, 0, 0, 0.75);
+  transform: translateY(-0.05rem);
+  box-shadow: 0px 24px 32px 2px rgba(0, 0, 0, 0.75);
 }
 
 section.invoiceContainer .invoicePage .invoiceHeader h1 {
@@ -2745,38 +2256,19 @@ section.invoiceContainer .invoicePage .invoiceHeader .logo {
 section.invoiceContainer .invoicePage .invoiceBody {
   padding: 1.5rem;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage .invoiceBody .left {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 section.invoiceContainer .invoicePage .invoiceBody .left span {
@@ -2798,159 +2290,91 @@ section.invoiceContainer .invoicePage .bookingDetails {
   width: 100%;
   background: #f0e4d7;
   color: #6e7582;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails h2 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   color: #6e7c7c;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .left {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .left h3 {
   font-weight: 200;
   color: #383e56;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .left div {
   width: 100%;
   border-bottom: 1px solid #c2b092;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .left div .tHead {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .left div .content {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-weight: 400;
 }
 
 section.invoiceContainer .invoicePage .bookingDetails .bookingDetailsBody .right {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 section.invoiceContainer .invoicePage .totalPrice {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  background: -webkit-gradient(linear, right top, left bottom, from(#000000), to(#434343));
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
   background: linear-gradient(to bottom left, #000000, #434343);
   color: #fff;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-size: 2rem;
   width: 100%;
   height: 100%;
@@ -2963,19 +2387,10 @@ section.invoiceContainer .invoicePage .totalPrice {
 }
 
 .gallery_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: sans-serif;
   margin-top: 20px;
 }
@@ -2985,14 +2400,12 @@ section.invoiceContainer .invoicePage .totalPrice {
 }
 
 .gallery_container h1.galleryTitle {
-  font-family: 'Train One', cursive;
+  font-family: "Train One", cursive;
 }
 
 .gallery_container .grid-container {
-  -webkit-columns: 5 200px;
-          columns: 5 200px;
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
+  columns: 5 200px;
+  column-gap: 1.5rem;
   width: 90%;
   margin: 20px auto;
 }
@@ -3004,16 +2417,13 @@ section.invoiceContainer .invoicePage .totalPrice {
   width: 100%;
   border: solid 2px black;
   padding: 5px;
-  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 
 .gallery_container .grid-container div:hover img {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .gallery_container .grid-container div:hover {
@@ -3022,10 +2432,8 @@ section.invoiceContainer .invoicePage .totalPrice {
 
 .gallery_container .grid-container div img {
   width: 100%;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
   border-radius: 5px;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 
@@ -3039,44 +2447,25 @@ section.invoiceContainer .invoicePage .totalPrice {
 /*****ABOUT PAGE CONTAINER*******/
 .aboutPageContainer {
   padding-top: 1rem;
-  background: -webkit-gradient(linear, right bottom, left top, from(#000000), to(#434343));
   background: linear-gradient(to top left, #000000, #434343);
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .aboutPageContainer .top {
   width: 80%;
   height: 100%;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   color: #fff;
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
+  column-gap: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -3087,37 +2476,24 @@ section.invoiceContainer .invoicePage .totalPrice {
 
 @media (max-width: 600px) {
   .aboutPageContainer .top {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
 .aboutPageContainer .top .left {
   border: 1.5px solid #ffe268;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
 .aboutPageContainer .top .left .img-box {
   width: 15rem;
-  -webkit-box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
-          box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
+  box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
   height: 15rem;
   background: #1989ff;
   border-radius: 50%;
@@ -3128,27 +2504,17 @@ section.invoiceContainer .invoicePage .totalPrice {
 .aboutPageContainer .top .right {
   border: 1.5px solid #ffe268;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
 .aboutPageContainer .top .right .img-box {
   width: 15rem;
-  -webkit-box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
-          box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
+  box-shadow: 0px -2px 182px -49px rgba(0, 0, 0, 0.75) inset;
   height: 15rem;
   background: purple;
   border-radius: 50%;
@@ -3157,48 +2523,39 @@ section.invoiceContainer .invoicePage .totalPrice {
 }
 
 .aboutPageContainer .top .title {
-  font-family: 'Cookie', cursive;
+  font-family: "Cookie", cursive;
   font-size: 2rem;
   color: #ffcc29;
 }
 
 .aboutPageContainer .top .description {
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
   border-bottom: 1.3px solid #9e9d89;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   justify-content: center;
 }
 
 .aboutPageContainer .top .contact {
   padding: 1rem;
   color: #fff;
-  font-size: .9rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-family: "Rajdhani", sans-serif;
 }
 
 .aboutPageContainer .top .contact a {
-  -webkit-transition: .2s all ease;
-  transition: .2s all ease;
+  transition: 0.2s all ease;
   text-decoration: none;
   color: #fff;
   margin-right: 1.5rem;
 }
 
 .aboutPageContainer .top .contact a:hover {
-  -webkit-transform: translateY(-0.4rem);
-          transform: translateY(-0.4rem);
+  transform: translateY(-0.4rem);
   text-decoration: underline;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   color: #f7ea00;
   cursor: pointer;
 }
@@ -3214,4 +2571,216 @@ section.invoiceContainer .invoicePage .totalPrice {
   height: 20%;
   background: #0f1123;
 }
-/*# sourceMappingURL=main.css.map */
+
+.profile-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  /**
+    PROFILE PAGE CSS
+  **/
+  /**
+    MY CSS FOR PROFILE PAGE
+  **/
+}
+
+.profile-container .wrapper {
+  width: 450px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.08);
+}
+
+.profile-container .wrapper .left {
+  width: 35%;
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+}
+
+.profile-container .wrapper .left img {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-container .wrapper .left h4 {
+  margin-bottom: 10px;
+}
+
+.profile-container .wrapper .left p,
+.profile-container .wrapper .left h5 {
+  font-size: 12px;
+  color: white;
+}
+
+.profile-container .wrapper .right {
+  width: 65%;
+  background: var(--secondary-bg-color);
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.profile-container .wrapper .right .info,
+.profile-container .wrapper .right .projects {
+  margin-bottom: 25px;
+}
+
+.profile-container .wrapper .right .info h3,
+.profile-container .wrapper .right .projects h3 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #070707;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.profile-container .wrapper .right .info_data,
+.profile-container .wrapper .right .projects_data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container .wrapper .right .info_data .data,
+.profile-container .wrapper .right .projects_data .data {
+  width: 45%;
+}
+
+.profile-container .wrapper .right .info_data .data h4,
+.profile-container .wrapper .right .projects_data .data h4 {
+  margin-bottom: 5px;
+}
+
+.profile-container .wrapper .right .info_data .data p,
+.profile-container .wrapper .right .projects_data .data p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #bcc5cf;
+}
+
+.profile-container .profile-edit .right {
+  width: 500px;
+  height: 400px;
+  border-radius: 5px;
+}
+
+.profile-container .profile-display .wrapper {
+  width: 600px;
+  height: 400px;
+}
+
+.profile-container .info > form > input[type="text"],
+.profile-container .info > form > input[type="email"],
+.profile-container .info > form > input[type="date"],
+.profile-container .info > form > input[type="password"],
+.profile-container .info > form > textarea {
+  width: 100%;
+  background: #bcc5cf;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+}
+
+.profile-container .info > form > input[type="radio"] {
+  margin: 0px 10px 10px 10px;
+}
+
+.profile-container .info > form > input[type="checkbox"] {
+  margin: 10px 10px 10px 0px;
+}
+
+.profile-container .info > form > .member {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-container .info > form > div > label > h4 {
+  margin: 5px 5px 0px 5px;
+}
+
+.profile-container .info > form > div {
+  margin-bottom: 15px;
+}
+
+.profile-container .info > form > button {
+  border: none;
+  background: linear-gradient(to right, #8e0e00, #1f1c18);
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.profile-container .social_media > a {
+  text-decoration: none;
+  color: red;
+}
+
+.profile-container .social_media,
+.profile-container .social_media > span {
+  color: #01d5d9;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.registeerFailed {
+  background: #f7451d;
+}
+
+.registerSuccess {
+  background: #00ff1e;
+}
+
+.registerSuccess,
+.registerFailed {
+  width: 60%;
+  align-self: center;
+  position: relative;
+  left: 1.5rem;
+  box-shadow: -4px 10px 25px -13px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-family: "Train One", cursive;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: auto;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .registerSuccess,
+  .registerFailed {
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .profile-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .wrapper {
+    width: 400px !important;
+    height: 400px !important;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.08);
+  }
+  .profile-display .wrapper {
+    width: 400px !important;
+    height: 400px;
+  }
+}

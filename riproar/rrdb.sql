@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 02:30 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Apr 11, 2021 at 07:07 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -83,7 +83,9 @@ CREATE TABLE `booking_detail` (
 `booking_id` int(11)
 ,`sport_detail_id` int(11)
 ,`slot_id` int(11)
-,`name` varchar(255)
+,`user_id` int(11)
+,`name` varchar(50)
+,`sport_name` varchar(255)
 ,`start_time` timestamp
 ,`number_of_people` int(11)
 ,`quantity` int(11)
@@ -276,8 +278,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `password`, `role`, `status`) VALUES
-(2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 0),
-(3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 0, 0);
+(2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 1),
+(3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -286,7 +288,7 @@ INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `
 --
 DROP TABLE IF EXISTS `booking_detail`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `booking_detail`  AS SELECT `booking`.`booking_id` AS `booking_id`, `booking`.`sport_detail_id` AS `sport_detail_id`, `slot`.`slot_id` AS `slot_id`, `sport_detail`.`name` AS `name`, `slot`.`start_time` AS `start_time`, `slot`.`number_of_people` AS `number_of_people`, `booking`.`quantity` AS `quantity`, `slot`.`slot_date` AS `slot_date` FROM (((`slot` join `booked_slot`) join `booking`) join `sport_detail`) WHERE `sport_detail`.`sport_detail_id` = `booking`.`sport_detail_id` AND `booking`.`booking_id` = `booked_slot`.`booking_id` AND `booked_slot`.`slot_id` = `slot`.`slot_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `booking_detail`  AS SELECT `booking`.`booking_id` AS `booking_id`, `booking`.`sport_detail_id` AS `sport_detail_id`, `slot`.`slot_id` AS `slot_id`, `booking`.`user_id` AS `user_id`, `users`.`name` AS `name`, `sport_detail`.`name` AS `sport_name`, `slot`.`start_time` AS `start_time`, `slot`.`number_of_people` AS `number_of_people`, `booking`.`quantity` AS `quantity`, `slot`.`slot_date` AS `slot_date` FROM ((((`slot` join `booked_slot`) join `booking`) join `sport_detail`) join `users`) WHERE `sport_detail`.`sport_detail_id` = `booking`.`sport_detail_id` AND `booking`.`booking_id` = `booked_slot`.`booking_id` AND `booked_slot`.`slot_id` = `slot`.`slot_id` AND `users`.`user_id` = `booking`.`user_id` ;
 
 -- --------------------------------------------------------
 
