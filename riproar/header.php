@@ -29,7 +29,7 @@
    <div class="top-nav">
       <!-- <p class="" style="color:white;font-size:.8rem;"><i class="fas fa-phone-alt"></i> 9844723612 </p> -->
       <?php if (!isset($_SESSION['user']) ||(trim ($_SESSION['user']) == '')){ ?>
-      <a href="register.php" class="logout <?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
+      <a href="login.php" class="logout <?php echo ($curPage == "register.php" ? "active" : "");?>"><i class="fas fa-user-plus"></i> SignUp/SignIn</a>
       <?php } else {
 
             
@@ -60,10 +60,12 @@
          
       
 
-      <div class="nav-links">
+      <div class="nav-links" style="padding-right:1.2rem">
          <a href="index.php" class="<?php echo ($curPage == "index.php" ? "active" : "");?>" >Home</a>
+         <a href="explore.php" class="<?php echo ($curPage == "explore.php" ? "active" : "");?>">Sports</a>
+         <a href="gallery.php" class="<?php echo ($curPage == "gallery.php" ? "active" : "");?>"> Gallery</a>
          <a href="about.php" class="<?php echo ($curPage == "about.php" ? "active" : "");?>">About Us</a>
-         <a href="contact.php" class="<?php echo ($curPage == "contact.php" ? "active" : "");?>"> Contact Us</a>
+         <!-- <a href="contact.php" class="<?php //echo ($curPage == "contact.php" ? "active" : "");?>"> Contact Us</a> -->
       </div>
 
       

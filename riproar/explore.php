@@ -1,8 +1,9 @@
 <?php include_once 'header.php'; ?>
-    <br><br>
-    
+   
+    <h1 class="exploreTitle">Explore diffrent Adventure Sports in Nepal!</h1>
 
     <div class="sportDisplay">
+
 
         <?php 
             $sports = $crud->fetch_all_table_data('sport');
@@ -12,7 +13,7 @@
 
                 <div class="wrapper">
                     <div class="product-img">
-                        <img src="dbImages/sports/<?php echo $sport['thumbnail1'] ?>" height="420" width="327">
+                    <div class="img-wrapper"><img src="dbImages/sports/<?php echo $sport['thumbnail1'] ?>" height="420" width="327"></div>
                     </div>
                     <div class="product-info">
                         <div class="product-text">
