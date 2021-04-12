@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 07:07 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Apr 12, 2021 at 01:14 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -120,7 +120,11 @@ INSERT INTO `location` (`location_id`, `location`, `desctiption`, `thumbnail`) V
 (8, 'Muktinath Region', 'Muktinath is a Vishnu temple, sacred to both Hindus and Buddhists. It is located in Muktinath Valley at the foot of the Thorong La mountain pass in Mustang, Nepal. It is one of the world\'s highest temples.', 'muktinath.jpg'),
 (9, 'Bhote Koshi River', 'The Bhote Koshi is the upper river course of the Sun Kosi, known as Poiqu in Tibet. It is part of the Koshi River system in Nepal. A western tributary of the upper Dudh Koshi is also called Bhote Koshi.', 'bhotekoshi.jpg'),
 (10, 'Trisuli River', 'The Trishuli River is one of the major tributaries of the Narayani River basin in central Nepal. It originates in Tibet as a stream and enters Nepal at Gyirong Town.', 'trisuli.jpg'),
-(11, 'Hinku Valley, Lamjung', 'Hinku Hongu Valley Trek located to the west of Solukhumbu is the secluded and rarely visited Rolwaling valley. The upper reaches of the valley are connected to the Solukhumbu by the high and difficult pass of Tashi Lapsta pass. Trekkers contemplating trek that connects Rolwaling with Khumbu valley should always travel from east to west (khumbu to Rolwaling). To attempt to do the trek in reverse is likely to result in technical and altitude problems. The trek, particularly the crossing of Tashi Lapsta pass, is one of the more difficult treks in Nepal and should only be attempted by self-sufficient and experienced parties. Some basic mountaineering skills are required. ', 'hinkuvalley.jpg');
+(11, 'Hinku Valley, Lamjung', 'Hinku Hongu Valley Trek located to the west of Solukhumbu is the secluded and rarely visited Rolwaling valley. The upper reaches of the valley are connected to the Solukhumbu by the high and difficult pass of Tashi Lapsta pass. Trekkers contemplating trek that connects Rolwaling with Khumbu valley should always travel from east to west (khumbu to Rolwaling). To attempt to do the trek in reverse is likely to result in technical and altitude problems. The trek, particularly the crossing of Tashi Lapsta pass, is one of the more difficult treks in Nepal and should only be attempted by self-sufficient and experienced parties. Some basic mountaineering skills are required. ', 'hinkuvalley.jpg'),
+(12, 'Kaligandaki River', 'The Gandaki River, also known as the Narayani and the Gandak, is one of the major rivers in Nepal and a left bank tributary of the Ganges in India. Its total catchment area amounts to 46,300 km², most of it in Nepal. In the Nepal Himalayas, it is notable for its deep canyon.', 'kaligandaki.jpg'),
+(13, 'Sunkoshi River', 'The Sunkoshi, also called Sunkosi, is a trans-boundary river that originates in Tibet Autonomous Region and is part of the Koshi or Saptkoshi River system in Nepal. ', 'sunkoshi.jpg'),
+(14, 'Karnali River', 'Ghaghara, also called Karnali is a perennial trans-boundary river originating on the Tibetan Plateau near Lake Manasarovar. It cuts through the Himalayas in Nepal and joins the Sharda River at Brahmaghat in India. Together they form the Ghaghara River, a major left bank tributary of the Ganges.', 'karnali.jpg'),
+(15, 'Lukla', 'Lukla is a small town in the Khumbu Pasanglhamu rural municipality of the Solukhumbu District in the Province No. 1 of north-eastern Nepal. Situated at 2,860 metres, it is a popular place for visitors to the Himalayas near Mount Everest to arrive.', 'lukla.jpg');
 
 -- --------------------------------------------------------
 
@@ -224,7 +228,10 @@ INSERT INTO `sport_detail` (`sport_detail_id`, `location_id`, `sport_id`, `name`
 (9, 6, 9, 'Single Track Nepal', 'Single Track Nepal is a local mountain biking expedition company owned by two Nepali mountain biking enthusiasts, Rakesh Manandhar and Sumit Joshi. The mission of Single Track Nepal is simple: to showcase the best of Nepal’s wilderness and culture from the thrill of a mountain bike. Single Track Nepal aims to promote Nepal as a premier destination for world class single track mountain biking. Explorers and adventurers at heart, Rakesh and Sumit push the boundaries of traditional mountain biking operators by always seeking new trails, new trips and new ways to travel through Nepal and the South Asian region on mountain bike. Exploratory trails in development include any sections of the Great Himalayan Trail, routes in Sikkim, Kerala and Bhutan.\r\n\r\nAt Single Track Nepal, every trip is personalised to help you reach personal ambitions and fulfil special interests. We can find you trails to fit your desired level of riding be it super enduro and technical, or relaxed and spiritual. With over a decade’s years of experience guiding mountain biking trips, and in addition to more than twenty years experience leading trekking and climbing expeditions in Nepal and in South Asia, you can be confident that Single Track Nepal have the experience and skill to provide the best experience for you.', 'singletracknepal1.jpg', 'singletracknepal2.jpg', 'singletracknepal3.jpg', 'http://singletracknepal.com.np/'),
 (10, 6, 9, 'Himalayan Single Track', 'By far and away the most ridden trail in Nepal, this short mountain biking adventure takes you into the heart of the Himalaya and rips down some of the best trails in the Lower Mustang region, including the famous Lubra Valley Trail. The route follows the raging Kaligandaki (Black River), famed as being part of the deepest gorge in the world, splitting the massive peaks of Annapurna and Dhaulagiri.\r\n\r\nThe upper part of the gorge is also called Thak Khola after the local Thakhali people who became prosperous from trans-Himalayan trade and are famed for their delicious food, apple growing and the making of local Apple Brandy.\r\n\r\nOur trail climbs up to Muktinath at the foot of the mighty Throng Pass on route from the Annapurna Circuit. From here there are many options for some amazing single track and downhill riding, past ancient monasteries and traditional villages. Bump along on cobble paths and get your feet wet in ice fed streams. This is surely one of the most spectacular short mountain biking holidays in the world. If you ride with the HST Team we will take you on trails other companies don’t know to hidden lakes, villages and single track descents.\r\n\r\nYou have to try it once in your life.', 'himalayansingletrack1.jpg', 'himalayansingletrack2.jpg', 'himalayansingletrack3.jpg', 'http://himalayansingletrack.com/tours/jomsom-muktinath-mountainbiking-nepal/'),
 (11, 10, 10, 'White Water Nepal', 'The scenery of river Trishuli includes small gorges and a glimpse of the cable car leading to the famous Hindu Temple Manakamana.\r\nFor the most of the year the rapids encountered on the Trisuli are straightforward, easily negotiated and well spaced out. Trisuli river is an excellent river for those looking for a short river trip, without the challenge of huge rapids, but with some really exciting rapids, with beautiful scenery and a relatively peaceful environment. During the monsoon months the intensity of the rapids increases and attracts a radically different set of rafters. But there are sections for rafting during the monsoon for those who are looking for simply exciting trip!', 'whitewaternepal1.jpg', 'whitewaternepal2.jpg', 'whitewaternepal3.jpg', 'http://www.raftnepal.com/trisuli_rafting.htm'),
-(12, 11, 11, 'Hop Nepal', 'Honey hunting is culturally important and has been practised in Nepal for centuries. Earlier, during the Udhauli and Ubhauli festivals, it was performed twice a year. \r\nIn an attempt to harvest the purest type of honey, Indigenous Himalayan people have been practising this craft. While a tradition, honey hunting is often performed for honey\'s medicinal values. \r\n\r\nHoney intake stimulates digestion and serves to enhance immunity. Honey\'s effects help retain body temperature, which is critical if you are a resident of the Himalayas. No wonder these people, for this edible molten gold, gamble their lives. \r\n\r\nHoney harvested from the hives of such wild bees is often assumed to have a strange hallucinating quality, which has lately drawn such finding natural highs.', 'hopnepal1.jpg', 'hopnepal2.jpg', 'hopnepal3.jpg', 'https://www.hopnepal.com/blog/honey-hunting-in-nepal');
+(12, 11, 11, 'Hop Nepal', 'Honey hunting is culturally important and has been practised in Nepal for centuries. Earlier, during the Udhauli and Ubhauli festivals, it was performed twice a year. \r\nIn an attempt to harvest the purest type of honey, Indigenous Himalayan people have been practising this craft. While a tradition, honey hunting is often performed for honey\'s medicinal values. \r\n\r\nHoney intake stimulates digestion and serves to enhance immunity. Honey\'s effects help retain body temperature, which is critical if you are a resident of the Himalayas. No wonder these people, for this edible molten gold, gamble their lives. \r\n\r\nHoney harvested from the hives of such wild bees is often assumed to have a strange hallucinating quality, which has lately drawn such finding natural highs.', 'hopnepal1.jpg', 'hopnepal2.jpg', 'hopnepal3.jpg', 'https://www.hopnepal.com/blog/honey-hunting-in-nepal'),
+(13, 12, 10, 'Kaligandaki River Rafting Tour', '<ul>\r\n<li>Starting point : Maldhunga at 8am in the morning</li>\r\n<li>Stopping point: Mirmi</li>\r\n<li>Distance covered: 90km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>\r\n', 'kaligandakirafting1.jpg', 'kaligandakirafting2.jpg', 'kaligandakirafting3.jpg', 'www.kaligandakiriverraftingtour.com'),
+(14, 12, 10, 'Sunkoshi River Rafting Tour ', '<ul>\r\n<li>Starting point : Dumja at 8am in the morning</li>\r\n<li>Stopping point: Chatara</li>\r\n<li>Distance covered: 270km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance </li>\r\n</ul>\r\n', 'sunkoshirafting1.jpg', 'sunkoshirafting2.jpg', 'sunkoshirafting3.jpg', 'www.sunkoshiriverraftingtour.jpg'),
+(15, 12, 10, 'Karnali River Rafting Tour', '<ul>\r\n<li>Starting point : Dungeshwor at 8am in the morning</li>\r\n<li>Stopping point: CHisapani</li>\r\n<li>Distance covered: 270km</li>\r\nIncluded: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>', 'karnalirafting1.jpg', 'karnalirafting2.jpg', 'karnalirafting3.jpg', 'www.karnaliriverraftingtour.com');
 
 -- --------------------------------------------------------
 
@@ -278,8 +285,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `password`, `role`, `status`) VALUES
-(2, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 0, '', 'Naruto@123', 0, 1),
-(3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 3, 0);
+(3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 3, 1),
+(4, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 29, 'Japan', 'fa6400da740226c369f5e71b85b50ef9', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -366,7 +373,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `slot`
@@ -384,13 +391,13 @@ ALTER TABLE `sport`
 -- AUTO_INCREMENT for table `sport_detail`
 --
 ALTER TABLE `sport_detail`
-  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

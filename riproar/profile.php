@@ -14,7 +14,7 @@
 
     ?>
     
-    <section >
+    <section class="profileContainer" >
 
         <div class="profile-container">
             <div class="profile-display mt-20 mb-20">
@@ -86,7 +86,7 @@
                         <input type='password' name="pass2"  value="<?php echo (isset($_POST['pass2'])) ? $_POST['pass2']: '';?>" placeholder="COMFIRM PASSWORD"/>
                         <div>
                             <label>Your Age:</label>
-                            <input type='number' name="age"  value="<?php echo $user_info['age'];?>" placeholder="AGE"/>
+                            <input type='number' class="age" name="age"  value="<?php echo $user_info['age'];?>" placeholder="AGE"/>
                         </div>
 
 
@@ -102,16 +102,18 @@
                 </div>
         </div>
 
-        <div>
-            <h3>Booking Details of this user.</h3>
+        <div class="profileBookingDetails">
+            <div class="profileBookingDetailsInner">
+            <h3>Your booking history!</h3><ul>
             <?php
                 $bookingDetails = $crud->fetch_datas_with_column('booking_detail', 'user_id', $_SESSION['user']);
 
                 foreach($bookingDetails as $booking){
-                    echo $booking['sport_name']." at date ".$booking['slot_date']. " and quantity ".$booking['quantity']."</br>";
+                   // echo $booking['sport_name']." at date ".$booking['slot_date']. " and quantity ".$booking['quantity']."</br>";
+                    echo "<li>".$booking['quantity']." slots of ".$booking['sport_name']." booked for ".$booking['slot_date']."!</li>";
                 }
-            ?>
-
+            ?></ul>
+            </div>
         </div>
     </section>
     <?php

@@ -26,7 +26,7 @@
         else{
             $_SESSION['user'] = $auth;
             unset($_SESSION['message']);
-            header('location:account.php');
+            header('location:profile.php');
         }
     }
 

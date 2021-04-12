@@ -41,7 +41,7 @@
          }
 
          public function register_user($name, $username, $email, $password, $country, $age) {
-            $sql = "INSERT INTO users (name, email, username, password, age, country, role, status) VALUES ('$name', '$email', '$username', '$password', '$age', '$country', 0, 0)";
+            $sql = "INSERT INTO users (name, email, username, password, age, country, role, status) VALUES ('$name', '$email', '$username', '$password', '$age', '$country', 0, 1)";
             //$query = $this->connection->query($sql);
             return $this->connection->query($sql);
          }

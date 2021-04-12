@@ -52,7 +52,7 @@
 
         <div class="productInfoSection">
             <div class="productInfo">
-                <h1 class="title"> About <?php echo strtoupper($sport_details['name']); ?>, <?php echo strtoupper($location['location']); ?> </h1>
+                <h1 class="title">  <?php echo strtoupper($sport_details['name']); ?>, <?php echo strtoupper($location['location']); ?> </h1>
 
                 <span class="description"> <?php echo $sport_details['description']; ?></span>
 

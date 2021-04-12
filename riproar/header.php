@@ -36,7 +36,7 @@
          //fetch user data
          $userDetailsRow = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
          ?>
-         <a href="#" class="<?php echo ($curPage == "account.php" ? "active" : "");?>" style="position:absolute;left:100px;top:10px;width:fit-content;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
+         <a href="profile.php" class="<?php echo ($curPage == "account.php" ? "active" : "");?>" style="position:absolute;left:100px;top:10px;width:fit-content;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
          <a href="index.php?logout='1'" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
       <?php }?>
    </div>
