@@ -36,8 +36,18 @@
          //fetch user data
          $userDetailsRow = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
          ?>
-         <a href="profile.php" class="<?php echo ($curPage == "account.php" ? "active" : "");?>" style="position:absolute;left:100px;top:10px;width:fit-content;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
+         <a href="profile.php" class="<?php echo ($curPage == "account.php" ? "active" : "");?>"style="margin-right:auto;z-index:999;"><i class="fas fa-user-circle"></i> <?php echo ucfirst($userDetailsRow['name']); ?></a>
+         <?php
+            if($userDetailsRow['role'] == 3) {
+               ?>
+               <a href="dashboard.php" class="logout"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+               <?php
+               
+            }
+         ?>
+
          <a href="index.php?logout='1'" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
       <?php }?>
    </div>
 
@@ -45,9 +55,8 @@
       <input type="checkbox" id="nav-check">
       <div class="nav-header">
          <div class="nav-title">
-         <!-- RIP & ROAR -->
-         <img src="assets/logo.PNG" alt="Logo" style="width:100px;height:100px;position:relative;top:-40px;z-index:9999;
-            ">
+            <!-- RIP & ROAR -->
+            <a href="index.php"><img src="assets/logo-riproar.PNG" alt="Logo" ></a>
          </div>
       </div>
       <div class="nav-btn">
