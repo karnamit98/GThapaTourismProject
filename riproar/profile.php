@@ -22,7 +22,7 @@
                 <div class="left">
                     <img src="assets/BUNGY-COOL-GUY-copyright-The-Last-Resort-2.jpg" alt="user" width="100">
                     <h5><?php echo strtoupper($user_info['name']); ?></h5>
-                    <p>Customer</p>
+                    <!-- <p>Customer</p> -->
                 </div>
                 <div class="right">
                     <div class="info">

@@ -40,7 +40,7 @@
          <?php
             if($userDetailsRow['role'] == 3) {
                ?>
-               <a href="dashboard.php" class="logout"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+               <a href="dashboard.php" class="logout <?php echo ($curPage == "dashboard.php" ? "active" : "");?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                <?php
                
             }

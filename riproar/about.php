@@ -5,18 +5,24 @@
 
 
     <div class="aboutPageContainer">
+        <div class="banner"><h1>About Us</h1> <span class="description">Hundreds of sports events are organized daily in Nepal by various individual organizers. However, these events lack marketing, advertisement and proper online platform. We created this website to make the booking easier. Plus, you can get as much information about that sport as needed in our website. </span></div>
+        <h1>Meet the Team</h1>
         <div class="top"> 
             <div class="left">
                 <div class="img-box"></div>
                 <div class="title">Gopal Thapa</div>
-                <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis facere placeat accusamus voluptas corrupti vero maxime itaque, repellat iusto deleniti? Molestias labore porro vel eaque quibusdam corrupti sit ab culpa, veniam impedit suscipit amet corporis quia error quos quasi accusamus! Reiciendis asperiores, repellat numquam consequuntur adipisci sequi soluta aliquid labore nobis aut? Obcaecati magnam eius nisi quasi adipisci, dolores quo ratione? Similique illum incidunt, autem explicabo odit nam repudiandae praesentium facilis tenetur libero amet corporis beatae sit quam. Nesciunt expedita aut deserunt nobis dolore minima! Esse et maiores ad atque nobis incidunt, quos deserunt doloremque ab optio maxime assumenda.</div>
-               <div class="contact"><a class="socialLink" target="blank" href="https://www.facebook.com/profile.php?id=100011093717505"><i class="fab fa-facebook"></i> Connect Now</a>  <span><i class="fas fa-phone-alt"></i> 9876543210</span></div>
+                <div class="role">Project Manager</div>
+                <div class="description">“The purpose of life, after all, is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.”– Eleanor Roosevelt</div>
+                <div class="emailContact"><span><i class="fas fa-envelope"></i>&nbsp;gopstc@gmail.com</span> <span><i class="fas fa-phone-alt"></i> +1405 300-3729</span></div>
+               <div class="contact"><a class="socialLink" target="blank" href="https://www.facebook.com/profile.php?id=100011093717505"><i class="fab fa-facebook-square"></i>&nbsp; Contact</a>  </div>
             </div>
             <div class="right">
             <div class="img-box"></div>
                 <div class="title">Aman Khan</div>
-                <div class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi consequuntur fuga hic? Numquam, et soluta ea ex obcaecati accusamus blanditiis sequi id incidunt excepturi quae suscipit, est tempore iste, quaerat asperiores optio esse quod voluptatum ipsum officia ratione quos laborum saepe. Magnam maiores fugiat corrupti dicta quia temporibus quos saepe sit. Hic impedit, reprehenderit corrupti optio fuga accusamus pariatur deserunt velit. Possimus delectus voluptatum, sunt commodi nemo libero distinctio quod recusandae ratione, consequatur debitis saepe quaerat. Dolores et aliquid fugiat qui doloremque laborum officiis laboriosam? Aspernatur dolores id modi quos, nam repellat odio recusandae deleniti optio quibusdam sit, reiciendis voluptatibus.</div>
-                <div class="contact"><a class="socialLink" target="blank" href="https://www.facebook.com/freedomoveraman.khan"><i class="fab fa-facebook"></i> Connect Now</a>  <span><i class="fas fa-phone-alt"></i> 9876543210</span></div>
+                <div class="role">Lead Developer</div>
+                <div class="description">“Every man’s life ends the same way. It is only the details of how he lived and how he died that distinguish one man from another.” – Ernest Hemingway</div>
+                <div class="emailContact"><span><i class="fas fa-envelope"></i>&nbsp;khanaman9730@gmail.com</span> <span><i class="fas fa-phone-alt"></i> +1850 346-1745</span></div>
+                <div class="contact"><a class="socialLink" target="blank" href="https://www.facebook.com/freedomoveraman.khan"><i class="fab fa-facebook-square"></i>&nbsp; Contact</a> </div>
             </div>
         </div>
         <!-- <div class="middle"> </div>

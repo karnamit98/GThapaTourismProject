@@ -5,10 +5,11 @@
     <section class="bg pd-20 mt-20" id="footer" style="border-radius:0;">
         <div class="space-between">
             <div class="pd-20">
-                <div><h3>RIP & ROAR</h3></div>
+                <div><a href="index.php"><img src="assets/logo-riproar.PNG" alt="Logo" ></a></div>
+                <!-- <h3>RIP & ROAR</h3> -->
                 <p class="mt-20">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae debitis hic nesciunt assumenda quas culpa fugiat error inventore rem eum asperiores voluptatum officia quidem eius nemo consectetur vel minima excepturi voluptatibus voluptas animi cum sapiente, repudiandae minus! Ab quas temporibus facilis ipsam soluta quo est labore non dignissimos rem similique, accusantium voluptate doloremque sit. Incidunt vitae nam fugit qui quam?</p>
-            </div>
+                Hundreds of sports events are organized daily in Nepal by various individual organizers. However, these events lack marketing, advertisement and proper online platform. We created this website to make the booking easier. Plus, you can get as much information about that sport as needed in our website. 
+               </div>
             <div class="pd-20">
                 <div><h3>NAVIGATION LINKS</h3></div>
                 <p class="mt-20"><a href="index.php" class=" footer-link">Home</a></p>
