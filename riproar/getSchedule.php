@@ -11,6 +11,7 @@ $datas = $crud->fetch_datas_with_column('booking_detail', 'sport_detail_id', $id
 $sport_detail = $crud->fetch_data_with_id('sport_view', 'sport_detail_id', $id);
 
 $max_num_of_people = $sport_detail['max_slot_capacity'];
+$sport_id = $sport_detail['sport_id'];
 $number_of_people = 0;
 
 $show_number_form = false;
@@ -61,10 +62,16 @@ for($i = 0; $i < $total_schedule; $i++) {
             //show the form if number of people is more than 1
             if($max_num_of_people != 1) {
                 $show_number_form = true;
-                echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this, ".$max_num_of_people.")' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+                if($sport_id != 12)
+                    echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this, ".$max_num_of_people.")' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i A')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i A')."</div>";
+                else{
+                    $date->setTime(9,00,00);
+                    echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this, ".$max_num_of_people.")' value='09:00:00'/>".$date->format('M-d h:i A')." - ".$date->add(new DateInterval('PT'. $duration.'M'))->format('M-d h:i A')."</div>";
+                }
+                   
             }
             else 
-            echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+            echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i A')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i A')."</div>";
 
             //if not booked show normal checkbox
             
@@ -73,11 +80,11 @@ for($i = 0; $i < $total_schedule; $i++) {
         else {
             //number_of_people zero means it's full
             if($number_of_people == 0) //if number_of_people is full i.e. 0 then show checked status
-            echo "<div class='sheduleCheckbox sheduleCheckboxDisabled' ><input class='multiSelect' type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' disabled/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+            echo "<div class='sheduleCheckbox sheduleCheckboxDisabled' ><input class='multiSelect' type='checkbox' name='ckb[]' onclick='return false;' value='".$starting_time->format('h:i')."' disabled/>".$starting_time->format('h:i A')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i A')."</div>";
             else {
                 // echo "slot_date is: ".$data['slot_date']. " and slot_start_time is : ".$data['start_time'];
                 $show_number_form = true;
-                echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this, ".$number_of_people.")' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i')."</div>";
+                echo "<div class='sheduleCheckbox'><input class='multiSelect' type='checkbox' name='ckb[]' onclick='chkcontrol(this, ".$number_of_people.")' value='".$starting_time->format('h:i')."'/>".$starting_time->format('h:i A')." - ".$starting_time->add(new DateInterval('PT'. $duration.'M'))->format('h:i A')."</div>";
             }//else respond to event 
 
         }

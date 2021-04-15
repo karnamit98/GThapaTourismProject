@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2021 at 01:14 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Apr 15, 2021 at 07:53 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ INSERT INTO `booked_slot` (`slot_id`, `booking_id`) VALUES
 (15, 33),
 (16, 33),
 (18, 36),
-(19, 37);
+(19, 37),
+(20, 0);
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,8 @@ INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `number_of_people`, `sl
 (15, '2021-04-11 01:35:00', '2021-04-11 01:45:00', 0, '2021-04-11'),
 (16, '2021-04-11 01:45:00', '2021-04-11 01:55:00', 0, '2021-04-11'),
 (18, '2021-04-11 04:15:00', '2021-04-11 06:15:00', 0, '2021-04-11'),
-(19, '2021-04-11 06:15:00', '2021-04-11 08:15:00', 3, '2021-04-11');
+(19, '2021-04-11 06:15:00', '2021-04-11 08:15:00', 3, '2021-04-11'),
+(20, '2021-04-15 03:15:00', '2021-04-15 03:15:00', 10, '2021-04-15');
 
 -- --------------------------------------------------------
 
@@ -192,7 +194,8 @@ INSERT INTO `sport` (`sport_id`, `name`, `available_season`, `slot_duration`, `o
 (8, 'rock climbing', 'all seasons', 360, '09:00:00', '15:00:00', 1, 50, 5000, 'rockclimbing1.jpg', 'rockclimbing2.jpg', 'rockclimbing3.jpg', 'Rock climbing is a sport in which participants climb up, down or across natural rock formations or artificial rock walls. The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling.'),
 (9, 'mountain biking', 'all seasons', 60, '09:00:00', '19:00:00', 100, 100, 200, 'mountainbiking1.jpeg', 'mountainbiking2.jpg', 'mountainbiking3.jpg', 'Mountain biking is a sport of riding bicycles off-road, often over rough terrain, usually using specially designed mountain bikes.'),
 (10, 'white-water rafting', 'all seasons', 480, '08:00:00', '15:00:00', 50, 10, 5000, 'rafting1.jpg', 'rafting2.jpg', 'rafting3.jpg', 'Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience.'),
-(11, 'Honey Hunting', 'all seasons', 54, '08:00:00', '17:00:00', 10, 1, 3000, 'honeyhunting1.jpg', 'honeyhunting2.jpg', 'honeyhunting3.jpg', 'Wild honey from Apis Laboriosa, the Himalayan giant honey bee, has been gathered by Gurung people from cliffs in the Himalayan foothills of Nepal for centuries. Apis Laboriosa is the largest honeybee in the world, and is referred to as ‘Bheer-Mauri’ in Nepali, which directly translates into ‘cliff bee.’ It is crucial for pollinating wild flora and crops in the mountains. The Gurung people across many parts of Nepal, especially the Kaski and Lamjung Districts, value their tradition of honey hunting as part of their lifestyle, and collect honey twice a year during the spring and autumn. The honey they gather is prized due to both its medicinal properties and monetary worth.\r\n\r\nEvery year, during the start of the spring or autumn season, the local Shaman (priest or the elder of the tribe) of the area sets an auspicious date for harvesting honey. Tuesday is considered a suitable day, while the 8th, 11th, 23rd, 26th, and 30th day of a moon cycle are not. ');
+(11, 'Honey Hunting', 'all seasons', 54, '08:00:00', '17:00:00', 10, 1, 3000, 'honeyhunting1.jpg', 'honeyhunting2.jpg', 'honeyhunting3.jpg', 'Wild honey from Apis Laboriosa, the Himalayan giant honey bee, has been gathered by Gurung people from cliffs in the Himalayan foothills of Nepal for centuries. Apis Laboriosa is the largest honeybee in the world, and is referred to as ‘Bheer-Mauri’ in Nepali, which directly translates into ‘cliff bee.’ It is crucial for pollinating wild flora and crops in the mountains. The Gurung people across many parts of Nepal, especially the Kaski and Lamjung Districts, value their tradition of honey hunting as part of their lifestyle, and collect honey twice a year during the spring and autumn. The honey they gather is prized due to both its medicinal properties and monetary worth.\r\n\r\nEvery year, during the start of the spring or autumn season, the local Shaman (priest or the elder of the tribe) of the area sets an auspicious date for harvesting honey. Tuesday is considered a suitable day, while the 8th, 11th, 23rd, 26th, and 30th day of a moon cycle are not. '),
+(12, 'Trekking', 'all seasons', 15840, '09:00:00', '09:00:00', 1, 20, 1500, 'trekking1.jpg', 'trekking2.jpg', 'trekking3.jpg', 'Nepal has attracted trekkers from around the world since the 1960s when Col Jimmy Robert\'s organized the first commercial trek. Trekking has been the leading activity of tourists in Nepal and thousands take to the Himalayas, some doing a few days of hiking while others take on a month long trek through valleys and high mountain passes. Two of the most popular trekking regions are the Everest and Annapurna where many different trails can be followed while the other popular treks are in the Langtang and Kanchenjunga regions.');
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,8 @@ INSERT INTO `sport_detail` (`sport_detail_id`, `location_id`, `sport_id`, `name`
 (12, 11, 11, 'Hop Nepal', 'Honey hunting is culturally important and has been practised in Nepal for centuries. Earlier, during the Udhauli and Ubhauli festivals, it was performed twice a year. \r\nIn an attempt to harvest the purest type of honey, Indigenous Himalayan people have been practising this craft. While a tradition, honey hunting is often performed for honey\'s medicinal values. \r\n\r\nHoney intake stimulates digestion and serves to enhance immunity. Honey\'s effects help retain body temperature, which is critical if you are a resident of the Himalayas. No wonder these people, for this edible molten gold, gamble their lives. \r\n\r\nHoney harvested from the hives of such wild bees is often assumed to have a strange hallucinating quality, which has lately drawn such finding natural highs.', 'hopnepal1.jpg', 'hopnepal2.jpg', 'hopnepal3.jpg', 'https://www.hopnepal.com/blog/honey-hunting-in-nepal'),
 (13, 12, 10, 'Kaligandaki River Rafting Tour', '<ul>\r\n<li>Starting point : Maldhunga at 8am in the morning</li>\r\n<li>Stopping point: Mirmi</li>\r\n<li>Distance covered: 90km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>\r\n', 'kaligandakirafting1.jpg', 'kaligandakirafting2.jpg', 'kaligandakirafting3.jpg', 'www.kaligandakiriverraftingtour.com'),
 (14, 12, 10, 'Sunkoshi River Rafting Tour ', '<ul>\r\n<li>Starting point : Dumja at 8am in the morning</li>\r\n<li>Stopping point: Chatara</li>\r\n<li>Distance covered: 270km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance </li>\r\n</ul>\r\n', 'sunkoshirafting1.jpg', 'sunkoshirafting2.jpg', 'sunkoshirafting3.jpg', 'www.sunkoshiriverraftingtour.jpg'),
-(15, 12, 10, 'Karnali River Rafting Tour', '<ul>\r\n<li>Starting point : Dungeshwor at 8am in the morning</li>\r\n<li>Stopping point: CHisapani</li>\r\n<li>Distance covered: 270km</li>\r\nIncluded: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>', 'karnalirafting1.jpg', 'karnalirafting2.jpg', 'karnalirafting3.jpg', 'www.karnaliriverraftingtour.com');
+(15, 12, 10, 'Karnali River Rafting Tour', '<ul>\r\n<li>Starting point : Dungeshwor at 8am in the morning</li>\r\n<li>Stopping point: CHisapani</li>\r\n<li>Distance covered: 270km</li>\r\nIncluded: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>', 'karnalirafting1.jpg', 'karnalirafting2.jpg', 'karnalirafting3.jpg', 'www.karnaliriverraftingtour.com'),
+(16, 15, 12, 'Everest base camp trekking.', '<ul>\r\n<li>Starting point: Lukla at 9 am</li>\r\n<li>Stopping point: lukla</li>\r\n\r\n<li>Itinerary:</li>\r\n<li>Day 1: Lukla(2810 m)</li>\r\n<li>Day 2: Phakding(2640m)</li>\r\n<li>Day 3: Namche bazaar(3450)</li>\r\n<li>Day 4: tengboche(3864m)</li>\r\n<li>Day 5: dingboche(4360m)</li>\r\n<li>Day 6: lobuche(4930m)</li>\r\n<li>Day 7:gorakshep(5357m)</li>\r\n<li>Day 8: kalapathar(5550m)</li>\r\n<li>Day 9: pheriche(3420m)</li>\r\n<li>Day 10: Namche(3450m)</li>\r\n<li>Day 11: Lukla (2810m)</li>\r\n</ul>', 'everesttrekking1.jpg', 'everesttrekking2.jpg', 'everesttrekking3.jpg', 'everesttrekking.com');
 
 -- --------------------------------------------------------
 
@@ -252,6 +256,7 @@ CREATE TABLE `sport_detail_ko_view` (
 --
 CREATE TABLE `sport_view` (
 `sport_detail_id` int(11)
+,`sport_id` int(11)
 ,`name` varchar(255)
 ,`price` double
 ,`opening_time` time
@@ -313,7 +318,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `sport_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sport_view`  AS SELECT `sd`.`sport_detail_id` AS `sport_detail_id`, `sd`.`name` AS `name`, `s`.`price` AS `price`, `s`.`opening_time` AS `opening_time`, `s`.`closing_time` AS `closing_time`, `s`.`slot_duration` AS `slot_duration`, `s`.`total_slots` AS `total_slots`, `s`.`max_slot_capacity` AS `max_slot_capacity`, `l`.`location` AS `location` FROM ((`sport_detail` `sd` join `sport` `s`) join `location` `l`) WHERE `sd`.`sport_id` = `s`.`sport_id` AND `sd`.`location_id` = `l`.`location_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sport_view`  AS SELECT `sd`.`sport_detail_id` AS `sport_detail_id`, `s`.`sport_id` AS `sport_id`, `sd`.`name` AS `name`, `s`.`price` AS `price`, `s`.`opening_time` AS `opening_time`, `s`.`closing_time` AS `closing_time`, `s`.`slot_duration` AS `slot_duration`, `s`.`total_slots` AS `total_slots`, `s`.`max_slot_capacity` AS `max_slot_capacity`, `l`.`location` AS `location` FROM ((`sport_detail` `sd` join `sport` `s`) join `location` `l`) WHERE `sd`.`sport_id` = `s`.`sport_id` AND `sd`.`location_id` = `l`.`location_id` ;
 
 --
 -- Indexes for dumped tables
@@ -367,7 +372,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -379,19 +384,19 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `sport`
 --
 ALTER TABLE `sport`
-  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `sport_detail`
 --
 ALTER TABLE `sport_detail`
-  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
