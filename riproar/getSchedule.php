@@ -97,7 +97,7 @@ for($i = 0; $i < $total_schedule; $i++) {
             <i class='fas fa-layer-group'></i>
             <label for='slotSchedule'>Number Of People</label>
 
-            <div id='numberOfPeople'> <input id='numberField' type='number' name='number_of_people' min='1' max='".$sport_detail['max_slot_capacity']."'/> </div>
+            <div id='numberOfPeople'> <input id='numberField' type='number' name='number_of_people' min='1' max='".$sport_detail['max_slot_capacity']."' required/> </div>
             </div>
         ";
     }

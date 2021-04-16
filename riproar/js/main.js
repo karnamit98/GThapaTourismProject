@@ -73,7 +73,7 @@ function openModal(p_name, p_price,p_description, p_opening_season, p_duration, 
     console.log(p_name + " " + p_price + " " + p_img);
     title.innerHTML = p_name.toUpperCase();
     price.innerHTML = "NPR. " + p_price;
-    description.innerHTML = p_description;
+    description.innerHTML = p_description.split(" ").splice(0,50).join(" ") + "...";
     duration.innerHTML = "Duration: " + p_duration + " minutes.";
     opening_season.innerHTML = capitalizeFirstLetter(p_opening_season) ;
     img.src = "dbImages/sports/" + p_img;

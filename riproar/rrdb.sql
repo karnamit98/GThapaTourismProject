@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 07:53 AM
+-- Generation Time: Apr 16, 2021 at 05:21 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -46,7 +46,10 @@ INSERT INTO `booked_slot` (`slot_id`, `booking_id`) VALUES
 (16, 33),
 (18, 36),
 (19, 37),
-(20, 0);
+(20, 0),
+(21, 40),
+(22, 40),
+(23, 0);
 
 -- --------------------------------------------------------
 
@@ -72,7 +75,8 @@ INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date
 (32, 3, 2, '2021-04-10 03:25:01', 3500, 1),
 (33, 3, 1, '2021-04-10 03:29:53', 14000, 4),
 (36, 3, 3, '2021-04-10 03:47:40', 210000, 1),
-(37, 3, 3, '2021-04-10 03:50:22', 105000, 1);
+(37, 3, 3, '2021-04-10 03:50:22', 105000, 1),
+(40, 3, 2, '2021-04-15 18:33:49', 7000, 2);
 
 -- --------------------------------------------------------
 
@@ -155,7 +159,10 @@ INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `number_of_people`, `sl
 (16, '2021-04-11 01:45:00', '2021-04-11 01:55:00', 0, '2021-04-11'),
 (18, '2021-04-11 04:15:00', '2021-04-11 06:15:00', 0, '2021-04-11'),
 (19, '2021-04-11 06:15:00', '2021-04-11 08:15:00', 3, '2021-04-11'),
-(20, '2021-04-15 03:15:00', '2021-04-15 03:15:00', 10, '2021-04-15');
+(20, '2021-04-15 03:15:00', '2021-04-15 03:15:00', 10, '2021-04-15'),
+(21, '2021-04-19 01:30:00', '2021-04-19 01:45:00', 0, '2021-04-19'),
+(22, '2021-04-19 01:45:00', '2021-04-19 02:00:00', 0, '2021-04-19'),
+(23, '2021-04-21 03:15:00', '2021-04-21 03:15:00', 15, '2021-04-21');
 
 -- --------------------------------------------------------
 
@@ -194,8 +201,8 @@ INSERT INTO `sport` (`sport_id`, `name`, `available_season`, `slot_duration`, `o
 (8, 'rock climbing', 'all seasons', 360, '09:00:00', '15:00:00', 1, 50, 5000, 'rockclimbing1.jpg', 'rockclimbing2.jpg', 'rockclimbing3.jpg', 'Rock climbing is a sport in which participants climb up, down or across natural rock formations or artificial rock walls. The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling.'),
 (9, 'mountain biking', 'all seasons', 60, '09:00:00', '19:00:00', 100, 100, 200, 'mountainbiking1.jpeg', 'mountainbiking2.jpg', 'mountainbiking3.jpg', 'Mountain biking is a sport of riding bicycles off-road, often over rough terrain, usually using specially designed mountain bikes.'),
 (10, 'white-water rafting', 'all seasons', 480, '08:00:00', '15:00:00', 50, 10, 5000, 'rafting1.jpg', 'rafting2.jpg', 'rafting3.jpg', 'Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience.'),
-(11, 'Honey Hunting', 'all seasons', 54, '08:00:00', '17:00:00', 10, 1, 3000, 'honeyhunting1.jpg', 'honeyhunting2.jpg', 'honeyhunting3.jpg', 'Wild honey from Apis Laboriosa, the Himalayan giant honey bee, has been gathered by Gurung people from cliffs in the Himalayan foothills of Nepal for centuries. Apis Laboriosa is the largest honeybee in the world, and is referred to as ‘Bheer-Mauri’ in Nepali, which directly translates into ‘cliff bee.’ It is crucial for pollinating wild flora and crops in the mountains. The Gurung people across many parts of Nepal, especially the Kaski and Lamjung Districts, value their tradition of honey hunting as part of their lifestyle, and collect honey twice a year during the spring and autumn. The honey they gather is prized due to both its medicinal properties and monetary worth.\r\n\r\nEvery year, during the start of the spring or autumn season, the local Shaman (priest or the elder of the tribe) of the area sets an auspicious date for harvesting honey. Tuesday is considered a suitable day, while the 8th, 11th, 23rd, 26th, and 30th day of a moon cycle are not. '),
-(12, 'Trekking', 'all seasons', 15840, '09:00:00', '09:00:00', 1, 20, 1500, 'trekking1.jpg', 'trekking2.jpg', 'trekking3.jpg', 'Nepal has attracted trekkers from around the world since the 1960s when Col Jimmy Robert\'s organized the first commercial trek. Trekking has been the leading activity of tourists in Nepal and thousands take to the Himalayas, some doing a few days of hiking while others take on a month long trek through valleys and high mountain passes. Two of the most popular trekking regions are the Everest and Annapurna where many different trails can be followed while the other popular treks are in the Langtang and Kanchenjunga regions.');
+(11, 'Honey Hunting', 'all seasons', 54, '08:00:00', '17:00:00', 10, 1, 3000, 'honeyhunting1.jpg', 'honeyhunting2.jpg', 'honeyhunting3.jpg', 'Wild honey from Apis Laboriosa the Himalayan giant honey bee has been gathered by Gurung people from cliffs in the Himalayan foothills of Nepal for centuries. Apis Laboriosa is the largest honeybee in the world and is referred to as Bheer Mauri in Nepali which directly translates into cliff bee. It is crucial for pollinating wild flora and crops in the mountains. The Gurung people across many parts of Nepal especially the Kaski and Lamjung Districts value their tradition of honey hunting as part of their lifestyle and collect honey twice a year during the spring and autumn. The honey they gather is prized due to both its medicinal properties and monetary worth.'),
+(12, 'Trekking', 'all seasons', 15840, '09:00:00', '09:00:00', 1, 20, 1500, 'trekking1.jpg', 'trekking2.jpg', 'trekking3.jpg', 'Nepal has attracted trekkers from around the world since the 1960s when Col Jimmy Roberts organized the first commercial trek. Trekking has been the leading activity of tourists in Nepal and thousands take to the Himalayas, some doing a few days of hiking while others take on a month long trek through valleys and high mountain passes. Two of the most popular trekking regions are the Everest and Annapurna where many different trails can be followed while the other popular treks are in the Langtang and Kanchenjunga regions.');
 
 -- --------------------------------------------------------
 
@@ -372,7 +379,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -384,7 +391,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `sport`
