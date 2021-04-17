@@ -49,9 +49,18 @@ if(isset($_POST['bookingConfirmation'])) {
                    $startTime = strtotime($checked);
                    $durationSeconds = $sport['slot_duration'] * 60;
                 //    $endTime = date("H:i", time() + $durationSeconds ) ;
-                $endTime = date("H:i", $startTime + $durationSeconds ) ;
+                $endTime = date("H:i:s", $startTime + $durationSeconds ) ;
                  array_push($slots,$checked,  $endTime);
-                        echo "<span>( ".$checked." - ".$endTime ." )</span> ";
+                        if($sport['sport_id'] != 12)
+                            echo "<span>( ".date("H:i:s", strtotime($checked))." - ".$endTime ." )</span> ";
+                        else
+                         {  
+                             $startTimeStampTrek = date("M-d H:i:s", strtotime($date ." ". $checked));
+                             $endD = date('Y-m-d', strtotime($date. ' + 11 days'));
+                             $endTimeStampTrek = date("M-d H:i:s", strtotime($endD ." ".$checked));
+                              echo "<span>( ".$startTimeStampTrek." - ".$endTimeStampTrek ." )</span> ";
+
+                         }
                     } ?>
                 <?php if(isset($_POST['number_of_people'])) { ?><h2>Number Of People per Slot: <b><?php echo $_POST['number_of_people']; ?></b> </h2> <?php } else { ?>  
                     <h2>Number Of People per Slot: <b>1</b> </h2> <?php }  ?>  

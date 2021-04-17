@@ -47,7 +47,7 @@ if(isset($_POST['btnRegisteSubmit'])){
                 $auth = $crud->check_login($username, md5($password));
                 if($auth){
                     $_SESSION['user'] = $auth;
-                    header('location:account.php');
+                    header('location:profile.php');
                 }
             }
             else {

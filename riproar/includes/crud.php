@@ -95,6 +95,8 @@
             $sql = "INSERT INTO booking ( user_id, sport_detail_id, booking_date, price, quantity) VALUES ('$user_id', '$sport_detail_id', '$booking_date', '$price', '$quantity')";
             //$query = $this->connection->query($sql);
             //return $this->connection->query($sql);
+           // echo "<br>booking DATA: userID:". $user_id.", sportDetailID: ".$sport_detail_id.", bookingDate: ".$booking_date.", price: ".$price.", quantity: ".$quantity;
+           // echo "<br>SQL: ".$sql;
             $this->connection->query($sql);
             return $this->connection->insert_id;
          }

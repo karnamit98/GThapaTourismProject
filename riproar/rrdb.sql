@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2021 at 05:21 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Apr 17, 2021 at 08:37 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,19 +37,13 @@ CREATE TABLE `booked_slot` (
 --
 
 INSERT INTO `booked_slot` (`slot_id`, `booking_id`) VALUES
-(10, 31),
-(11, 31),
-(12, 32),
-(13, 33),
-(14, 33),
-(15, 33),
-(16, 33),
-(18, 36),
-(19, 37),
-(20, 0),
-(21, 40),
-(22, 40),
-(23, 0);
+(29, 1),
+(30, 2),
+(31, 2),
+(32, 3),
+(33, 3),
+(34, 4),
+(35, 4);
 
 -- --------------------------------------------------------
 
@@ -63,7 +57,7 @@ CREATE TABLE `booking` (
   `sport_detail_id` int(11) NOT NULL,
   `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `price` double NOT NULL,
-  `quantity` int(11) DEFAULT NULL
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -71,12 +65,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `user_id`, `sport_detail_id`, `booking_date`, `price`, `quantity`) VALUES
-(31, 3, 2, '2021-04-10 03:19:08', 7000, 2),
-(32, 3, 2, '2021-04-10 03:25:01', 3500, 1),
-(33, 3, 1, '2021-04-10 03:29:53', 14000, 4),
-(36, 3, 3, '2021-04-10 03:47:40', 210000, 1),
-(37, 3, 3, '2021-04-10 03:50:22', 105000, 1),
-(40, 3, 2, '2021-04-15 18:33:49', 7000, 2);
+(1, 4, 16, '2021-04-16 23:05:39', 9000, 1),
+(2, 4, 2, '2021-04-16 23:09:40', 7000, 2),
+(3, 4, 4, '2021-04-16 23:11:36', 13000, 2),
+(4, 4, 2, '2021-04-16 23:13:38', 7000, 2);
 
 -- --------------------------------------------------------
 
@@ -150,19 +142,13 @@ CREATE TABLE `slot` (
 --
 
 INSERT INTO `slot` (`slot_id`, `start_time`, `end_time`, `number_of_people`, `slot_date`) VALUES
-(10, '2021-04-12 01:15:00', '2021-04-12 01:30:00', 0, '2021-04-12'),
-(11, '2021-04-12 01:30:00', '2021-04-12 01:45:00', 0, '2021-04-12'),
-(12, '2021-04-12 01:45:00', '2021-04-12 02:00:00', 0, '2021-04-12'),
-(13, '2021-04-11 01:15:00', '2021-04-11 01:25:00', 0, '2021-04-11'),
-(14, '2021-04-11 01:25:00', '2021-04-11 01:35:00', 0, '2021-04-11'),
-(15, '2021-04-11 01:35:00', '2021-04-11 01:45:00', 0, '2021-04-11'),
-(16, '2021-04-11 01:45:00', '2021-04-11 01:55:00', 0, '2021-04-11'),
-(18, '2021-04-11 04:15:00', '2021-04-11 06:15:00', 0, '2021-04-11'),
-(19, '2021-04-11 06:15:00', '2021-04-11 08:15:00', 3, '2021-04-11'),
-(20, '2021-04-15 03:15:00', '2021-04-15 03:15:00', 10, '2021-04-15'),
-(21, '2021-04-19 01:30:00', '2021-04-19 01:45:00', 0, '2021-04-19'),
-(22, '2021-04-19 01:45:00', '2021-04-19 02:00:00', 0, '2021-04-19'),
-(23, '2021-04-21 03:15:00', '2021-04-21 03:15:00', 15, '2021-04-21');
+(29, '2021-04-18 03:15:00', '2021-04-29 03:15:00', 14, '2021-04-18'),
+(30, '2021-04-18 01:15:00', '2021-04-18 01:30:00', 0, '2021-04-18'),
+(31, '2021-04-18 01:30:00', '2021-04-18 01:45:00', 0, '2021-04-18'),
+(32, '2021-04-18 03:15:00', '2021-04-18 03:25:00', 0, '2021-04-18'),
+(33, '2021-04-18 03:25:00', '2021-04-18 03:35:00', 0, '2021-04-18'),
+(34, '2021-04-18 01:45:00', '2021-04-18 02:00:00', 0, '2021-04-18'),
+(35, '2021-04-18 02:00:00', '2021-04-18 02:15:00', 0, '2021-04-18');
 
 -- --------------------------------------------------------
 
@@ -242,7 +228,9 @@ INSERT INTO `sport_detail` (`sport_detail_id`, `location_id`, `sport_id`, `name`
 (13, 12, 10, 'Kaligandaki River Rafting Tour', '<ul>\r\n<li>Starting point : Maldhunga at 8am in the morning</li>\r\n<li>Stopping point: Mirmi</li>\r\n<li>Distance covered: 90km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>\r\n', 'kaligandakirafting1.jpg', 'kaligandakirafting2.jpg', 'kaligandakirafting3.jpg', 'www.kaligandakiriverraftingtour.com'),
 (14, 12, 10, 'Sunkoshi River Rafting Tour ', '<ul>\r\n<li>Starting point : Dumja at 8am in the morning</li>\r\n<li>Stopping point: Chatara</li>\r\n<li>Distance covered: 270km</li>\r\n<li>Included: accommodations, food, transportation, safety gears, insurance </li>\r\n</ul>\r\n', 'sunkoshirafting1.jpg', 'sunkoshirafting2.jpg', 'sunkoshirafting3.jpg', 'www.sunkoshiriverraftingtour.jpg'),
 (15, 12, 10, 'Karnali River Rafting Tour', '<ul>\r\n<li>Starting point : Dungeshwor at 8am in the morning</li>\r\n<li>Stopping point: CHisapani</li>\r\n<li>Distance covered: 270km</li>\r\nIncluded: accommodations, food, transportation, safety gears, insurance</li>\r\n</ul>', 'karnalirafting1.jpg', 'karnalirafting2.jpg', 'karnalirafting3.jpg', 'www.karnaliriverraftingtour.com'),
-(16, 15, 12, 'Everest base camp trekking.', '<ul>\r\n<li>Starting point: Lukla at 9 am</li>\r\n<li>Stopping point: lukla</li>\r\n\r\n<li>Itinerary:</li>\r\n<li>Day 1: Lukla(2810 m)</li>\r\n<li>Day 2: Phakding(2640m)</li>\r\n<li>Day 3: Namche bazaar(3450)</li>\r\n<li>Day 4: tengboche(3864m)</li>\r\n<li>Day 5: dingboche(4360m)</li>\r\n<li>Day 6: lobuche(4930m)</li>\r\n<li>Day 7:gorakshep(5357m)</li>\r\n<li>Day 8: kalapathar(5550m)</li>\r\n<li>Day 9: pheriche(3420m)</li>\r\n<li>Day 10: Namche(3450m)</li>\r\n<li>Day 11: Lukla (2810m)</li>\r\n</ul>', 'everesttrekking1.jpg', 'everesttrekking2.jpg', 'everesttrekking3.jpg', 'everesttrekking.com');
+(16, 15, 12, 'Everest base camp trekking.', '<ul>\r\n<li>Starting point: Lukla at 9 am</li>\r\n<li>Stopping point: lukla</li>\r\n\r\n<li>Itinerary:</li>\r\n<li>Day 1: Lukla(2810 m)</li>\r\n<li>Day 2: Phakding(2640m)</li>\r\n<li>Day 3: Namche bazaar(3450)</li>\r\n<li>Day 4: tengboche(3864m)</li>\r\n<li>Day 5: dingboche(4360m)</li>\r\n<li>Day 6: lobuche(4930m)</li>\r\n<li>Day 7:gorakshep(5357m)</li>\r\n<li>Day 8: kalapathar(5550m)</li>\r\n<li>Day 9: pheriche(3420m)</li>\r\n<li>Day 10: Namche(3450m)</li>\r\n<li>Day 11: Lukla (2810m)</li>\r\n</ul>', 'everesttrekking1.jpg', 'everesttrekking2.jpg', 'everesttrekking3.jpg', 'everesttrekking.com'),
+(17, 2, 7, 'Annapurna Ice Climbing', 'Want to ice climb in Annapurna Conservation Area? Check out our huge selection of holidays and vacations, courses and lessons, experiences and day trips, hotels and other accommodation. There are also deals and discounts to help you save money when you plan Annapurna Conservation Area ice climbing trips.\r\n\r\nLooking for inspiration? Check out our articles about ice climbing in Annapurna Conservation Area including reviews of holidays and experiences, top 10s, gear and much more.\r\n\r\nUse the blue menus to change the activity or destination. You can also filter by the type of content you are looking for to help plan Annapurna Conservation Area ice climbing trips.\r\n\r\nTo ice climb in Annapurna Conservation Area is a great way to spend your time and we are stoked to share our knowledge with you. So scroll down, look at the top holidays, best courses, epic experiences, awesome accommodation, money saving discounts and inspiring articles in this guide to Annapurna Conservation Area ice climbing trips.', 'annapurnaiceclimbing1.jpg', 'annapurnaiceclimbing2.jpg', 'annapurnaiceclimbing3.jpg', 'https://awe365.com/activity/ice-climbing/destination/annapurna-conservation-area/'),
+(18, 10, 6, 'Trisuli Kayaking and Canyoning', 'The Trisuli is Nepal’s best river for day trips. Located centrally between Kathmandu, Chitwan, and Pokhara, it’s the perfect way to break up a long bus journey to your next destination. Why sit on a bus for 8 hours when you can raft half of it! It’s one of the most popular day trips in Nepal and is great for everyone, all year round.\r\n', 'trisulikayaking1.jpg', 'trisulikayaking2.jpg', 'trisulikayaking3.jpg', 'https://www.kimkim.com/c/trisuli-rafting-kayaking-trip');
 
 -- --------------------------------------------------------
 
@@ -298,7 +286,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `age`, `country`, `password`, `role`, `status`) VALUES
 (3, 'Sataka Gintoki', 'gintama', 'gintama@gmail.com', 30, 'Kyoto', '0fe2fae8317d253679535764c7843200', 3, 1),
-(4, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 29, 'Japan', 'fa6400da740226c369f5e71b85b50ef9', 0, 1);
+(4, 'Uzumaki Naruto', 'naruto', 'naruto@gmail.com', 29, 'Japan', 'fa6400da740226c369f5e71b85b50ef9', 0, 1),
+(5, 'Aman Khan', 'aman', 'khanaman9730@gmail.com', 25, 'Nepal', '73b25522615dac9cfd289ee35faef4ef', 3, 1),
+(6, 'Gopal Thapa', 'gopal', 'gopstc@gmail.com', 25, 'Nepal', '0c675f5c3546d0f6f99d90b5ab8dfe7e', 3, 1),
+(7, 'Monkey D. Luffy', 'luffy', 'luffy@gmail.com', 19, 'Japan', 'bc0062c11767b7edaebb887c547180e0', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -335,9 +326,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `ForeignKeyUserId` (`user_id`),
-  ADD KEY `ForeignKeySportDetailId` (`sport_detail_id`);
+  ADD PRIMARY KEY (`booking_id`);
 
 --
 -- Indexes for table `location`
@@ -379,7 +368,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -391,7 +380,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `slot`
 --
 ALTER TABLE `slot`
-  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `slot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sport`
@@ -403,24 +392,13 @@ ALTER TABLE `sport`
 -- AUTO_INCREMENT for table `sport_detail`
 --
 ALTER TABLE `sport_detail`
-  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `sport_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `booking`
---
-ALTER TABLE `booking`
-  ADD CONSTRAINT `ForeignKeySportDetailId` FOREIGN KEY (`sport_detail_id`) REFERENCES `sport` (`sport_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ForeignKeyUserId` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

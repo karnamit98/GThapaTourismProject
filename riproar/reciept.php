@@ -46,7 +46,16 @@ if(isset($_SESSION['booking_data'])){
                         for($i =0; $i<$_SESSION['reciept_data']['numSlots']*2;$i+=2)
                         {
                             if($i != 1 && $i>1 ) echo ", ";
-                            echo $_SESSION['reciept_data']['slots'][$i]." - ".$_SESSION['reciept_data']['slots'][$i+1];
+                            if($sport['sport_id'] != 12)
+                            { echo date("H:i", strtotime($_SESSION['reciept_data']['slots'][$i]))." - ".date("H:i", strtotime($_SESSION['reciept_data']['slots'][$i+1])); } 
+                             else {
+                                 $date = $_SESSION['reciept_data']['date']; 
+                                 $startTime = date("H:i:s", strtotime($_SESSION['reciept_data']['slots'][$i]));
+                                $startTimeStampTrek = date("M-d H:i:s", strtotime($date ." ". $startTime));
+                                $endD = date('Y-m-d', strtotime($date. ' + 11 days'));
+                                $endTimeStampTrek = date("M-d H:i:s", strtotime($endD ." ".$startTime));
+                                 echo "<span>( ".$startTimeStampTrek." - ".$endTimeStampTrek ." )</span> ";
+                             }
                         }   
                     ?> </span></div>
                      <div style="border-bottom:0px;"><span class="tHead"><b> Price per Person </b></span><span class="content"> NPR.<b><?php echo $sport['price']; ?></b></span></div>

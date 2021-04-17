@@ -3,7 +3,7 @@
 
 
         $user_info = $crud->fetch_data_with_id('users', 'user_id', $_SESSION['user']);
-
+        $bookings = $crud->fetch_all_table_data('booking');
         if($msg != null) {
             ?>
                 <div class="registerSuccess mt-20"><?php echo $msg; ?></div>
@@ -44,11 +44,19 @@
                             <div class="projects_data">
                                 <div class="data">
                                     <h4>Account Type</h4>
-                                    <p>USER</p>
+                                    <p><?php 
+                                        if($user_info['role'] == 3)
+                                        {
+                                            echo "ADMIN";
+                                        }
+                                        else{
+                                            echo "USER";
+                                        }
+                                    ?></p>
                                 </div>
                                 <div class="data">
                                 <h4>Total Bookings</h4>
-                                    <p><?php echo rand(0, 50);?></p>
+                                    <p><?php echo count($bookings);?></p>
                             </div>
                             </div>
                         </div>
@@ -103,17 +111,24 @@
         </div>
 
         <div class="profileBookingDetails">
-            <div class="profileBookingDetailsInner">
-            <h3>Your booking history!</h3><ul>
+            
+            <h3>BOOKING HISTORY</h3>
+            <table rules=none   >
+            <tr>
+                <th>S.N.</th>
+                <th>Sport Name</th>
+                <th>No. Of Slots</th>
+                <th>Booked Date</th>
+            </tr>
             <?php
                 $bookingDetails = $crud->fetch_datas_with_column('booking_detail', 'user_id', $_SESSION['user']);
-
+                $i=1;
                 foreach($bookingDetails as $booking){
                    // echo $booking['sport_name']." at date ".$booking['slot_date']. " and quantity ".$booking['quantity']."</br>";
-                    echo "<li>".$booking['quantity']." slots of ".$booking['sport_name']." booked for ".$booking['slot_date']."!</li>";
+                    echo "<tr><td>".($i++)."</td><td>".$booking['sport_name']."</td><td> ".$booking['quantity']." </td><td>".$booking['slot_date']."</td></tr>";
                 }
-            ?></ul>
-            </div>
+            ?></table>
+            
         </div>
     </section>
     <?php
